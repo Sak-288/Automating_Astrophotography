@@ -15,7 +15,7 @@ GPIO.setup(MS1, GPIO.OUT)
 GPIO.setup(MS2, GPIO.OUT)
 GPIO.setup(MS3, GPIO.OUT)
 
-GPIO.output(DIR, CW) 
+GPIO.output(DIR, CW)
 GPIO.output(STEP, GPIO.LOW) 
 GPIO.output(MS1, GPIO.HIGH) 
 GPIO.output(MS2, GPIO.HIGH) 
@@ -28,7 +28,7 @@ target = 90
 nMicro = 16
 nSteps = round(target / 1.8 * nMicro)
 print(nSteps)
-DELAY = 1/nSteps
+DELAY = 0.1
 
 for i in range(nSteps):
     GPIO.output(STEP, GPIO.HIGH)
