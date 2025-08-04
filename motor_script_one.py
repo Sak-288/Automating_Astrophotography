@@ -1,5 +1,4 @@
 import RPi.GPIO as GPIO
-import math
 import time
 
 DIR = 11
@@ -27,7 +26,7 @@ target = 90
 # Since MS1-2 && 3 are set to HIGH, we are dealing in 1/16th steps
 
 nMicro = 16
-nSteps = target / 1.8 * nMicro
+nSteps = round(target / 1.8 * nMicro)
 
 for i in range(nSteps):
     GPIO.output(STEP, GPIO.HIGH)
