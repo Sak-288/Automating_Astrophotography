@@ -23,7 +23,7 @@ GPIO.output(MS1, GPIO.HIGH)
 GPIO.output(MS2, GPIO.HIGH) 
 GPIO.output(MS3, GPIO.HIGH)
 
-target = 360 * 10
+target = 180
 
 # Since MS1-2 && 3 are set to HIGH, we are dealing in 1/16th steps
 
