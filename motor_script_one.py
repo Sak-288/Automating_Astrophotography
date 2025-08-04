@@ -34,3 +34,5 @@ DELAY = 1/nSteps * 5
 for i in range(nSteps):
     GPIO.output(STEP, GPIO.HIGH)
     time.sleep(DELAY)
+    GPIO.output(STEP, GPIO.LOW)
+    time.sleep(DELAY)
