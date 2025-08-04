@@ -23,14 +23,14 @@ GPIO.output(MS1, GPIO.LOW)
 GPIO.output(MS2, GPIO.LOW) 
 GPIO.output(MS3, GPIO.LOW)
 
-target = 360
+target = 360 * 10
 
 # Since MS1-2 && 3 are set to HIGH, we are dealing in 1/16th steps
 
 nMicro = 1
 nSteps = round(target / 1.8 * nMicro)
 print(nSteps)
-DELAY = 1/nSteps
+DELAY = 0.02
 
 for i in range(nSteps):
     GPIO.output(STEP, GPIO.HIGH)
