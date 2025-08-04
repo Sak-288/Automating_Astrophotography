@@ -1,13 +1,13 @@
 import RPi.GPIO as GPIO
 import time
 
-DIR = 11
-STEP = 13
-MS1 = 15
-MS2 = 16
-MS3 = 18
+DIR = 20
+STEP = 21
+MS1 = 23
+MS2 = 24
+MS3 = 25
 
-GPIO.setmode(GPIO.BOARD)
+GPIO.setmode(GPIO.BCM)
 
 GPIO.setup(DIR, GPIO.OUT)
 GPIO.setup(STEP, GPIO.OUT)
