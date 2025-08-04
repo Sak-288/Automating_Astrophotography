@@ -27,6 +27,7 @@ target = 90
 
 nMicro = 16
 nSteps = round(target / 1.8 * nMicro)
+print(nSteps)
 DELAY = 1/nSteps
 
 for i in range(nSteps):
