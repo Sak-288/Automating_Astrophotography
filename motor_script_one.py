@@ -27,11 +27,10 @@ target = 90
 
 nMicro = 16
 nSteps = round(target / 1.8 * nMicro)
+DELAY = 1/nSteps
 
 for i in range(nSteps):
     GPIO.output(STEP, GPIO.HIGH)
-    time.sleep(0.001)
+    time.sleep(DELAY)
     GPIO.output(STEP, GPIO.LOW)
-    time.sleep(0.001)
-
-GPIO.cleanup()
+    time.sleep(DELAY)
