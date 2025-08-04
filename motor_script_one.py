@@ -18,24 +18,22 @@ GPIO.setup(MS2, GPIO.OUT)
 GPIO.setup(MS3, GPIO.OUT)
 
 GPIO.output(DIR, GPIO.HIGH)
-GPIO.output(STEP, GPIO.LOW) 
-GPIO.output(MS1, GPIO.HIGH)
-GPIO.output(MS2, GPIO.HIGH) 
-GPIO.output(MS3, GPIO.HIGH)
+GPIO.output(STEP, GPIO.HIGH) 
+GPIO.output(MS1, GPIO.LOW)
+GPIO.output(MS2, GPIO.LOW) 
+GPIO.output(MS3, GPIO.LOW)
 
 target = 90
 
 # Since MS1-2 && 3 are set to HIGH, we are dealing in 1/16th steps
 
-nMicro = 16
+nMicro = 1
 nSteps = round(target / 1.8 * nMicro)
 print(nSteps)
-DELAY = 0.1
+DELAY = 1/nSteps
 
 for i in range(nSteps):
     GPIO.output(STEP, GPIO.HIGH)
     time.sleep(DELAY)
     GPIO.output(STEP, GPIO.LOW)
     time.sleep(DELAY)
-
-GPIO.cleanup()
