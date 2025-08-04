@@ -15,7 +15,7 @@ GPIO.setup(MS1, GPIO.OUT)
 GPIO.setup(MS2, GPIO.OUT)
 GPIO.setup(MS3, GPIO.OUT)
 
-GPIO.output(DIR, HIGH)
+GPIO.output(DIR, GPIO.HIGH)
 GPIO.output(STEP, GPIO.LOW) 
 GPIO.output(MS1, GPIO.HIGH) 
 GPIO.output(MS2, GPIO.HIGH) 
