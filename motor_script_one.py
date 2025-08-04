@@ -1,6 +1,8 @@
 import RPi.GPIO as GPIO
 import time
 
+print('hello world I am working !')
+
 DIR = 20
 STEP = 21
 MS1 = 23
@@ -17,9 +19,9 @@ GPIO.setup(MS3, GPIO.OUT)
 
 GPIO.output(DIR, GPIO.HIGH)
 GPIO.output(STEP, GPIO.LOW) 
-GPIO.output(MS1, GPIO.HIGH) 
+GPIO.output(MS1, GPIO.HIGH)
 GPIO.output(MS2, GPIO.HIGH) 
-GPIO.output(MS3, GPIO.HIGH) 
+GPIO.output(MS3, GPIO.HIGH)
 
 target = 90
 
@@ -35,3 +37,5 @@ for i in range(nSteps):
     time.sleep(DELAY)
     GPIO.output(STEP, GPIO.LOW)
     time.sleep(DELAY)
+
+GPIO.cleanup()
