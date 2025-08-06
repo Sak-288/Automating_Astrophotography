@@ -1,4 +1,4 @@
-# Needed ibraries for the function (don't forget to import them later on in the main file)
+# Needed ibraries for the function --don't forget to import them later on in the main file--
 from picamera2 import Picamera2
 import os
 from datetime import datetime
