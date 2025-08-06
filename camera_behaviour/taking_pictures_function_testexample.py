@@ -1,0 +1,54 @@
+# Needed ibraries for the function (don't forget to import them later on in the main file)
+from picamera2 import Picamera2
+import os
+from datetime import datetime
+from picamera2 import Picamera2
+from pathlib import Path
+from time import sleep
+from sys import exit
+
+# Asking the user for specs
+
+# Asking folder name
+folder_name = input("Enter the name of the new folder: ").strip()
+
+# Create the new (or not) folder
+base_path = Path.home() / folder_name
+os.makedirs(base_path, exist_ok=True)
+
+# Asking the amount of photos
+try:
+    n_photos = int(input("Enter the amount of photos you'd like, between 1 and 20: "))
+except Excpetion as e:
+    n_photos = int(input('Please enter a valid number between 1 and 20: '))
+while n_photos < 1 or n_photos > 20:
+    n_photos = int(input('Please input a valid number between 1 and 20: '))
+
+# Asking for the exposure time
+try:
+    exp_time = int(input("Enter the amount of photos you'd like, between 10 and 10000 (in Milliseconds): "))
+except Excpetion as e:
+    exp_time = int(input('Please enter a valid number between 500 and 10000: '))
+while exp_time < 500 or exp_time > 10000:
+    exp_time = int(input('Please input a valid number between 1 and 20: '))
+
+# Main Running Loop
+def take_pictures(basepath, exp_time, n_photos):
+    # Starting the photo_taking
+    picam2.start()  
+
+    # Creating the Pi Cam object && Configuration
+    picam2 = Picamera2()
+    picam2.configure(picam2.create_still_configuration({"size": (1920, 1080)}))
+
+    # To control the exposure time of the photo (important in astrophotography)
+    picam2.set_controls({
+    "ExposureTime": exp_time * 1000,  # 1 second
+    "AnalogueGain": 1.0       # ISO gain (lower = less noise)
+    })
+    for i in range(n_photos):
+        filename = base_path / f"photo_{i + 1}_{datetime.now().strftime('%H%M%S')}.jpg"
+        picam2.capture_file(str(filename))
+        print(f"Captured {filename.name}")
+    picam2.stop()
+    exit()
