@@ -1,12 +1,21 @@
 from mpu6050 import mpu6050
-from time import sleep
+from time import sleep, time
 
-# CONSTANTS :
-sensor = mpu6050(0x68, 1) # Object
-reference_delay = 5 # Delay in seconds to let gyro stabilize
+# Create sensor object
+sensor = mpu6050(0x68, 1)
 
-# Mainline
-sleep(reference_delay)
-reference_coords = mpu.get_gyro_data()
+# Let the sensor stabilize
+sleep(2)
 
- 
+# Get Reference Values --> (0; 0)
+r_yaw = sensor.get_gyro_data()['z']
+r_pitch = sensor.get_gyro_data()['x']
+
+def getTelOrientation():
+    c_yaw = sensor.get_gyro_data()['z'] - r_yaw
+    c_pitch = sensor.get_gyro_data()['x'] - r_pitch
+    telCoords = [c_yaw, c_pitch]
+    return telCoords
+
+while True:
+    print(getTelOrientation())
