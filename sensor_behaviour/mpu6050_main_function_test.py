@@ -1,3 +1,7 @@
+# FIX ? MAYBE ?
+import sys
+sys.path.append("/home/sakam/.venv/myenv/lib/python3.11/site-packages")
+
 # Importing the related libraries
 from MPU6050.mpu6050 import mpu6050
 import time
