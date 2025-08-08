@@ -1,8 +1,8 @@
 # Importing the related libraries
-from mpu6050 import MPU6050
+from MPU6050.mpu6050 import mpu6050
 import time
 
-mpu = MPU6050(0x68, 1)
+mpu = mpu6050(0x68, 1)
 
 while True:
     print("Temp : "+str(mpu.get_temp()))
