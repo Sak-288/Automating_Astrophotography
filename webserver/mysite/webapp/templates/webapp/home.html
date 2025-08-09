@@ -3,10 +3,10 @@
     <head>
         <meta charset='utf-8'>
         <title>@auto_astro.begginers</title>
-        <link rel='stylesheet' href='home.css'>
+        {% load static %}
+        <link rel='stylesheet' href='{% static 'webapp/home.css' %}'>
     </head>
     <body>
-        <h1>This is a website made by Sak-288 on github !</h1>
-        <button>Click on this button for something funny to happen !</button>
+        <div id="parallax"><h1>@auto_astro</h1></div>
     </body>
 </html>
