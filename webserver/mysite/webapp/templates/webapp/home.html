@@ -2,12 +2,21 @@
 <html lang="en">
     <head>
         <meta charset='utf-8'>
-        <title>@auto_astro.begginers</title>
+        <title>@auto_astro.beginners</title>
         {% load static %}
         <link rel='stylesheet' href="{% static 'webapp/home.css' %}">
     </head>
     <body>
+        <!-- Optional scrolling title -->
+        <div class="scrolling-title">
+            <h2>🚀 Automating Astrophotography - Raspberry Pi Control System 🌟</h2>
+        </div>
+        
+        <div id="parallax">
+            <h1>@auto_astro</h1>
+        </div>
+        
+        <!-- Load JavaScript at the end for better performance -->
         <script src="{% static 'webapp/home.js' %}"></script>
-        <div id="parallax"><h1>@auto_astro</h1></div>
     </body>
 </html>

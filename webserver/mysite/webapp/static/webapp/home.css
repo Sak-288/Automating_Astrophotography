@@ -1,25 +1,62 @@
 body {
-    margin:0;
-    background-color:darkblue;
+    margin: 0;
+    background-color: darkblue;
 }
 
 #parallax {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background-image: 'MARS.png', 'JUPITER.png', 'VENUS.png';
-  background-repeat: no-repeat;
-  background-position: center;
-  background-position: 50% 50%;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* Fixed: background-image needs url() and proper syntax */
+    background-image: url("{% static 'webapp/MARS.png' %}"), 
+                     url("{% static 'webapp/JUPITER.png' %}"), 
+                     url("{% static 'webapp/VENUS.png' %}");
+    background-repeat: no-repeat;
+    background-position: center;
+    /* Removed duplicate background-position */
+    background-size: cover, contain, contain;
 }
+
 h1 {
-  position: absolute;
-  top: 47%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  font-family: "Arial";
-  text-transform: uppercase;
-  opacity: .2;
-  font-size: 70px;
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-family: "Arial", sans-serif;
+    text-transform: uppercase;
+    opacity: 0.2;
+    font-size: 70px;
+    margin: 0; /* Remove default margin */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Add some responsive design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 40px;
+    }
+}
+
+/* Add scrolling title animation if you want */
+.scrolling-title {
+    overflow: hidden;
+    background: rgba(0, 0, 139, 0.8);
+    padding: 10px 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.scrolling-title h2 {
+    display: inline-block;
+    animation: scroll 15s linear infinite;
+    white-space: nowrap;
+    color: #4ecdc4;
+    margin: 0;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
 }
