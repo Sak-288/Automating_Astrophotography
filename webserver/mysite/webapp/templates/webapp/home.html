@@ -4,7 +4,71 @@
         <meta charset='utf-8'>
         <title>@auto_astro.beginners</title>
         {% load static %}
-        <link rel='stylesheet' href="{% static 'webapp/home.css' %}">
+        <!-- Embedded CSS to avoid loading issues -->
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: darkblue;
+                font-family: Arial, sans-serif;
+            }
+
+            #parallax {
+                position: relative;
+                width: 100%;
+                height: 100vh;
+                background-image: 
+                    url("https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800"),
+                    url("https://images.unsplash.com/photo-1550985543-501d5d3c6640?w=600"),
+                    url("https://images.unsplash.com/photo-1507499739999-097706ad8914?w=400");
+                background-repeat: no-repeat;
+                background-position: 30% 30%, 70% 70%, center;
+                background-size: 400px, 300px, cover;
+                background-color: #0a0a1a;
+            }
+
+            h1 {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: white;
+                text-transform: uppercase;
+                opacity: 0.8;
+                font-size: 70px;
+                margin: 0;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+                background-color: rgba(0,0,0,0.3);
+                padding: 20px;
+                border-radius: 10px;
+                white-space: nowrap;
+            }
+
+            /* Scrolling title */
+            .scrolling-title {
+                overflow: hidden;
+                background: rgba(0, 0, 139, 0.8);
+                padding: 10px 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                z-index: 10;
+            }
+
+            .scrolling-title h2 {
+                display: inline-block;
+                animation: scroll 15s linear infinite;
+                white-space: nowrap;
+                color: #4ecdc4;
+                margin: 0;
+                font-size: 18px;
+            }
+
+            @keyframes scroll {
+                0% { transform: translateX(-100%); }
+                100% { transform: translateX(100%); }
+            }
+        </style>
     </head>
     <body>
         <!-- Optional scrolling title -->
