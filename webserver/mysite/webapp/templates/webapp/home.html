@@ -4,9 +4,11 @@
         <meta charset='utf-8'>
         <title>@auto_astro.begginers</title>
         {% load static %}
-        <link rel='stylesheet' href='{% static 'webapp/home.css' %}'>
+        <link rel='stylesheet' href="{% static 'webapp/home.css' %}">
     </head>
     <body>
+        {% load static %}
+        <script href="{% load static 'webapp/home.js%}""></script>
         <div id="parallax"><h1>@auto_astro</h1></div>
     </body>
 </html>
