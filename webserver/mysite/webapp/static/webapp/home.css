@@ -2,9 +2,9 @@
     position: relative;
     width: 100%;
     height: 100vh;
-    background-image: url("{% static 'webapp/MARS.png' %}"),
-    url("{% static 'webapp/JUPITER.png' %}"),
-    url("{% static 'webapp/VENUS.png' %}");
+    background-image: url("webapp/MARS.png"),
+    url("webapp/JUPITER.png"),
+    url("webapp/VENUS.png");
     background-repeat: no-repeat;
     background-position: 30% 30%, 70% 70%, center;
     background-size: 400px, 300px, cover;
