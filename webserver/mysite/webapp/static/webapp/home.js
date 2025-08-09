@@ -1,36 +1,22 @@
 (function() {
-    // Wait for DOM to be fully loaded
+    console.log("JavaScript loaded!");
+    
     document.addEventListener('DOMContentLoaded', function() {
-        // Add event listener for mouse movement
-        document.addEventListener("mousemove", parallax);
-        const elem = document.querySelector("#parallax");
+        console.log("DOM loaded!");
         
-        // Check if element exists
+        const elem = document.querySelector("#parallax");
+        console.log("Parallax element found:", elem);
+        
         if (!elem) {
-            console.error('Parallax element not found');
+            console.error('Parallax element not found!');
             return;
         }
         
-        // Parallax effect function
+        document.addEventListener("mousemove", parallax);
+        
         function parallax(e) {
-            let _w = window.innerWidth / 2;
-            let _h = window.innerHeight / 2;
-            let _mouseX = e.clientX;
-            let _mouseY = e.clientY;
-            
-            // Calculate different depth layers
-            let _depth1 = `${50 - (_mouseX - _w) * 0.01}% ${50 - (_mouseY - _h) * 0.01}%`;
-            let _depth2 = `${50 - (_mouseX - _w) * 0.02}% ${50 - (_mouseY - _h) * 0.02}%`;
-            let _depth3 = `${50 - (_mouseX - _w) * 0.06}% ${50 - (_mouseY - _h) * 0.06}%`;
-            
-            // Combine all layers
-            let backgroundPosition = `${_depth3}, ${_depth2}, ${_depth1}`;
-            
-            // Apply the parallax effect
-            elem.style.backgroundPosition = backgroundPosition;
-            
-            // Optional: Log for debugging (remove in production)
-            // console.log(backgroundPosition);
+            console.log("Mouse moved!", e.clientX, e.clientY);
+            // ... rest of your parallax code
         }
     });
 })();
