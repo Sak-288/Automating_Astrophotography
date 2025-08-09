@@ -7,6 +7,7 @@
         <link rel='stylesheet' href="{% static 'webapp/home.css' %}">
     </head>
     <body>
+        <!-- Optional scrolling title -->
         <div class="scrolling-title">
             <h2>🚀 Automating Astrophotography - Raspberry Pi Control System 🌟</h2>
         </div>
@@ -15,7 +16,7 @@
             <h1>@auto_astro</h1>
         </div>
         
-        <!-- JavaScript directly in HTML for testing -->
+        <!-- JavaScript directly embedded -->
         <script>
             console.log("JavaScript is running!");
             
@@ -27,11 +28,23 @@
                 
                 if (elem) {
                     document.addEventListener("mousemove", function(e) {
-                        console.log("Mouse moved to:", e.clientX, e.clientY);
+                        // Calculate parallax positions
+                        let _w = window.innerWidth / 2;
+                        let _h = window.innerHeight / 2;
+                        let _mouseX = e.clientX;
+                        let _mouseY = e.clientY;
                         
-                        // Simple test - change background color
-                        let hue = (e.clientX / window.innerWidth) * 360;
-                        elem.style.backgroundColor = `hsl(${hue}, 50%, 20%)`;
+                        // Different depths for parallax layers
+                        let _depth1 = `${50 - (_mouseX - _w) * 0.01}% ${50 - (_mouseY - _h) * 0.01}%`;
+                        let _depth2 = `${50 - (_mouseX - _w) * 0.02}% ${50 - (_mouseY - _h) * 0.02}%`;
+                        let _depth3 = `${50 - (_mouseX - _w) * 0.06}% ${50 - (_mouseY - _h) * 0.06}%`;
+                        
+                        // Apply parallax effect to background positions
+                        let backgroundPositions = `${_depth3}, ${_depth2}, ${_depth1}`;
+                        elem.style.backgroundPosition = backgroundPositions;
+                        
+                        // Optional: log for debugging (remove this line later)
+                        console.log("Parallax positions:", backgroundPositions);
                     });
                 } else {
                     console.error("Parallax element not found!");
