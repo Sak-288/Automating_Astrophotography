@@ -7,7 +7,6 @@
         <link rel='stylesheet' href="{% static 'webapp/home.css' %}">
     </head>
     <body>
-        <!-- Optional scrolling title -->
         <div class="scrolling-title">
             <h2>🚀 Automating Astrophotography - Raspberry Pi Control System 🌟</h2>
         </div>
@@ -16,7 +15,28 @@
             <h1>@auto_astro</h1>
         </div>
         
-        <!-- Load JavaScript at the end for better performance -->
-        <script src="{% static 'webapp/home.js' %}"></script>
+        <!-- JavaScript directly in HTML for testing -->
+        <script>
+            console.log("JavaScript is running!");
+            
+            document.addEventListener('DOMContentLoaded', function() {
+                console.log("DOM ready!");
+                
+                const elem = document.querySelector("#parallax");
+                console.log("Found parallax element:", elem);
+                
+                if (elem) {
+                    document.addEventListener("mousemove", function(e) {
+                        console.log("Mouse moved to:", e.clientX, e.clientY);
+                        
+                        // Simple test - change background color
+                        let hue = (e.clientX / window.innerWidth) * 360;
+                        elem.style.backgroundColor = `hsl(${hue}, 50%, 20%)`;
+                    });
+                } else {
+                    console.error("Parallax element not found!");
+                }
+            });
+        </script>
     </body>
 </html>
