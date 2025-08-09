@@ -4,108 +4,31 @@
         <meta charset='utf-8'>
         <title>@auto_astro.beginners</title>
         {% load static %}
-        <!-- Embedded CSS to avoid loading issues -->
-        <style>
-            body {
-                margin: 0;
-                padding: 0;
-                background-color: darkblue;
-                font-family: Arial, sans-serif;
-            }
-
-            #parallax {
-                position: relative;
-                width: 100%;
-                height: 100vh;
-                background-image: url("/media/VENUS.png"), url("/media/JUPITER.png"), url("/media/MARS.png");
-                background-repeat: no-repeat;
-                background-position: 30% 30%, 70% 70%, center;
-                background-size: 400px, 300px, cover;
-                background-color: #0a0a1a;
-            }
-
-            h1 {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                color: white;
-                text-transform: uppercase;
-                opacity: 0.8;
-                font-size: 70px;
-                margin: 0;
-                text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-                background-color: rgba(0,0,0,0.3);
-                padding: 20px;
-                border-radius: 10px;
-                white-space: nowrap;
-            }
-
-            /* Scrolling title */
-            .scrolling-title {
-                overflow: hidden;
-                background: rgba(0, 0, 139, 0.8);
-                padding: 10px 0;
-                position: absolute;
-                top: 0;
-                width: 100%;
-                z-index: 10;
-            }
-
-            .scrolling-title h2 {
-                display: inline-block;
-                animation: scroll 15s linear infinite;
-                white-space: nowrap;
-                color: #4ecdc4;
-                margin: 0;
-                font-size: 18px;
-            }
-
-            @keyframes scroll {
-                0% { transform: translateX(-100%); }
-                100% { transform: translateX(100%); }
-            }
-        </style>
+        <link rel="stylesheet" href="{% static 'webapp/home.css' %}">
     </head>
     <body>
-        <div id="parallax">
-            <h1>@auto_astro</h1>
-        </div>
+        <div id="parallax"><h1>Parallax</h1></div>
         
-        <!-- JavaScript directly embedded -->
         <script>
-            console.log("JavaScript is running!");
-            
-            document.addEventListener('DOMContentLoaded', function() {
-                console.log("DOM ready!");
-                
+            (function() {
+                // Add event listener
+                document.addEventListener("mousemove", parallax);
                 const elem = document.querySelector("#parallax");
-                console.log("Found parallax element:", elem);
                 
-                if (elem) {
-                    document.addEventListener("mousemove", function(e) {
-                        // Calculate parallax positions
-                        let _w = window.innerWidth / 2;
-                        let _h = window.innerHeight / 2;
-                        let _mouseX = e.clientX;
-                        let _mouseY = e.clientY;
-                        
-                        // Different depths for parallax layers
-                        let _depth1 = `${50 - (_mouseX - _w) * 0.01}% ${50 - (_mouseY - _h) * 0.01}%`;
-                        let _depth2 = `${50 - (_mouseX - _w) * 0.02}% ${50 - (_mouseY - _h) * 0.02}%`;
-                        let _depth3 = `${50 - (_mouseX - _w) * 0.06}% ${50 - (_mouseY - _h) * 0.06}%`;
-                        
-                        // Apply parallax effect to background positions
-                        let backgroundPositions = `${_depth3}, ${_depth2}, ${_depth1}`;
-                        elem.style.backgroundPosition = backgroundPositions;
-                        
-                        // Optional: log for debugging (remove this line later)
-                        console.log("Parallax positions:", backgroundPositions);
-                    });
-                } else {
-                    console.error("Parallax element not found!");
+                // Magic happens here
+                function parallax(e) {
+                    let _w = window.innerWidth/2;
+                    let _h = window.innerHeight/2;
+                    let _mouseX = e.clientX;
+                    let _mouseY = e.clientY;
+                    let _depth1 = `${50 - (_mouseX - _w) * 0.01}% ${50 - (_mouseY - _h) * 0.01}%`;
+                    let _depth2 = `${50 - (_mouseX - _w) * 0.02}% ${50 - (_mouseY - _h) * 0.02}%`;
+                    let _depth3 = `${50 - (_mouseX - _w) * 0.06}% ${50 - (_mouseY - _h) * 0.06}%`;
+                    let x = `${_depth3}, ${_depth2}, ${_depth1}`;
+                    console.log(x);
+                    elem.style.backgroundPosition = x;
                 }
-            });
+            })();
         </script>
     </body>
 </html>
