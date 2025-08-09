@@ -17,14 +17,10 @@
                 position: relative;
                 width: 100%;
                 height: 100vh;
-                /* Using your local planet images with Django static files */
-                background-image: 
-                    url("{% static 'webapp/VENUS.png' %}"),
-                    url("{% static 'webapp/JUPITER.png' %}"),
-                    url("{% static 'webapp/MARS.png' %}");
+                background-image: url("/media/VENUS.png"), url("/media/JUPITER.png"), url("/media/MARS.png");
                 background-repeat: no-repeat;
-                background-position: 20% 20%, 80% 30%, 50% 80%;
-                background-size: 200px, 250px, 180px;
+                background-position: 30% 30%, 70% 70%, center;
+                background-size: 400px, 300px, cover;
                 background-color: #0a0a1a;
             }
 
@@ -72,11 +68,6 @@
         </style>
     </head>
     <body>
-        <!-- Optional scrolling title -->
-        <div class="scrolling-title">
-            <h2>🚀 Automating Astrophotography - Raspberry Pi Control System 🌟</h2>
-        </div>
-        
         <div id="parallax">
             <h1>@auto_astro</h1>
         </div>
