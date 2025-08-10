@@ -1,12 +1,9 @@
-@font-face {
-    font-family: 'SpaceFont';
-    src: url('fonts/StarJedi.woff2') format('woff2'),
-         url('fonts/StarJedi.woff') format('woff');
-}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
 body{
   margin: 0;
   background-color:hsl(176, 40%, 8%);
-  font-family:'spacefont', sans-serif;
+  font-family: 'Orbitron', sans-serif;
 }
 #wlc_title {
   position: absolute;
