@@ -60,10 +60,9 @@
 
                     let offset_coeff = 1/10;
                     let bg_Xoffset = (_mouseX - _w/2) * offset_coeff;
-                    let bg_Yoffset = (_mouseY - _y/2) * offset_coeff;
+                    let bg_Yoffset = (_mouseY - _h/2) * offset_coeff;
 
-                    let x = `${bg_Xoffset} ${bg_Yoffset}`;
-                    elem.style.backgroundPosition = x;
+                    elem.style.backgroundPosition = `${bg_Xoffset}% ${bg_Yoffset}%`;
                 }
             })();
         </script>
