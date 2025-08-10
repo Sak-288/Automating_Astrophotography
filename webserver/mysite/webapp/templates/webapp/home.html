@@ -7,18 +7,19 @@
         <link rel="stylesheet" href="{% static 'webapp/home.css' %}">
     </head>
     <body>
-        <nav id="parallax"><h1 id="wlc_title">@auto_astro</h1></nav>
+        <nav id="parallax_nav"><h1 id="wlc_title">@auto_astro</h1></nav>
         <div id="content">
             <p>HELLO WORLD</p>
         </div>
+        <!-- Parallax for Proportional Solar System in NAV -->
         <script>
             (function() {
                 // Add event listener
-                document.addEventListener("mousemove", parallax);
-                const elem = document.querySelector("#parallax");
+                document.addEventListener("mousemove", parallax_nav);
+                const elem = document.querySelector("#parallax_nav");
                 
                 // Magic happens here
-                function parallax(e) {
+                function parallax_nav(e) {
                     let _w = 1080/2;
                     let _h = 500/2;
                     let _mouseX = e.clientX;
@@ -40,6 +41,29 @@
                     else {
                         elem.style.backgroundPosition = `50% 50%, ${_depth2}, ${_depth3}, ${_depth4}, ${_depth5}, ${_depth6}, ${_depth7}, ${_depth8}, ${_depth9}`;
                     }
+                }
+            })();
+        </script>
+        <!-- Parallax Effect for Dynamic Starry Background in Body-->
+         <script>
+            (function() {
+                // Add event listener
+                document.addEventListener("mousemove", parallax_body);
+                const elem = document.querySelector("body");
+                
+                // Magic happens here
+                function parallax_body(e) {
+                    let _w = window.innerWidth;
+                    let _h = window.innerHeight;
+                    let _mouseX = e.clientX;
+                    let _mouseY = e.clientY;
+
+                    let offset_coeff = 1/10;
+                    let bg_Xoffset = (_mouseX - _w/2) * offset_coeff;
+                    let bg_Yoffset = (_mouseY - _y/2) * offset_coeff;
+
+                    let x = `${bg_Xoffset} ${bg_Yoffset}`;
+                    elem.style.backgroundPosition = x;
                 }
             })();
         </script>
