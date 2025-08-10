@@ -1,6 +1,6 @@
 @font-face {
     font-family:'SpaceFont';
-    src:url('fonts/custom_spatial_font.ttf');
+    src: url('/static/fonts/custom_spatial_font.ttf') format('truetype');
 }
 body{
   margin: 0;
@@ -9,7 +9,7 @@ body{
 }
 #wlc_title {
   position: absolute;
-  top: 47%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
