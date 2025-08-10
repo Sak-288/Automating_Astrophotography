@@ -1,8 +1,6 @@
 @font-face {
-    font-family: 'SpaceFont';
-    src: url('ustom_spatial_font.woff2') format('woff2'),
-         url('custom_spatial_font.woff') format('woff'),
-         url('custom_spatial_font.ttf') format('truetype');
+    font-family:SpaceFont;
+    src:url('custom_spatial_font.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -12,6 +10,7 @@ body{
   font-family:SpaceFont;
 }
 #wlc_title {
+  font-family:SpaceFont;
   position: absolute;
   top: 47%;
   left: 50%;

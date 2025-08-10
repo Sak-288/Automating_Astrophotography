@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="{% static 'webapp/home.css' %}">
     </head>
     <body>
-        <nav id="parallax"><marquee direction="left" speed=20>@auto_astro</marquee></nav>
+        <nav id="parallax"><h1 id="wlc_title">@auto_astro</h1></nav>
         <div id="content">
             <p>HELLO WORLD</p>
         </div>
@@ -19,13 +19,12 @@
                 
                 // Magic happens here
                 function parallax(e) {
-                    let _w = window.innerWidth/2;
-                    let _h = window.innerHeight/2;
+                    let _w = 1080/2;
+                    let _h = 500/2;
                     let _mouseX = e.clientX;
                     let _mouseY = e.clientY;
-                    console.log("Mouse Y:", _mouseY); // Debug: see actual mouse Y values
                     
-                    // Parallax works everywhere (remove the condition to test)
+                    if (_mouseY < window.innerHeight){
                     let _depth1 = `${50 - (_mouseX - _w) * 0.00}% ${50 - (_mouseY - _h) * 0.00}%`;
                     let _depth2 = `${50 - (_mouseX - _w) * 0.01}% ${50 - (_mouseY - _h) * 0.01}%`;
                     let _depth3 = `${50 - (_mouseX - _w) * 0.02}% ${50 - (_mouseY - _h) * 0.02}%`;
@@ -37,6 +36,10 @@
                     let _depth9 = `${50 - (_mouseX - _w) * 0.77}% ${50 - (_mouseY - _h) * 0.77}%`;
                     let x = `${_depth9}, ${_depth8}, ${_depth7}, ${_depth6}, ${_depth5}, ${_depth4}, ${_depth3}, ${_depth2}, ${_depth1}`;
                     elem.style.backgroundPosition = x;
+                    }
+                    else {
+                        elem.style.backgroundPosition = "50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%";
+                    }
                 }
             })();
         </script>
