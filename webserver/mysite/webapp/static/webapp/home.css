@@ -1,11 +1,15 @@
 @font-face {
-    font-family: 'SpaceFont';
-    src: url('fonts/custom_spatial_font.ttf') format('truetype');
+    font-family: 'spacefont';
+    src: url('StarJedi.woff2') format('woff2'),
+        url('StarJedi.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 body{
   margin: 0;
   background-color:hsl(176, 40%, 8%);
-  font-family:'SpaceFont', sans-serif;
+  font-family:'spacefont', sans-serif;
 }
 #wlc_title {
   position: absolute;
