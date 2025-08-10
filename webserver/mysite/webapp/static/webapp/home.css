@@ -1,6 +1,6 @@
 @font-face {
-    font-family:'SpaceFont';
-    src: url('/static/fonts/custom_spatial_font.ttf') format('truetype');
+    font-family: 'SpaceFont';
+    src: url('fonts/custom_spatial_font.ttf') format('truetype');
 }
 body{
   margin: 0;
