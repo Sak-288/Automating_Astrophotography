@@ -1,7 +1,6 @@
 @font-face {
       font-family: 'SpaceFont';
-      src: url('custom_spatial_font.ttf') format('ttf');
-      font-weight: normal; 
+      src: url('/static/webapp/custom_spatial_font.ttf') format('ttf');      font-weight: normal; 
       font-style: normal;
 }
 body{
@@ -27,7 +26,7 @@ marquee {
   background-image: url('/static/webapp/NEPTUNE.png'), url('/static/webapp/URANUS.png'), url('/static/webapp/SATURNE.png'), url('/static/webapp/JUPITER.png'), url('/static/webapp/MARS.png'), url('/static/webapp/EARTH.png'), url('/static/webapp/VENUS.png'), url('/static/webapp/MERCURY.png'), url('/static/webapp/SUN.png');
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  background-size: calc(7.04% * 1.5), 7.26%, 16.66%, 20%, 0.97%, 1.82%, 1.73%, 0.7%, 20%;
+  background-size: calc(7.04% * 0.65), calc(7.26% * 0.65), calc(16.66% * 0.65), calc(20% * 0.65), calc(0.97% * 0.65), calc(1.82% * 0.65), calc(1.73% * 0.65), calc(0.7% * 0.65), calc(20% * 0.65);
   opacity: 1.0;
 }
 
