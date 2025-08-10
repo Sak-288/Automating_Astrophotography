@@ -11,6 +11,7 @@ body{
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size:10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%;
+  opacity: 1.0;
 }
 h1 {
   position: absolute;
