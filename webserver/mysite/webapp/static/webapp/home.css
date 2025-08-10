@@ -9,7 +9,7 @@ body{
   background-image: url('/static/webapp/NEPTUNE.png'), url('/static/webapp/URANUS.png'), url('/static/webapp/SATURN.png'), url('/static/webapp/JUPITER.png'), url('/static/webapp/MARS.png'), url('/static/webapp/EARTH.png'), url('/static/webapp/VENUS.png'), url('/static/webapp/MERCURY.png'), url('/static/webapp/SUN.png');
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  background-size:10%, 10%, 10%, 10%, 10%, 10%, 10%, 10%, 10%;
+  background-size: 7.04%, 7.26%, 16.66%, 20%, 0.97%, 1.82%, 1.73%, 0.7%, 20%;
   opacity: 1.0;
 }
 h1 {
