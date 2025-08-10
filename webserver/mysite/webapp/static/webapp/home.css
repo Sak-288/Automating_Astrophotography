@@ -7,8 +7,7 @@ body{
   margin: 0;
   background-color: #000000;
   background-image: url('STARRY.gif');
-  background-size: cover;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   background-position: center;
 }
 #wlc_title {
