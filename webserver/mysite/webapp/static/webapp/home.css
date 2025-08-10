@@ -11,14 +11,14 @@ body{
   background-color:hsl(176, 40%, 8%);
   font-family:SpaceFont;
 }
-marquee {
+#wlc_title {
   position: absolute;
   top: 47%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
   text-transform: uppercase;
-  opacity: .8;
+  opacity: 1.0;
   font-size: 70px
 }
 
