@@ -6,8 +6,7 @@ body{
   position: relative;
   width: 100%;
   height: 100vh;
-  background-image: url('static/webapp/NEPTUNE.png'), url('static/webapp/URANUS.png'), url('static/webapp/SATURN.png'), url('static/webapp/JUPITER.png'),
-  url('static/webapp/MARS.png'), url('static/webapp/EARTH.png'), url('static/webapp/VENUS.png'), url('static/webapp/MERCURY.png'), url('SUN.png');
+  background-image: url('/static/webapp/NEPTUNE.png'), url('/static/webapp/URANUS.png'), url('/static/webapp/SATURN.png'), url('/static/webapp/JUPITER.png'), url('/static/webapp/MARS.png'), url('/static/webapp/EARTH.png'), url('/static/webapp/VENUS.png'), url('/static/webapp/MERCURY.png'), url('/static/webapp/SUN.png');
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size:10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%;
