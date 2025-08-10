@@ -6,8 +6,8 @@
 }
 body{
   margin: 0;
-  background-color:#0c1c1b;
-  font-family:'SpaceFont', sans-serif;
+  background-color:hsl(176, 40%, 8%);
+  font-family:SpaceFont;
 }
 marquee {
   position: absolute;
@@ -27,7 +27,7 @@ marquee {
   background-image: url('/static/webapp/NEPTUNE.png'), url('/static/webapp/URANUS.png'), url('/static/webapp/SATURNE.png'), url('/static/webapp/JUPITER.png'), url('/static/webapp/MARS.png'), url('/static/webapp/EARTH.png'), url('/static/webapp/VENUS.png'), url('/static/webapp/MERCURY.png'), url('/static/webapp/SUN.png');
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  background-size: 7.04%, 7.26%, 16.66%, 20%, 0.97%, 1.82%, 1.73%, 0.7%, 20%;
+  background-size: calc(7.04% * 1.5), 7.26%, 16.66%, 20%, 0.97%, 1.82%, 1.73%, 0.7%, 20%;
   opacity: 1.0;
 }
 
