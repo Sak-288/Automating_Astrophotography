@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="{% static 'webapp/home.css' %}">
     </head>
     <body>
-        <nav id="parallax"><h1 id="wlc_title">@auto_astro</h1></nav>
+        <nav id="parallax"><marquee direction="left" speed=20>@auto_astro</marquee></nav>
         <div id="content">
             <p>HELLO WORLD</p>
         </div>
@@ -23,25 +23,22 @@
                     let _h = window.innerHeight/2;
                     let _mouseX = e.clientX;
                     let _mouseY = e.clientY;
-                    print(_mouseY)
+                    console.log("Mouse Y:", _mouseY); // Debug: see actual mouse Y values
                     
-                    while(_mouseY < 1400) {
-                        let _depth1 = `${50 - (_mouseX - _w) * 0.00}% ${50 - (_mouseY - _h) * 0.00}%`;
-                        let _depth2 = `${50 - (_mouseX - _w) * 0.01}% ${50 - (_mouseY - _h) * 0.01}%`;
-                        let _depth3 = `${50 - (_mouseX - _w) * 0.02}% ${50 - (_mouseY - _h) * 0.02}%`;
-                        let _depth4 = `${50 - (_mouseX - _w) * 0.026}% ${50 - (_mouseY - _h) * 0.026}%`;
-                        let _depth5 = `${50 - (_mouseX - _w) * 0.04}% ${50 - (_mouseY - _h) * 0.04}%`;
-                        let _depth6 = `${50 - (_mouseX - _w) * 0.135}% ${50 - (_mouseY - _h) * 0.135}%`;
-                        let _depth7 = `${50 - (_mouseX - _w) * 0.246}% ${50 - (_mouseY - _h) * 0.246}%`;
-                        let _depth8 = `${50 - (_mouseX - _w) * 0.5}% ${50 - (_mouseY - _h) * 0.5}%`;
-                        let _depth9 = `${50 - (_mouseX - _w) * 0.77}% ${50 - (_mouseY - _h) * 0.77}%`;
-                        let x = `${_depth9}, ${_depth8}, ${_depth7}, ${_depth6}, ${_depth5}, ${_depth4}, ${_depth3}, ${_depth2}, ${_depth1}`;
-                        console.log(x);
-                        elem.style.backgroundPosition = x;
-                    }
-                        // Reset to center position when mouse is above 1400px
-                        elem.style.backgroundPosition = "50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%";
-            }})();
+                    // Parallax works everywhere (remove the condition to test)
+                    let _depth1 = `${50 - (_mouseX - _w) * 0.00}% ${50 - (_mouseY - _h) * 0.00}%`;
+                    let _depth2 = `${50 - (_mouseX - _w) * 0.01}% ${50 - (_mouseY - _h) * 0.01}%`;
+                    let _depth3 = `${50 - (_mouseX - _w) * 0.02}% ${50 - (_mouseY - _h) * 0.02}%`;
+                    let _depth4 = `${50 - (_mouseX - _w) * 0.026}% ${50 - (_mouseY - _h) * 0.026}%`;
+                    let _depth5 = `${50 - (_mouseX - _w) * 0.04}% ${50 - (_mouseY - _h) * 0.04}%`;
+                    let _depth6 = `${50 - (_mouseX - _w) * 0.135}% ${50 - (_mouseY - _h) * 0.135}%`;
+                    let _depth7 = `${50 - (_mouseX - _w) * 0.246}% ${50 - (_mouseY - _h) * 0.246}%`;
+                    let _depth8 = `${50 - (_mouseX - _w) * 0.5}% ${50 - (_mouseY - _h) * 0.5}%`;
+                    let _depth9 = `${50 - (_mouseX - _w) * 0.77}% ${50 - (_mouseY - _h) * 0.77}%`;
+                    let x = `${_depth9}, ${_depth8}, ${_depth7}, ${_depth6}, ${_depth5}, ${_depth4}, ${_depth3}, ${_depth2}, ${_depth1}`;
+                    elem.style.backgroundPosition = x;
+                }
+            })();
         </script>
     </body>
 </html>
