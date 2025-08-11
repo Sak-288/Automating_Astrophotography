@@ -10,7 +10,7 @@ def login_astronomer(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('home') # 50% chance you change this in the future
+            home() # 50% chance you change this in the future
         else:
             messages.success(request, ('There was an error logging in, TRY AGAIN !'))
             return redirect('login')
