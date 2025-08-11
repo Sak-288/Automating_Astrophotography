@@ -40,12 +40,14 @@ nav a {
   opacity:1.0;
   color:#ffffff;
   font-size:15px;
+  position:relative;
+  margin: 0 50px;
 }
 
 nav {
+  font-family: 'Orbitron', sans-serif;
   background-color:rgba(0, 0, 0, 0.3);
   position: fixed;
   top:0px;
   justify-content: space-between;
-  margin: 0 50px;
 }
