@@ -20,7 +20,7 @@ body{
   background-color:rgba(255, 0, 0, 0.3);
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  background-size: calc(7.04% * 0.65), calc(7.26% * 0.65), calc(16.66% * 1.1), calc(20% * 0.65), calc(0.97% * 0.65), calc(1.82% * 0.65), calc(1.73% * 0.65), calc(0.7% * 0.65), calc(20% * 0.65);
+  background-size: calc(7.04% * 0.45), calc(7.26% * 0.45), calc(16.66% * 0.85), calc(20% * 0.45), calc(0.97% * 0.45), calc(1.82% * 0.45), calc(1.73% * 0.45), calc(0.7% * 0.45), calc(20% * 0.45);
   opacity: 1.0;
 }
 #shitty_container {

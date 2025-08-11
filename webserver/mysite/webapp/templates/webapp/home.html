@@ -10,11 +10,11 @@
         <nav id="parallax_nav">
             <div id="shitty_container">
                 <h1 id="wlc_title">@auto_astro</h1>
+                <a href='' id="navLink">Sign Up / Log in</a>
+                <a href='' id="navLink">Explore the Skies</a>
+                <a href='' id="navLink">About</a>
+                <a href='' id="navLink">Contact Us</a>
             </div>
-            <a href='' id="navLink">Sign Up / Log in</a>
-            <a href='' id="navLink">Explore the Skies</a>
-            <a href='' id="navLink">About</a>
-            <a href='' id="navLink">Contact Us</a>
         </nav>
         <!-- Parallax for Proportional Solar System in NAV -->
         <script>
@@ -30,7 +30,7 @@
                     let _mouseX = e.clientX;
                     let _mouseY = e.clientY;
                     
-                    if (_mouseY < 200){
+                    if (_mouseY < 250){
                     let _depth1 = `${50 - (_mouseX - _w) * 0.005}% ${50 - (_mouseY - _h) * 0.005}%`;
                     let _depth2 = `${50 - (_mouseX - _w) * 0.01}% ${50 - (_mouseY - _h) * 0.01}%`;
                     let _depth3 = `${50 - (_mouseX - _w) * 0.02}% ${50 - (_mouseY - _h) * 0.02}%`;
@@ -38,8 +38,8 @@
                     let _depth5 = `${50 - (_mouseX - _w) * 0.04}% ${50 - (_mouseY - _h) * 0.04}%`;
                     let _depth6 = `${50 - (_mouseX - _w) * 0.135}% ${50 - (_mouseY - _h) * 0.135}%`;
                     let _depth7 = `${50 - (_mouseX - _w) * 0.246}% ${50 - (_mouseY - _h) * 0.246}%`;
-                    let _depth8 = `${50 - (_mouseX - _w) * 0.5}% ${50 - (_mouseY - _h) * 0.5}%`;
-                    let _depth9 = `${50 - (_mouseX - _w) * 0.77}% ${50 - (_mouseY - _h) * 0.77}%`;
+                    let _depth8 = `${50 - (_mouseX - _w) * 0.3}% ${50 - (_mouseY - _h) * 0.3}%`;
+                    let _depth9 = `${50 - (_mouseX - _w) * 0.4}% ${50 - (_mouseY - _h) * 0.4}%`;
                     let x = `${_depth9}, ${_depth8}, ${_depth7}, ${_depth6}, ${_depth5}, ${_depth4}, ${_depth3}, ${_depth2}, ${_depth1}`;
                     elem.style.backgroundPosition = x;
                     }
