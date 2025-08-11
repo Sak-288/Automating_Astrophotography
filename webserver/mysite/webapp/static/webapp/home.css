@@ -50,7 +50,7 @@ body{
   color:#ffffff;
   font-size:15px;
   position:absolute;
-  top:80%;
+  top:70%;
   margin: 0 80px; /* space around links */
 }
 #navUSE {
@@ -59,7 +59,7 @@ body{
   color:#ffffff;
   font-size:15px;
   position:absolute;
-  top:80%;
+  top:70%;
   margin: 0 387px; /* space around links */
 }
 #navABO {
@@ -68,7 +68,7 @@ body{
   color:#ffffff;
   font-size:15px;
   position:absolute;
-  top:80%;
+  top:70%;
   margin: 0 694px; /* space around links */
 }
 #navCON {
@@ -77,7 +77,7 @@ body{
   color:#ffffff;
   font-size:15px;
   position:absolute;
-  top:80%;
+  top:70%;
   margin: 0 1000px; /* space around links */
 
 }
