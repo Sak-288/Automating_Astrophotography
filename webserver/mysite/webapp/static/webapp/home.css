@@ -22,7 +22,7 @@ body{
   opacity: 1.0;
 }
 #wlc_title {
-  position: absolute;
+  position: relative;
   font-weight:bold;
   top: 30%;
   left: 50%;
@@ -42,5 +42,5 @@ body{
   color:#ffffff;
   font-size:15px;
   position:relative;
-  margin: 0 250px;
+  margin: 0 20%;
 }
