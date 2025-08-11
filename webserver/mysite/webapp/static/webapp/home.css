@@ -10,7 +10,7 @@ body{
   background-repeat: repeat;
   background-position: center;
 }
-nav {
+#parallax_nav {
   position:fixed;
   top:0%;
   font-family: 'Orbitron', sans-serif;
@@ -23,12 +23,12 @@ nav {
   background-size: calc(7.04% * 0.65), calc(7.26% * 0.65), calc(16.66% * 1.1), calc(20% * 0.65), calc(0.97% * 0.65), calc(1.82% * 0.65), calc(1.73% * 0.65), calc(0.7% * 0.65), calc(20% * 0.65);
   opacity: 1.0;
 }
-#parallax_nav {
+#shitty_container {
   position: relative;
 }
 #wlc_title {
   position: absolute;
-  top: 30%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-transform: uppercase;
