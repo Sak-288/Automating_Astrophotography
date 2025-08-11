@@ -57,6 +57,6 @@ body{
 
 /* Place them equally spaced by using left % */
 #navLOG { left: 10%; }
-#navUSE { left: 37%; }
-#navABO { left: 64%; }
-#navCON { left: 91%; }
+#navUSE { left: 36.6%; }
+#navABO { left: 63.3%; }
+#navCON { right: 10%; }
