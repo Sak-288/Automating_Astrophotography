@@ -1,19 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-        <h1>Login :</h1>
-        <form id="login_form" action="" method=POST>
-            {% csrf_token %}
-            <form>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Username</label>
-                    <input type="text" class="form-control" name="username" aria-describedby="emailHelp">
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" name="password">
-                </div>
-            <input type="submit" value="Submit" class="btn btn-secondary">
-        </form>
-    </body>
-</html> 
+    <h1>Login:</h1>
+    <form id="login_form" action="" method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" name="username" aria-describedby="usernameHelp">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password">
+        </div>
+        <input type="submit" value="Submit" class="btn btn-secondary">
+    </form>
+{% endblock %}
