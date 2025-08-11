@@ -17,7 +17,7 @@ body{
   width: 100%;
   height: 250px;
   background-image: url('/static/webapp/NEPTUNE.png'), url('/static/webapp/URANUS.png'), url('/static/webapp/SATURNE.png'), url('/static/webapp/JUPITER.png'), url('/static/webapp/MARS.png'), url('/static/webapp/EARTH.png'), url('/static/webapp/VENUS.png'), url('/static/webapp/MERCURY.png'), url('/static/webapp/SUN.png');
-  background-color:rgba(0, 0, 0, 0.4);
+  background-color:rgba(0, 40, 48, 0.4);
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: calc(7.04% * 0.65), calc(7.26% * 0.65), calc(16.66% * 1.1), calc(20% * 0.65), calc(0.97% * 0.65), calc(1.82% * 0.65), calc(1.73% * 0.65), calc(0.7% * 0.65), calc(20% * 0.65);
