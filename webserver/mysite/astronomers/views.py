@@ -3,4 +3,4 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 
 def login_astronomer(request):
-    return render(request, 'authentification/login.html', {})
+    return render(request, 'registration/login.html', {})
