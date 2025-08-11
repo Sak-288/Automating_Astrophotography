@@ -13,6 +13,6 @@ def login_astronomer(request):
             return redirect('home')
         else:
             messages.error(request, 'There was an error logging in, TRY AGAIN!')
-            return redirect('login')
+            # return redirect('login')
     else:
         return render(request, 'registration/login.html', {})
