@@ -16,3 +16,4 @@ def login_astronomer(request):
             # return redirect('login')
     else:
         # return render(request, 'registration/login.html', {})
+        pass
