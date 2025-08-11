@@ -10,10 +10,10 @@
         <nav id="parallax_nav">
             <div id="shitty_container">
                 <h1 id="wlc_title">@auto_astro</h1>
-                <a href='' id="navLink">Sign Up / Log in</a>
-                <a href='' id="navLink">Explore the Skies</a>
-                <a href='' id="navLink">About</a>
-                <a href='' id="navLink">Contact Us</a>
+                <a href='' id="navLOG">Sign Up / Log in</a>
+                <a href='' id="navUSE">Explore the Skies</a>
+                <a href='' id="navABO">About</a>
+                <a href='' id="navCON">Contact Us</a>
             </div>
         </nav>
         <!-- Parallax for Proportional Solar System in NAV -->
@@ -26,11 +26,11 @@
                 // Magic happens here
                 function parallax_nav(e) {
                     let _w = 1080;
-                    let _h = 500;
+                    let _h = 250;
                     let _mouseX = e.clientX;
                     let _mouseY = e.clientY;
 
-                    damening_factor = 0.18;
+                    damening_factor = 1;
                     
                     let _depth1 = `${50 - (_mouseX - _w) * 0.005 * damening_factor}% ${50 - (_mouseY - _h) * 0.005 * damening_factor}%`;
                     let _depth2 = `${50 - (_mouseX - _w) * 0.01 * damening_factor}% ${50 - (_mouseY - _h) * 0.01 * damening_factor}%`;
