@@ -20,8 +20,10 @@ body{
   opacity: 1.0;
   font-size: 50px;
   text-shadow: 
-  0 0 20px aqua,
-  0 0 30px aqua;
+  0 0 5px #ffffff,
+  0 0 10px #CCF5F5,
+  0 0 20px #99EBEB,
+  0 0 30px #66E0E0;
 }
 
 #parallax_nav {
