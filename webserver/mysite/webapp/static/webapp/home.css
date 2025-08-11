@@ -41,6 +41,8 @@ body{
   color:#ffffff;
   font-size:15px;
   font-weight:lighter;
-  position:absolute;
+  position:relative;
   padding:50px;
+  margin-top:47%;
+  margin-bottom:47%;
 }
