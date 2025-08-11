@@ -20,9 +20,8 @@ body{
   opacity: 1.0;
   font-size: 50px;
   text-shadow: 
-  0 0 5px #fff,  /* Inner glow */
   0 0 10px #fff, 
-  0 0 20px aqua, /* Outer glow */
+  0 0 20px aqua,
   0 0 30px aqua;
 }
 
