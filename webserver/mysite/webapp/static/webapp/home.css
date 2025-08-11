@@ -69,7 +69,7 @@ body{
   font-size:15px;
   position:absolute;
   top:80%;
-  margin: 0 10px; /* space around links */
+  margin: 0 100px; /* space around links */
 }
 #navCON {
   font-weight:lighter;
@@ -78,6 +78,6 @@ body{
   font-size:15px;
   position:absolute;
   top:80%;
-  margin: 0 10px; /* space around links */
+  margin: 0 100px; /* space around links */
 
 }
