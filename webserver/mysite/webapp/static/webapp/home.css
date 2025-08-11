@@ -11,6 +11,11 @@ body{
   background-position: center;
 }
 #parallax_nav {
+  font-family: 'Orbitron', sans-serif;
+  background-color:rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top:0px;
+  justify-content: space-between;
   position: relative;
   width: 100%;
   height: 200px;
@@ -42,12 +47,4 @@ nav a {
   font-size:15px;
   position:relative;
   margin: 0 50px;
-}
-
-nav {
-  font-family: 'Orbitron', sans-serif;
-  background-color:rgba(0, 0, 0, 0.3);
-  position: fixed;
-  top:0px;
-  justify-content: space-between;
 }
