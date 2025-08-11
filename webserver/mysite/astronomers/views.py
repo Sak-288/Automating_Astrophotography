@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from webapp.views import home
 
 def login_astronomer(request):
     if request.method == "POST":
@@ -10,7 +9,7 @@ def login_astronomer(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            home() # 50% chance you change this in the future
+            return redirect("home") # 50% chance you change this in the future
         else:
             messages.success(request, ('There was an error logging in, TRY AGAIN !'))
             return redirect('login')
