@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>@auto_astro Astronomers' Login</title>
-        {% load static %}
-        <link rel="stylesheet" href="{% static 'registration/login.css' %}">
-    </head>
-    <body>
+{% extends 'base.html' %s}
+
+{% block content %}
         <h1>Login :</h1>
         <form id="login_form" action="" method=POST>
             {% csrf_token %}
