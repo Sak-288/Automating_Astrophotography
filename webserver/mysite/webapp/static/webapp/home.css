@@ -51,7 +51,7 @@ body{
   font-size:15px;
   position:absolute;
   top:80%;
-  margin: 0 68px; /* space around links */
+  margin: 0 80px; /* space around links */
 }
 #navUSE {
   font-weight:lighter;
@@ -60,7 +60,7 @@ body{
   font-size:15px;
   position:absolute;
   top:80%;
-  margin: 0 375px; /* space around links */
+  margin: 0 387px; /* space around links */
 }
 #navABO {
   font-weight:lighter;
@@ -69,7 +69,7 @@ body{
   font-size:15px;
   position:absolute;
   top:80%;
-  margin: 0 682px; /* space around links */
+  margin: 0 694px; /* space around links */
 }
 #navCON {
   font-weight:lighter;
@@ -78,6 +78,6 @@ body{
   font-size:15px;
   position:absolute;
   top:80%;
-  margin: 0 950px; /* space around links */
+  margin: 0 1000px; /* space around links */
 
 }
