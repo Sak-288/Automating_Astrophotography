@@ -51,7 +51,6 @@ body{
   font-size:15px;
   position:absolute;
   top:50%;
-  transform: translate(0%, -50%);
   margin-left:50px;
   margin-right:50px;
 }
