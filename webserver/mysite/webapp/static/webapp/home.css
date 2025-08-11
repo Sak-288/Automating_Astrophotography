@@ -17,7 +17,7 @@ body{
   transform: translate(-50%, -50%);
   color: rgb(92, 204, 204);
   text-transform: uppercase;
-  opacity: 1.0;
+  opacity: 0.75;
   font-size: 50px;
   text-shadow: 
   0 0 5px #ffffff,
