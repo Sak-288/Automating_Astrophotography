@@ -40,15 +40,10 @@ nav a {
   opacity:1.0;
   color:#ffffff;
   font-size:15px;
-  font-weight:lighter;
-  position:relative;
-  margin-top:47%;
-  margin-bottom:47%;
-  margin-right:50px;
-  margin-left:50px;
 }
 
 nav {
+  background-color:rgba(0, 0, 0, 0.3);
   position: fixed;
   top:0px;
   justify-content: space-between;
