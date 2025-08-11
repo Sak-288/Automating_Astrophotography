@@ -51,19 +51,12 @@ body{
   opacity: 1.0;
   color: #ffffff;
   font-size: 15px;
-  margin: 0;
-  top: auto;
+  margin: 0;             /* remove fixed margins */
+  top: auto;             /* unset top */
 }
 
-/* Fixed margin from left and right edges */
-#navLOG { left: 50px; }        /* fixed distance from left edge */
-#navCON { right: 50px; }       /* fixed distance from right edge */
-
-/* Middle two spaced evenly between */
-#navUSE {
-  left: calc(50% - 60px);      /* roughly between left and center */
-}
-
-#navABO {
-  left: 60%;                   /* adjust as needed to be evenly spaced */
-}
+/* Place them equally spaced by using left % */
+#navLOG { left: 10%; }
+#navUSE { left: 37%; }
+#navABO { left: 64%; }
+#navCON { left: 91%; }
