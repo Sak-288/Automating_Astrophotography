@@ -32,7 +32,6 @@
 
                     damening_factor = 0.18;
                     
-                    if (_mouseY < 250){
                     let _depth1 = `${50 - (_mouseX - _w) * 0.005 * damening_factor}% ${50 - (_mouseY - _h) * 0.005 * damening_factor}%`;
                     let _depth2 = `${50 - (_mouseX - _w) * 0.01 * damening_factor}% ${50 - (_mouseY - _h) * 0.01 * damening_factor}%`;
                     let _depth3 = `${50 - (_mouseX - _w) * 0.02 * damening_factor}% ${50 - (_mouseY - _h) * 0.02 * damening_factor}%`;
@@ -44,10 +43,6 @@
                     let _depth9 = `${50 - (_mouseX - _w) * 0.77 * damening_factor}% ${50 - (_mouseY - _h) * 0.77 * damening_factor}%`;
                     let x = `${_depth9}, ${_depth8}, ${_depth7}, ${_depth6}, ${_depth5}, ${_depth4}, ${_depth3}, ${_depth2}, ${_depth1}`;
                     elem.style.backgroundPosition = x;
-                    }
-                    else {
-                        elem.style.backgroundPosition = `${_depth1}, ${_depth2}, ${_depth3}, ${_depth4}, ${_depth5}, ${_depth6}, ${_depth7}, ${_depth8}, ${_depth9}`;
-                    }
                 }
             })();
         </script>
