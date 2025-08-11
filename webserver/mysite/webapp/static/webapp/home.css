@@ -44,40 +44,19 @@ body{
   0 0 20px #99EBEB,
   0 0 30px #66E0E0;
 }
-#navLOG {
-  font-weight:lighter;
-  opacity:1.0;
-  color:#ffffff;
-  font-size:15px;
-  position:absolute;
-  top:80%;
-  margin: 0 100px; /* space around links */
+#navLOG, #navUSE, #navABO, #navCON {
+  position: absolute;
+  bottom: 20px;          /* close to bottom of nav */
+  font-weight: lighter;
+  opacity: 1.0;
+  color: #ffffff;
+  font-size: 15px;
+  margin: 0;             /* remove fixed margins */
+  top: auto;             /* unset top */
 }
-#navUSE {
-  font-weight:lighter;
-  opacity:1.0;
-  color:#ffffff;
-  font-size:15px;
-  position:absolute;
-  top:80%;
-  margin: 0 407px; /* space around links */
-}
-#navABO {
-  font-weight:lighter;
-  opacity:1.0;
-  color:#ffffff;
-  font-size:15px;
-  position:absolute;
-  top:80%;
-  margin: 0 714px; /* space around links */
-}
-#navCON {
-  font-weight:lighter;
-  opacity:1.0;
-  color:#ffffff;
-  font-size:15px;
-  position:absolute;
-  top:80%;
-  margin: 0 1020px; /* space around links */
 
-}
+/* Place them equally spaced by using left % */
+#navLOG { left: 10%; }
+#navUSE { left: 35%; }
+#navABO { left: 60%; }
+#navCON { left: 85%; }
