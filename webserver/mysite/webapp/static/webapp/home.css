@@ -42,7 +42,8 @@ body{
   font-size:15px;
   font-weight:lighter;
   position:relative;
-  padding:50px;
   margin-top:47%;
   margin-bottom:47%;
+  margin-right:50px;
+  margin-left:50px;
 }
