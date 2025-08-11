@@ -30,7 +30,7 @@ body{
 }
 #wlc_title {
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-transform: uppercase;
@@ -50,7 +50,6 @@ body{
   color:#ffffff;
   font-size:15px;
   position:absolute;
-  top:50%;
-  margin-left:50px;
-  margin-right:50px;
+  top:80%;
+  margin:0 7.5%;
 }
