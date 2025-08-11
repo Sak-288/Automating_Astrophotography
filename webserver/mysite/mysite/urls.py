@@ -23,5 +23,4 @@ urlpatterns = [
     path('', include('webapp.urls')),
     path('astronomers/', include('astronomers.urls')),
     path('astronomers/', include('django.contrib.auth.urls')),
-    path('home/', include('webapp.urls')),
 ]
