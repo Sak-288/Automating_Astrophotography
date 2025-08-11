@@ -15,10 +15,15 @@ body{
   top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: aqua;
+  color: rgb(92, 204, 204);
   text-transform: uppercase;
   opacity: 1.0;
-  font-size: 50px
+  font-size: 50px;
+  text-shadow: 
+  0 0 5px #fff,  /* Inner glow */
+  0 0 10px #fff, 
+  0 0 20px aqua, /* Outer glow */
+  0 0 30px aqua;
 }
 
 #parallax_nav {
