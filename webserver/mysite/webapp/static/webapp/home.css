@@ -42,7 +42,7 @@ body{
   0 0 20px #99EBEB,
   0 0 30px #66E0E0;
 }
-#navLOG, #navOUT, #navUSE, #navABO, #navCON{
+#navLOG, #navUSE, #navABO, #navCON{
   position: absolute;
   bottom: 20px;          /* close to bottom of nav */
   font-weight: lighter;
@@ -51,6 +51,17 @@ body{
   font-size: 15px;
   margin: 0;             /* remove fixed margins */
   top: auto;             /* unset top */
+}
+#navOUT{
+  position: absolute;
+  bottom: 20px;          /* close to bottom of nav */
+  font-weight: lighter;
+  opacity: 1.0;
+  color: #ffffff;
+  font-size: 15px;
+  margin: 0;             /* remove fixed margins */
+  top: auto; 
+  background-color:transparent;  
 }
 
 /* Place them equally spaced by using left % */
