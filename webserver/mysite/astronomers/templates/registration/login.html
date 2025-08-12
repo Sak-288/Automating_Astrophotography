@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +17,7 @@
         }
         body{
             margin: 0;
-            background-image:url("./STARRY.gif");
+            background-image:url("{% static 'astronomers/STARRY.gif' %}");
             font-family: 'Orbitron', sans-serif;
             background-repeat: repeat;
             background-position: center;
