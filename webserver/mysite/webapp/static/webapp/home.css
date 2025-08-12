@@ -42,7 +42,7 @@ body{
   0 0 20px #99EBEB,
   0 0 30px #66E0E0;
 }
-#navLOG, #navUSE, #navABO, #navCON, #navOUT{
+#navLOG, #navOUT, #navUSE, #navABO, #navCON{
   position: absolute;
   bottom: 20px;          /* close to bottom of nav */
   font-weight: lighter;
@@ -55,6 +55,7 @@ body{
 
 /* Place them equally spaced by using left % */
 #navLOG { left: 10%; }
+#navOUT { left: 10%; }
 #navUSE { left: 36.6%; }
 #navABO { left: 63.3%; }
 #navCON { right: 10%; }
