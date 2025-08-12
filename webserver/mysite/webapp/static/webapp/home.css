@@ -64,6 +64,7 @@ body{
   top: auto; 
   background-color:transparent;  
   border:none;
+  text-decoration:underline;
 }
 
 /* Place them equally spaced by using left % */
