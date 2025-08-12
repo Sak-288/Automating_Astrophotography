@@ -53,6 +53,7 @@ body{
   top: auto;             /* unset top */
 }
 #navOUT{
+  font-family:'Orbitron', sans-serif;
   position: absolute;
   bottom: 20px;          /* close to bottom of nav */
   font-weight: lighter;
