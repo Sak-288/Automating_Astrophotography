@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
-from django.contrib import messages
+from django.contrib.messages import *
 
 def login_astronomer(request):
     if request.method == "POST":
@@ -15,3 +15,7 @@ def login_astronomer(request):
     else:
         pass
         return render(request, 'registration/login.html')
+
+def logout_astronomer(request):
+    logout(request)
+    return redirect('home')
