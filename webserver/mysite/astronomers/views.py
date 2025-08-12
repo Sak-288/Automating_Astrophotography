@@ -5,7 +5,7 @@ from django.contrib import messages
 def login_astronomer(request):
     if request.method == "POST":
         username = request.POST['username']
-        password = request.post['password']
+        password = request.POST['password']
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
