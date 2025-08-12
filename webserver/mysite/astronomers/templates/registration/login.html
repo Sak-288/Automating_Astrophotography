@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -16,7 +17,7 @@
         }
         body{
             margin: 0;
-            background-image:url('STARRY.gif');
+            background-image:url("{% static 'astronomers/STARRY.gif' %}"");
             font-family: 'Orbitron', sans-serif;
             margin: 0;
             background-color: #000000;
