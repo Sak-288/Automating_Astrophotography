@@ -11,14 +11,13 @@
 <body>
     <div class="container">
         <!-- Display Django messages -->
+        {% if messages %}
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        {% endif %}
+
         {% block content %}
-
-            {% if messages %}
-                {% for message in messages %}
-                    {{ message }}
-                {% endfor %}
-            {% endif %}
-
         {% endblock %}
     </div>
 
