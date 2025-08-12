@@ -62,6 +62,7 @@ body{
   margin: 0;             /* remove fixed margins */
   top: auto; 
   background-color:transparent;  
+  border:none;
 }
 
 /* Place them equally spaced by using left % */
