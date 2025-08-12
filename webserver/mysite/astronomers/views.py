@@ -11,7 +11,7 @@ def login_astronomer(request):
             login(request, user)
             return redirect('home')
         else:
-            messages.success(request, ('There was an error logging in, TRY AGAIN !'))
+            messages.error(request, ('There was an error logging in, TRY AGAIN !'))
             #return redirect('login')
     else:
         pass
