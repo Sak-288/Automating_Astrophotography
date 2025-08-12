@@ -1,0 +1,15 @@
+ @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+#godforsakeme{
+    font-family:'Orbitron', sans-serif;
+    color:darkred;
+    font-size: 20px;
+}
+body{
+    margin: 0;
+    background-image:url("{% static 'astronomers/STARRY.gif' %}");
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    background-repeat: repeat;
+    background-position: center;
+}  
