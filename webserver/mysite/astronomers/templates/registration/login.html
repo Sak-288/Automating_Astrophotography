@@ -10,6 +10,11 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 
+        #godforsakeme{
+            font-family:'Orbitron', sans-serif;
+            color:rgb(160, 0, 0);
+            font-size: 20px;
+        }
         body{
             margin: 0;
             background-image:url("{% static 'astronomers/STARRY.gif' %}");
@@ -38,14 +43,10 @@
 </head>
 <body>
     <div class="container mt-5">
-        {% if messages %}
-            {% for message in messages %}
-                {{ message }}
-            {% endfor %}
-        {% endif %}
 
-        {% block content %}
-        {% endblock %}
+        <p id="godforsakeme">
+            This page WILL keep reloading UNTIL the astronomer (u) inputs a correct login
+        </p>
 
         <!-- Login Form -->
         <h1 id="text" class="mb-4">Login:</h1>
