@@ -11,6 +11,7 @@ def login_astronomer(request):
             login(request, user)
             return redirect('home')
         else:
+            messages.success(request, ('There was an error whil logging in... PLEASE input a valid login'))
             return redirect('login')
     else:
         pass
