@@ -42,7 +42,7 @@ body{
   0 0 20px #99EBEB,
   0 0 30px #66E0E0;
 }
-#navLOG, #navUSE, #navABO, #navCON {
+#navLOG, #navUSE, #navABO, #navCON, #navOUT{
   position: absolute;
   bottom: 20px;          /* close to bottom of nav */
   font-weight: lighter;
