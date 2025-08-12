@@ -32,45 +32,43 @@
         <p id='godforsakeme'>This page won't keep reloading UNTIL the astronomer (u) inputs a correct login</p>
 
         <!-- Login Form -->
-        <h1 class="mb-4">Login:</h1>
+        <h1 id="text" class="mb-4">Login:</h1>
         <form id="login_form" action="" method="POST">
             {% csrf_token %}
             <div class="mb-3">
-                <label for="username" class="form-label">Username</label>
+                <label id="text" for="username" class="form-label">Username</label>
                 <input type="text" class="form-control" id="username" name="username" aria-describedby="usernameHelp">
             </div>
             <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
+                <label  id="text" for="password" class="form-label">Password</label>
                 <input type="password" class="form-control" id="password" name="password">
             </div>
             <input type="submit" value="Submit" class="btn btn-secondary">
         </form>
 
     </div>
+    <!-- Parallax Effect for Dynamic Starry Background in Body-->
+        <script>
+        (function() {
+            // Add event listener
+            document.addEventListener("mousemove", parallax_body);
+            const elem = document.querySelector("body");
+            
+            // Magic happens here
+            function parallax_body(e) {
+                let _w = window.innerWidth;
+                let _h = window.innerHeight;
+                let _mouseX = e.clientX;
+                let _mouseY = e.clientY;
 
-            </script>
-        <!-- Parallax Effect for Dynamic Starry Background in Body-->
-         <script>
-            (function() {
-                // Add event listener
-                document.addEventListener("mousemove", parallax_body);
-                const elem = document.querySelector("body");
-                
-                // Magic happens here
-                function parallax_body(e) {
-                    let _w = window.innerWidth;
-                    let _h = window.innerHeight;
-                    let _mouseX = e.clientX;
-                    let _mouseY = e.clientY;
+                let offset_coeff = 0.005;
+                let bg_Xoffset = -(_mouseX - _w/2) * offset_coeff;
+                let bg_Yoffset = -(_mouseY - _h/2) * offset_coeff * -1.75;
 
-                    let offset_coeff = 0.005;
-                    let bg_Xoffset = -(_mouseX - _w/2) * offset_coeff;
-                    let bg_Yoffset = -(_mouseY - _h/2) * offset_coeff * -1.75;
-
-                    elem.style.backgroundPosition = `${bg_Xoffset}% ${bg_Yoffset}%`;
-                }
-            })();
-        </script>
+                elem.style.backgroundPosition = `${bg_Xoffset}% ${bg_Yoffset}%`;
+            }
+        })();
+    </script>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
