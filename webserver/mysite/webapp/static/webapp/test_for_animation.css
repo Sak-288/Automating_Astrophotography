@@ -9,7 +9,14 @@ div {
   transform-style: preserve-3d;
   box-sizing: border-box; 
 }
-
+.globe::before {
+  content: "yStarting: " var(--yStarting);
+  position: absolute;
+  top: -30px;
+  left: 0;
+  color: white;
+  font-size: 12px;
+}
 .globe {
   --r: 10;
   --u: 1vmin;
@@ -31,7 +38,6 @@ div {
   left: 50%; /* calc(var(--xStarting) * 100%) */
   transform:translate(-50%, -50%);
   transform-origin: calc(var(--cc) * var(--RevR) * 1px) 0;
-  border: 2px solid red;
   
   /* COMBINE BOTH ANIMATIONS */
   animation: 
