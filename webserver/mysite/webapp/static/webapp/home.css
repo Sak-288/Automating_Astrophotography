@@ -78,6 +78,7 @@ body{
 #wlc_greet {
   color:white;
   position:absolute;
-  top:5%;
-  left:5%;
+  top:2%;
+  left:2%;
+  font-size:25px;
 }
