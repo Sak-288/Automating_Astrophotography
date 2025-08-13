@@ -27,10 +27,12 @@ div {
   animation: rotates 10s linear infinite; /* CHANGE THIS TO CHANGE THE SPEED OF THE ROTATION */
     
   /* ORBIT POSITIONING */
+  --cc:-1;
   position: absolute;
   top: 50%;           /* Y position of orbit center */ /* CHANGE THE X CENTER OF THE REVOLUTION */
   left: 50%;          /* X position of orbit center */ /* CHANGE THE Y CENTER OF THE REVOLUTION */
-  transform-origin: -100px 0; /* CHANGE THIS TO CHANGE THE RADIUS OF THE REVOLUTION */
+  transform:translate(calc(-50% * var(--cc)));
+  transform-origin: calc(var(--cc) * 100px) 0; /* CHANGE THIS TO CHANGE THE RADIUS OF THE REVOLUTION */
   
   /* ORBIT ANIMATION */
   animation: orbit 5s linear infinite; /* CHANGE THIS TO CHANGE THE SPEED OF THE ORBIT */
