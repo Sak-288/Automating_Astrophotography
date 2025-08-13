@@ -22,4 +22,5 @@ def contact_successful(request):
 
 def test_for_animation(request):
     t = 7
-    return render(request, "webapp/test_for_animation.pug", {"t": t})
+    t2_plus_1 = 2*t + 1
+    return render(request, "webapp/test_for_animation.pug", {"t": t, "t2_plus_1": t2_plus_1})
