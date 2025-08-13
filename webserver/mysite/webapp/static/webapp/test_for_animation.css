@@ -78,14 +78,14 @@ div {
         calc(var(--r) * var(--u) - var(--w) / 2)
         calc((var(--d) * var(--s) * var(--u)));
     --del: 0.5s; /* FLASH SPEED */
-    animation: flash linear var(--del) infinite;
+    animation: mercury-flash linear var(--del) infinite;
     animation-delay: calc(var(--c) * var(--del) / var(--t));
 }
 /* The horizontal lines are created with SCSS and a loop, which can be approximated with a set of elements */
 /* For this example, we'll assume a single globe for simplicity, but you would duplicate the .line and .h elements
    in the HTML and adjust the --c variable to simulate the SCSS loop. */
 /* Animation keyframes */
-@keyframes flash {
+@keyframes mercury-flash {
     0%, 13.33% {
         color: #aaa3;
         background-color: #3cf3;
@@ -186,14 +186,14 @@ div {
         calc(var(--r) * var(--u) - var(--w) / 2)
         calc((var(--d) * var(--s) * var(--u)));
     --del: 0.5s; /* FLASH SPEED */
-    animation: flash linear var(--del) infinite;
+    animation: sun-flash linear var(--del) infinite;
     animation-delay: calc(var(--c) * var(--del) / var(--t));
 }
 /* The horizontal lines are created with SCSS and a loop, which can be approximated with a set of elements */
 /* For this example, we'll assume a single globe for simplicity, but you would duplicate the .line and .h elements
    in the HTML and adjust the --c variable to simulate the SCSS loop. */
 /* Animation keyframes */
-@keyframes flash {
+@keyframes sun-flash {
     0%, 13.33% {
         color: rgba(255, 166, 0, 0.2);
         background-color: rgba(255, 149, 0, 0.2);
