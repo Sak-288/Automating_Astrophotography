@@ -18,31 +18,26 @@ div {
 }
 
 /* ---------------------------------- */
-/* ORBIT CONTAINER - handles positioning and orbit path */
-/* ---------------------------------- */
-.orbit-container {
-    position: absolute;
-    top: var(--orbit-center-y);
-    left: var(--orbit-center-x);
-    transform: translate(-50%, -50%); /* Centers the container on its top/left position */
-}
-
-/* ---------------------------------- */
 /* MERCURY PROPERTIES           */
 /* ---------------------------------- */
 .MERCURY {
-    /* Orbiting Planet */
+    /* Orbiting Container */
     --orbit-radius: 100px;
     --orbit-speed: 5s;
     --orbit-center-x: 50%;
     --orbit-center-y: 50%;
     
+    position: absolute;
+    top: var(--orbit-center-y);
+    left: var(--orbit-center-x);
+    transform-origin: 0 0;
+    transform: translate(-50%, -50%);
     animation: orbit-animation var(--orbit-speed) linear infinite;
 }
 
 .mercury-globe {
     /* Globe Properties */
-    --r: 1vmin; /* SPHERE RADIUS */
+    --r: 1; /* SPHERE RADIUS */
     --u: 1vmin;
     --h: 2px;
     
@@ -84,19 +79,23 @@ div {
 /* SUN PROPERTIES             */
 /* ---------------------------------- */
 .SUN {
-    /* Orbiting Planet */
+    /* Orbiting Container */
     --orbit-radius: 0px;
     --orbit-speed: 5s;
     --orbit-center-x: 80%;
     --orbit-center-y: 50%;
-
-    /* This now enables the sun's orbit animation */
-    animation: orbit-animation var(--orbit-speed) linear infinite;
+    
+    position: absolute;
+    top: var(--orbit-center-y);
+    left: var(--orbit-center-x);
+    transform-origin: 0 0;
+    transform: translate(-50%, -50%);
+    animation: none;
 }
 
 .sun-globe {
     /* Globe Properties */
-    --r: 20vmin; /* SPHERE RADIUS */
+    --r: 20; /* SPHERE RADIUS */
     --u: 1vmin;
     --h: 2px;
     
@@ -178,9 +177,9 @@ div {
 }
 @keyframes orbit-animation {
     from {
-        transform: rotate(0deg) translateX(calc(var(--orbit-radius) * -1));
+        transform: rotate(0deg) translate(calc(var(--orbit-radius) * -1), 0);
     }
     to {
-        transform: rotate(360deg) translateX(calc(var(--orbit-radius) * -1));
+        transform: rotate(360deg) translate(calc(var(--orbit-radius) * -1), 0);
     }
 }
