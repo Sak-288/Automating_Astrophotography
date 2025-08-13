@@ -2,14 +2,14 @@
 <html lang="en">
     <head>
         <meta charset='utf-8'>
-        <title>@auto_astro.beginners</title>
+        <title>Automating Astrophotography - A SOM Project by Sakoute Amine</title>
         {% load static %}
         <link rel="stylesheet" href="{% static 'webapp/home.css' %}">
     </head>
     <body>
         <nav id="parallax_nav">
             <div id="shitty_container">
-                <h1 id="wlc_title">@auto_astro</h1>
+                <h1 id="wlc_title">Auto_Astro</h1>
                 {% if user.is_authenticated %}
                 <h2 id="wlc_greet">Welcome {{ user.first_name }} !</h2>
                 <form method="post" action="{% url 'logout' %}">
