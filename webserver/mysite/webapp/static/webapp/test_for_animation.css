@@ -9,20 +9,6 @@ div {
   transform-style: preserve-3d;
   box-sizing: border-box; 
 }
-.globe::before {
-  --cc: 1;
-  --RevR: 100;
-  --xCenter: 50;
-  --yCenter: 50;
-  --xStarting: var(--xCenter) - (var(--RevR)/1080) * var(--cc) * 100 / 2;
-  --yStarting: var(--yCenter) - (var(--RevR)/1080) * 100 / 2;
-  content: "yStarting: " var(--yStarting);
-  position: absolute;
-  top: -30px;
-  left: 0;
-  color: white;
-  font-size: 12px;
-}
 .globe {
   --r: 10;
   --u: 1vmin;
@@ -40,9 +26,8 @@ div {
   --yStarting: var(--yCenter) - (var(--RevR)/1080) * 100 / 2;
 
   position: absolute;
-  top: 50%;
+  top: calc(var(--yStarting) * 1%);
   left: 50%; /* calc(var(--xStarting) * 100%) */
-  transform:translate(-50%, -50%);
   transform-origin: calc(var(--cc) * var(--RevR) * 1px) 0;
   
   /* COMBINE BOTH ANIMATIONS */
