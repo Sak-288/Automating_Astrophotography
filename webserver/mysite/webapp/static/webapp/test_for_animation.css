@@ -29,7 +29,7 @@ div {
   /* ORBIT POSITIONING */
   position: absolute;
   top: 50%;           /* Y position of orbit center */ /* CHANGE THE X CENTER OF THE REVOLUTION */
-  left: 50%;          /* X position of orbit center */ /* CHANGE THE Y CENTER OF THE REVOLUTION */
+  left: 25%        /* X position of orbit center */ /* CHANGE THE Y CENTER OF THE REVOLUTION */
   transform:translate(-50%, -50%);
 
   transform-origin: 200px 0; /* CHANGE THIS TO CHANGE THE RADIUS */
