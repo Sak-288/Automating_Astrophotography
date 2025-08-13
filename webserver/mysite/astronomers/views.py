@@ -23,7 +23,7 @@ def logout_astronomer(request):
 
 def register_astronomer(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = RegisterAstronomerForm(request.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data['username']
@@ -32,8 +32,8 @@ def register_astronomer(request):
             login(request, user)
             return redirect('home')
     else:
-        form = UserCreationForm()
+        form = RegisterAstronomerForm()
 
     return render(request, 'registration/register_astronomer.html', {
         'form':form,
-    })
+    }) 
