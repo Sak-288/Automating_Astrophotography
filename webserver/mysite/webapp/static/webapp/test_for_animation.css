@@ -30,8 +30,10 @@ div {
   position: absolute;
   top: 50%;           /* Y position of orbit center */ /* CHANGE THE X CENTER OF THE REVOLUTION */
   left: 50%;          /* X position of orbit center */ /* CHANGE THE Y CENTER OF THE REVOLUTION */
-  transform:translate(-50%, -50%);
-  transform-origin: -100px 0; /* CHANGE THIS TO CHANGE THE RADIUS OF THE REVOLUTION */
+
+  transform: translateX(200px);
+
+  transform-origin: -100px 0; /* CHANGE THIS TO CHANGE THE RADIUS */
   
   /* ORBIT ANIMATION */
   animation: orbit 30s linear infinite; /* CHANGE THIS TO CHANGE THE SPEED OF THE ORBIT */
