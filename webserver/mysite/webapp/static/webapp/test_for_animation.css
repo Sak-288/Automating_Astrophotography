@@ -14,31 +14,26 @@ div {
   --r: 25;
   --u: 1vmin;
   --h: 2px;
+  /* border: 1px solid; */
   border-radius: 50%;
   width: calc(var(--r) * var(--u) * 2);
   height: calc(var(--r) * var(--u) * 2);
   place-self: center;
   position: relative;
-
-  /* Illusion of 3D sphere tilt */
-  transform:
-    rotateX(45deg)
-    rotateY(45deg)
-    rotateZ(15deg);
-
-  /* Uncomment to make it spin */
-  /* animation: rotates 50s linear infinite; */
+  /*
+  background-image: linear-gradient(90deg, #fc33 50%, #cf33 50%);
+  */
 }
 
 .line {
   position: absolute;
   height: var(--h);
   border: 1px solid;
-
+  
   --d: calc(var(--r) * var(--dp));
   /* Replace pow/sqrt with simpler calc approximation or precompute */
   --w: calc(2 * var(--r) * var(--u)); /* placeholder, adjust if needed */
-
+  
   width: var(--w);
   top: calc(50% - (var(--d) * var(--s) * var(--u)));
   left: calc(50% - var(--w) / 2);
@@ -49,6 +44,13 @@ div {
   height: var(--h);
   --w: calc(var(--r) * var(--u) * 2);
   top: 50%;
+}
+
+.globe {
+  transform:
+    rotateX(45deg)
+    rotateY(45deg)
+    rotateZ(15deg);
 }
 
 .h,
@@ -88,9 +90,14 @@ div {
 
 @keyframes rotates {
   from {
-    transform: rotateX(45deg) rotateY(45deg) rotateZ(15deg);
+    transform: rotateX(0) rotateY(0) rotateZ(0);
   }
   to {
-    transform: rotateX(405deg) rotateY(765deg) rotateZ(375deg);
+    transform: rotateX(360deg) rotateY(720deg) rotateZ(360deg);
   }
+}
+
+/* Uncomment to enable rotation */
+.globe {
+    animation: rotates 50s linear infinite;
 }
