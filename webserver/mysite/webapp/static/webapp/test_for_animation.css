@@ -26,7 +26,7 @@ div {
   --yStarting: var(--yCenter) - (var(--RevR)/1080) * 100 / 2;
 
   position: absolute;
-  top: calc(var(--yStarting) * 1%);
+  top: calc(var(--yStarting));
   left: 50%; /* calc(var(--xStarting) * 100%) */
   transform-origin: calc(var(--cc) * var(--RevR) * 1px) 0;
   
