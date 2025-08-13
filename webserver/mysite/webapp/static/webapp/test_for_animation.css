@@ -20,15 +20,15 @@ div {
   
   /* ORBIT POSITIONING */
   --cc: -1;
-  --RevR: 200;
+  --RevR: 100;
   --xCenter: 50;
   --yCenter: 50;
   --xStarting: var(--xCenter) - (var(--RevR)/1080) * var(--cc) * 100 / 2;
   --yStarting: var(--yCenter) - (var(--RevR)/1080) * 100 / 2;
 
   position: absolute;
-  top: 40%; /* calc(var(--yStarting) * 100%) */
-  left: 60%; /* calc(var(--xStarting) * 100%) */
+  top: 50%; /* calc(var(--yStarting) * 100%) */
+  left: 50%; /* calc(var(--xStarting) * 100%) */
   transform:translate(-50%, -50%);
   transform-origin: calc(var(--cc) * var(--RevR) * 1px) 0;
   
