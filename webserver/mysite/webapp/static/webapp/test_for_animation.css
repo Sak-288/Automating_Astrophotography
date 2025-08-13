@@ -14,15 +14,19 @@ div {
   --r: 25;
   --u: 1vmin;
   --h: 2px;
-  /* border: 1px solid; */
   border-radius: 50%;
   width: calc(var(--r) * var(--u) * 2);
   height: calc(var(--r) * var(--u) * 2);
   place-self: center;
   position: relative;
-  /*
-  background-image: linear-gradient(90deg, #fc33 50%, #cf33 50%);
-  */
+  
+  transform:
+    rotateX(45deg)
+    rotateY(45deg)
+    rotateZ(15deg);
+
+  /* Uncomment if you want to spin */
+  /* animation: rotates 50s linear infinite; */
 }
 
 .line {
