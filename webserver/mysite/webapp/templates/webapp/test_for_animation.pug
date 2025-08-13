@@ -1,6 +1,7 @@
 - var t = 7
 head
-  link(rel="stylesheet", href="{% sass_src 'webapp/test_for_animation.scss' %}")
+    {% load sass_tags %}
+    link(rel="stylesheet", href="{% sass_src 'webapp/test_for_animation.scss' %}")
 body
   .globe(style='--t:' + (2 * t + 1))
     .line.radius.h(style='--c:' + t)

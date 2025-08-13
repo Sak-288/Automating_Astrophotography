@@ -143,6 +143,8 @@ STATICFILES_FINDERS = [
     'sass_processor.finders.CssFinder',
 ]
 
+SASS_PROCESSOR_ENABLED = True
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
