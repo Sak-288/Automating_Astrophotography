@@ -18,7 +18,7 @@
                 {% else %}
                 <form method="post" action="{% url 'register_astronomer' %}">
                     {% csrf_token %}
-                <button style="cursor: pointer;" id="navREG" type="submit" class="btn btn-link">Register</button>
+                <button style="cursor: pointer;" id="navREG" type="submit" class="btn btn-link">Register / </button>
                 </form>
                 <a href="{% url 'login' %}" id="navLOG">Log in</a>
                 {% endif %}
