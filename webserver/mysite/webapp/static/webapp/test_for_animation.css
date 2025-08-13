@@ -11,7 +11,7 @@ div {
 }
 
 .globe {
-  --r: 25; /* CHANGE THIS TO CHANGE THE RADIUS OF THE SPHERE */
+  --r: 10; /* CHANGE THIS TO CHANGE THE RADIUS OF THE SPHERE */
   --u: 1vmin;
   --h: 2px;
   /* border: 1px solid; */
@@ -24,16 +24,16 @@ div {
     rotatex(45deg)
     rotatey(45deg)
     rotatez(15deg);
-  animation: rotates 50s linear infinite; /* CHANGE THIS TO CHANGE THE SPEED OF THE ROTATION */
+  animation: rotates 10s linear infinite; /* CHANGE THIS TO CHANGE THE SPEED OF THE ROTATION */
     
   /* ORBIT POSITIONING */
   position: absolute;
   top: 50%;           /* Y position of orbit center */
   left: 50%;          /* X position of orbit center */
-  transform-origin: -200px 0; /* Distance from center (-200px = orbit radius) */
+  transform-origin: -100px 0; /* CHANGE THIS TO CHANGE THE RADIUS OF THE REVOLUTION */
   
   /* ORBIT ANIMATION */
-  animation: orbit 20s linear infinite; /* CHANGE THIS TO CHANGE THE SPEED OF THE ORBIT */
+  animation: orbit 30s linear infinite; /* CHANGE THIS TO CHANGE THE SPEED OF THE ORBIT */
 }
 
 .line {
@@ -59,7 +59,7 @@ div {
 .h, .v {
   --h: var(--w);
   border-radius: 100vmax;
-  background-color: #3cf3; /* CHANGE THIS TO CHANGE THE BASE COLOR OF THE FLASH */
+  background-color: rgba(0, 128, 255, 0.2); /* CHANGE THIS TO CHANGE THE BASE COLOR OF THE SPHERE */
   top: 0;
   left: 0;
   box-shadow: 0 0 1em 1em #0000;
@@ -70,7 +70,7 @@ div {
     calc(var(--r) * var(--u) - var(--w) / 2)
     calc(var(--r) * var(--u) - var(--w) / 2)
     calc((var(--d) * var(--s) * var(--u)));
-  --del: 2s; /* CHANGE THIS TO CHANGE THE SPEED OF THE FLASH */
+  --del: 0.5s; /* CHANGE THIS TO CHANGE THE SPEED OF THE FLASH */
   animation: flash linear var(--del) infinite;
   animation-delay: calc(var(--c) * var(--del) / var(--t));
 }
@@ -84,7 +84,7 @@ div {
   }
   6.67% { /* 1 * (100 / (2 * 7 + 1)) = 6.67% */
     color: #f003;
-    background-color: #39FF1480; /* CHANGE THIS TO CHANGE THE COLOR OF THE FLASH */
+    background-color: #04ff0081; /* CHANGE THIS TO CHANGE THE COLOR OF THE FLASH */
     box-shadow: 0 0 1em 1em #39FF1430;
   }
 }
