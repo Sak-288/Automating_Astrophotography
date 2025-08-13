@@ -31,6 +31,7 @@ div {
   left: 50%; /* calc(var(--xStarting) * 100%) */
   transform:translate(-50%, -50%);
   transform-origin: calc(var(--cc) * var(--RevR) * 1px) 0;
+  border: 2px solid red;
   
   /* COMBINE BOTH ANIMATIONS */
   animation: 
