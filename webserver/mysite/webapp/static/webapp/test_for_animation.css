@@ -93,7 +93,7 @@ div {
     6.67% {
         color: #f003;
         background-color: #ffffff81; /* FLASH COLOR */
-        box-shadow: 0 0 1em 1em #39FF1430;
+        box-shadow: 0 0 1em 1em #ffffff30; /* PLANET GLOW */
     }
 }
 @keyframes rotates {
