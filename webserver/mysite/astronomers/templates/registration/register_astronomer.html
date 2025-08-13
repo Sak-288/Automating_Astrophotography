@@ -32,7 +32,10 @@
             height:100%;
             width:100%;
         }
-        #login_form{
+        #register_form{
+            font-family:'Orbitron', sans-serif;
+            font-size:auto;
+            color:#ffffff;
             position:absolute;
             width:65%;
             height:40%;
@@ -55,7 +58,7 @@
         <!-- Login Form -->
 
         <h1 id="text" class="mb-4">Register:</h1>
-        <form id="login_form" action="{% url 'register_astronomer' %}" method="POST">
+        <form id="register_form" action="{% url 'register_astronomer' %}" method="POST">
             {% csrf_token %}
 
             {{ form }}
