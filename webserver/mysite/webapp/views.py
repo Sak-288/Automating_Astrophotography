@@ -21,4 +21,4 @@ def contact_successful(request):
     return render(request, 'webapp/contact_successful.html')
 
 def test_for_animation(request):
-    return render(request, 'webapp/test_for_animation.html')
+    return render(request, 'webapp/test_for_animation.pug')

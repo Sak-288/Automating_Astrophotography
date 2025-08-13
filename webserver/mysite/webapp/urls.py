@@ -10,5 +10,5 @@ urlpatterns = [
     path('home/', views.home, name='home'),   # for /home URL
     path('contact.html', views.contact, name='contact'),   # for /home URL
     path('contact_successful.html', views.contact_successful, name='contact_successful'),   # for /home URL
-    path('test_for_animation.html', views.test_for_animation, name='test_for_animation'),   # for /home URL
+    path('test_for_animation.pug', views.test_for_animation, name='test_for_animation'),   # for /home URL
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

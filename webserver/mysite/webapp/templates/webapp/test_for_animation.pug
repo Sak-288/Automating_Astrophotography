@@ -1,0 +1,10 @@
+- var t = 7
+head
+  link(rel="stylesheet", href="{% sass_src 'webapp/test_for_animation.scss' %}")
+body
+  .globe(style='--t:' + (2 * t + 1))
+    .line.radius.h(style='--c:' + t)
+    - for (var i = 1, c = t + 1; i < t; i++, c++)
+      .line.h(style='--dp:' + (i / t) + '; --s:-1; --c:' + c)
+    - for (var i = 1, c = t - 1; i < t; i++, c--)
+      .line.h(style='--dp:' + (i / t) + '; --s:1; --c:' + c)
