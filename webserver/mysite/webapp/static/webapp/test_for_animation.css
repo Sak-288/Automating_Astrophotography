@@ -138,7 +138,7 @@ div {
 }
 /* GLOBE - This element is a child of the orbit container and handles its own rotation */
 .sun-globe {
-    --r: 15; /* SPHERE RADIUS */
+    --r: 8; /* SPHERE RADIUS */
     --u: 1vmin;
     --h: 2px;
     
