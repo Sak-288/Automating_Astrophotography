@@ -20,7 +20,7 @@ div {
   place-self: center;
   position: relative;
   transform-style: preserve-3d;
-  transform: rotateX(181.368deg) rotateY(362.736deg) rotateZ(181.368deg);
+  transform: rotateX(185deg) rotateY(365deg) rotateZ(185deg);
 }
 
 .line {
