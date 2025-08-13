@@ -9,33 +9,32 @@ div {
   transform-style: preserve-3d;
   box-sizing: border-box; 
 }
+
 .globe {
-  --r: 10;
+  --r: 10; /* CHANGE THIS TO CHANGE THE RADIUS OF THE SPHERE */
   --u: 1vmin;
   --h: 2px;
+  /* border: 1px solid; */
   border-radius: 50%;
   width: calc(var(--r) * var(--u) * 2);
   height: calc(var(--r) * var(--u) * 2);
-  
+  place-self: center;
+  position: relative;
+  transform:
+    rotatex(45deg)
+    rotatey(45deg)
+    rotatez(15deg);
+  animation: rotates 10s linear infinite; /* CHANGE THIS TO CHANGE THE SPEED OF THE ROTATION */
+    
   /* ORBIT POSITIONING */
-  --cc: 1;
-  --RevR: 100;
-  --xCenter: 50;
-  --yCenter: 50;
-  --xStarting: var(--xCenter) - (var(--RevR)/1080) * var(--cc) * 100 / 2;
-  --yStarting: var(--yCenter) - (var(--RevR)/1080) * 100 / 2;
-
   position: absolute;
-  top: calc(var(--yStarting));
-  left: 50%; /* calc(var(--xStarting) * 100%) */
-  transform-origin: calc(var(--cc) * var(--RevR) * 1px) 0;
+  top: 50%;           /* Y position of orbit center */ /* CHANGE THE X CENTER OF THE REVOLUTION */
+  left: 50%;          /* X position of orbit center */ /* CHANGE THE Y CENTER OF THE REVOLUTION */
+  transform-origin: -100px 0; /* CHANGE THIS TO CHANGE THE RADIUS OF THE REVOLUTION */
   
-  /* COMBINE BOTH ANIMATIONS */
-  animation: 
-    orbit 10s linear infinite;
-    /* rotates 10s linear infinite; */
+  /* ORBIT ANIMATION */
+  animation: orbit 30s linear infinite; /* CHANGE THIS TO CHANGE THE SPEED OF THE ORBIT */
 }
-
 
 .line {
   position: absolute;
