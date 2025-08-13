@@ -19,7 +19,7 @@ div {
   height: calc(var(--r) * var(--u) * 2);
   
   /* ORBIT POSITIONING */
-  --cc: -1;
+  --cc: 1;
   --RevR: 100;
   --xCenter: 50;
   --yCenter: 50;
