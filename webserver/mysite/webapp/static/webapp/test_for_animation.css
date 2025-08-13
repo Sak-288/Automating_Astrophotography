@@ -16,8 +16,8 @@ div {
 /* ORBITING CONTAINER - This element handles the revolution around a central point */
 .MERCURY {
     /* Customize the orbit properties here */
-    --orbit-radius: 30px; /* Distance from the orbit center */ /* ORBIT RADIUS */
-    --orbit-speed: 5s;     /* Speed of the revolution */ /* ORBIT SPEED */
+    --orbit-radius: 100px; /* Distance from the orbit center */ /* ORBIT RADIUS */
+    --orbit-speed: 10s;     /* Speed of the revolution */ /* ORBIT SPEED */
     --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
     --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
     
