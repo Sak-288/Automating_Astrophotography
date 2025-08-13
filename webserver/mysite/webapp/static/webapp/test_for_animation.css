@@ -27,12 +27,19 @@ div {
   animation: rotates 10s linear infinite; /* CHANGE THIS TO CHANGE THE SPEED OF THE ROTATION */
     
   /* ORBIT POSITIONING */
-  position: absolute;
-  top: 50%;           /* Y position of orbit center */ /* CHANGE THE X CENTER OF THE REVOLUTION */
-  left: 25%;      /* X position of orbit center */ /* CHANGE THE Y CENTER OF THE REVOLUTION */
-  transform:translate(-50%, -50%);
+  --cc: -1; /* NEGATIVE MEANS CCW && POSITIVE MEANS CW */
+  --RevR: 200; /* Radius of Revolution */
+  --xCenter: 50; /* X Center */
+  --yCenter: 50; /* Y Center */
+  --xStarting: var(--xCenter) - (var(--RevR)/1080) * var(--cc) * 100 / 2; /* Getting the X Starting Point of the Revolution according to the center and direction */
+  --yStarting: var(--yCenter) - (var(--RevR)/1080) * 100 / 2; /* Getting the Y Starting Point of the Revolution according to the center and direction */
 
-  transform-origin: 200px 0; /* CHANGE THIS TO CHANGE THE RADIUS */
+  position: absolute;
+  top: calc(var(--yStarting) * 1%); /* Y position of orbit center */ /* CHANGE THE X STARTING POINT OF THE REVOLUTION */
+  left: calc(var(--xStarting) * 1%); /* X position of orbit center */ /* CHANGE THE Y STARTING OF THE REVOLUTION */
+  transform:translate(-50%, -50%); /* To offset the planet's dimensions against its orbit */
+
+  transform-origin: var(--cc)px 0; /* CHANGE THIS TO CHANGE THE RADIUS OF THE ORBIT */
   
   /* ORBIT ANIMATION */
   animation: orbit 10s linear infinite; /* CHANGE THIS TO CHANGE THE SPEED OF THE ORBIT */
