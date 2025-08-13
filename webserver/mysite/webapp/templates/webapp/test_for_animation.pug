@@ -9,30 +9,27 @@
 <link rel="icon" type="image/x-icon" href="{% static 'webapp/perfect_logo.png' %}">
 </head>
 <body>
-<!-- Container for all planets to ensure they are above the background -->
 <div class="planets-container">
-<!-- MERCURY -->
 <div class="MERCURY">
 <div style="--t: {{ t2_plus_1 }}" class="mercury-globe">
-<div style="--c: {{ t }}" class="line radius h"></div>
+<div style="--c: {{ t }}" class="line radius h mercury-h"></div>
 {% for line in positive_lines %}
-<div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h"></div>
+<div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h mercury-h"></div>
 {% endfor %}
 {% for line in negative_lines %}
-<div style="--dp: {{ line.dp }}; --s:1; --c: {{ line.c }}" class="line h"></div>
+<div style="--dp: {{ line.dp }}; --s:1; --c: {{ line.c }}" class="line h mercury-h"></div>
 {% endfor %}
 </div>
 </div>
 
-<!-- SUN -->
 <div class="SUN">
 <div style="--t: {{ t2_plus_1 }}" class="sun-globe">
-<div style="--c: {{ t }}" class="line radius h"></div>
+<div style="--c: {{ t }}" class="line radius h sun-h"></div>
 {% for line in positive_lines %}
-<div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h"></div>
+<div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h sun-h"></div>
 {% endfor %}
 {% for line in negative_lines %}
-<div style="--dp: {{ line.dp }}; --s:1; --c: {{ line.c }}" class="line h"></div>
+<div style="--dp: {{ line.dp }}; --s:1; --c: {{ line.c }}" class="line h sun-h"></div>
 {% endfor %}
 </div>
 </div>

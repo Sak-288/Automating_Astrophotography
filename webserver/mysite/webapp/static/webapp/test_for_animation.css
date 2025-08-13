@@ -17,7 +17,7 @@ div {
 .MERCURY {
     /* Customize the orbit properties here */
     --orbit-radius: 75px; /* Distance from the orbit center */ /* ORBIT RADIUS */
-    --orbit-speed: 10s;     /* Speed of the revolution */ /* ORBIT SPEED */
+    --orbit-speed: 10s;      /* Speed of the revolution */ /* ORBIT SPEED */
     --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
     --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
     
@@ -72,7 +72,7 @@ div {
     left: 0;
     box-shadow: 0 0 1em 1em #0000;
 }
-.h {
+.mercury-h {
     translate: 
         calc(var(--r) * var(--u) - var(--w) / 2)
         calc(var(--r) * var(--u) - var(--w) / 2)
@@ -83,7 +83,7 @@ div {
 }
 /* The horizontal lines are created with SCSS and a loop, which can be approximated with a set of elements */
 /* For this example, we'll assume a single globe for simplicity, but you would duplicate the .line and .h elements
-   in the HTML and adjust the --c variable to simulate the SCSS loop. */
+    in the HTML and adjust the --c variable to simulate the SCSS loop. */
 /* Animation keyframes */
 @keyframes mercury-flash {
     0%, 13.33% {
@@ -125,7 +125,7 @@ div {
 .SUN {
     /* Customize the orbit properties here */
     --orbit-radius: 10px; /* Distance from the orbit center */ /* ORBIT RADIUS */
-    --orbit-speed: 5s;     /* Speed of the revolution */ /* ORBIT SPEED */
+    --orbit-speed: 5s;      /* Speed of the revolution */ /* ORBIT SPEED */
     --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
     --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
     
@@ -180,7 +180,7 @@ div {
     left: 0;
     box-shadow: 0 0 1em 1em #0000;
 }
-.h {
+.sun-h {
     translate: 
         calc(var(--r) * var(--u) - var(--w) / 2)
         calc(var(--r) * var(--u) - var(--w) / 2)
@@ -191,7 +191,7 @@ div {
 }
 /* The horizontal lines are created with SCSS and a loop, which can be approximated with a set of elements */
 /* For this example, we'll assume a single globe for simplicity, but you would duplicate the .line and .h elements
-   in the HTML and adjust the --c variable to simulate the SCSS loop. */
+    in the HTML and adjust the --c variable to simulate the SCSS loop. */
 /* Animation keyframes */
 @keyframes sun-flash {
     0%, 13.33% {
