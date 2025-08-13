@@ -10,6 +10,12 @@ div {
   box-sizing: border-box; 
 }
 .globe::before {
+  --cc: 1;
+  --RevR: 100;
+  --xCenter: 50;
+  --yCenter: 50;
+  --xStarting: var(--xCenter) - (var(--RevR)/1080) * var(--cc) * 100 / 2;
+  --yStarting: var(--yCenter) - (var(--RevR)/1080) * 100 / 2;
   content: "yStarting: " var(--yStarting);
   position: absolute;
   top: -30px;
