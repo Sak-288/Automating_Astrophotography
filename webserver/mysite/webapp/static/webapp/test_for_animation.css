@@ -68,11 +68,6 @@ div {
         background-color: rgba(14, 14, 15, 0.33); /* SPHERE COLOR */
         box-shadow: 0 0 1em 1em #0000;
     }
-    6.67% {
-        color: rgba(255, 255, 255, 0.2);
-        background-color: #ffffff81; /* FLASH COLOR */
-        box-shadow: 0 0 1em 1em #ffffff30; /* PLANET GLOW */
-    }
 }
 
 /* ---------------------------------- */
