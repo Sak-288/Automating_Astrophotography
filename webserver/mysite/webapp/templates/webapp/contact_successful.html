@@ -7,20 +7,31 @@
         <link rel="stylesheet" href="{% static 'webapp/home.css' %}">
         <link rel="icon" type="image/x-icon" href="{% static 'webapp/perfect_logo.png' %}">
         <style>
-            #titles{
+            #title1{
                 position:absolute;
                 left:50%;
+                top:10%;
                 color:white;
+                transform: translate(-50%, -50%);
+            }
+            #title2{
+                position:absolute;
+                left:50%;
+                top:20%;
+                color:white;
+                transform: translate(-50%, -50%);
             }
             #home_send{
                 position:absolute;
                 left:50%;
+                top:30%;
+                transform: translate(-50%, -50%);
                 border:none;
                 border-radius:3px;
                 background-color:rgb(33, 33, 255);
                 height:65px;
                 width:auto;
-                font-size:50px;
+                font-size:
                 font-family:'Orbitron', sans-serif;
                 color:white;
             }
@@ -31,9 +42,9 @@
     </head>
     <body>
         <div id='centering'>
-        <h1 id="titles">The message was successfully sent.</h1>
+        <h1 id="title1">The message was successfully sent.</h1>
         <br/>
-        <h2 id="titles">Click the button below to go back to HOME page :</h2>
+        <h2 id="title2">Click the button below to go back to HOME page :</h2>
         <br/>
         <a href="{% url 'home' %}">
             <button id="home_send">Go Back</button>
