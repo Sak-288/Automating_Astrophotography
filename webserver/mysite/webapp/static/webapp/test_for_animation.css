@@ -22,10 +22,10 @@ div {
 /* ---------------------------------- */
 .MERCURY {
     /* Orbiting Container */
-    --orbit-radius: 10px;
+    --orbit-radius: 100px;
     --orbit-speed: 5s;
     --orbit-center-x: 50%;
-    --orbit-center-y: 50%;
+    --orbit-center-y: 30%;
     
     position: absolute;
     top: var(--orbit-center-y);
@@ -83,7 +83,7 @@ div {
     --orbit-radius: 0px;
     --orbit-speed: 5s;
     --orbit-center-x: 50%;
-    --orbit-center-y: 50%;
+    --orbit-center-y: 30%;
     
     position: absolute;
     top: var(--orbit-center-y);
