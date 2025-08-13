@@ -6,29 +6,11 @@ body {
     margin: 0;
     display: grid;
     place-items: center;
-    position: relative;
-    overflow: hidden; /* Hide overflow to prevent scrollbars from the moving background */
-}
-
-/* New background layer for parallax effect */
-.parallax-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 110vw; /* Make the div larger than the viewport */
-    height: 110vh;
     background-image: url('STARRY.gif');
-    background-repeat: repeat; /* This now works because the element itself is moving */
-    transform: translate(0, 0); /* Initial position */
-    z-index: -1;
-}
-
-/* Container for all planets to ensure they appear on top of the background */
-.planets-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+    background-repeat: repeat;
+    background-position:center;
+    perspective: 1000px;
+    overflow: hidden;
 }
 
 div {
@@ -178,6 +160,10 @@ div {
     top: 0;
     left: 0;
     box-shadow: 0 0 1em 1em #0000;
+}
+.globe .h, .globe .v {
+    /* This rule is no longer needed as each globe now defines its own background-color */
+    /* background-color: rgba(14, 14, 15, 0.33); */
 }
 
 /* ---------------------------------- */
