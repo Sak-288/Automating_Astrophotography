@@ -1,10 +1,11 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'webapp/test_for_animation.css' %}">
+
 <div style="--t: {{ t2_plus_1 }}" class="globe">
 <div style="--c: {{ t }}" class="line radius h"></div>
-
 {% for line in positive_lines %}
 <div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h"></div>
 {% endfor %}
-
 {% for line in negative_lines %}
 <div style="--dp: {{ line.dp }}; --s:1; --c: {{ line.c }}" class="line h"></div>
 {% endfor %}
