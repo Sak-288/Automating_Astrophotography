@@ -1,12 +1,10 @@
-{% load sass_tags %}
-{% __pypugjs_set t = 7 %}
-head
-  link(rel="stylesheet", href="{% sass_src 'webapp/test_for_animation.scss' %}")
-.globe(style='--t:' + (2 * t + 1))
-  .line.radius.h(style='--c:' + t)
+- t = 7
+
+.globe(style='--t:' + str(2 * t + 1))
+  .line.radius.h(style='--c:' + str(t))
   - for i in range(1, t)
     - c = t + i
-    .line.h(style='--dp:' + (i / t) + '; --s:-1; --c:' + c)
+    .line.h(style='--dp:' + str(i / t) + '; --s:-1; --c:' + str(c))
   - for i in range(1, t)
     - c = t - i
-    .line.h(style='--dp:' + (i / t) + '; --s:1; --c:' + c)
+    .line.h(style='--dp:' + str(i / t) + '; --s:1; --c:' + str(c))
