@@ -67,7 +67,7 @@ div {
 .h, .v {
     --h: var(--w);
     border-radius: 100vmax;
-    background-color: rgba(14, 14, 15, 0.2); /* SPHERE COLOR */
+    background-color: rgba(105, 105, 105, 0.2); /* SPHERE COLOR */
     top: 0;
     left: 0;
     box-shadow: 0 0 1em 1em #0000;
@@ -87,9 +87,9 @@ div {
 /* Animation keyframes */
 @keyframes mercury-flash {
     0%, 13.33% {
-        color: #aaa3;
-        background-color: #3cf3;
-        box-shadow: 0 0 1em 1em #0000;
+        color: rgba(255, 255, 255, 0.2);
+        background-color: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 0 1em 1em #ffffff00;
     }
     6.67% {
         color: rgba(255, 255, 255, 0.2);
