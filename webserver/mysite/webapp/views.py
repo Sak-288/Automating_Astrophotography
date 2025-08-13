@@ -13,6 +13,6 @@ def contact(request):
         name = request.POST['name']
         email = request.POST['email']
 
-        send_mail(f'Message from {name}', subject, email, ['settings.EMAIL_HOST_USER'], fail_silently=False)
+        send_mail(f'Message from {name}', subject, email, [settings.EMAIL_HOST_USER], fail_silently=False)
         return HttpResponse('webapp/contact_successful.html')
     return render(request, 'webapp/contact.html')
