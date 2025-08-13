@@ -68,6 +68,11 @@ div {
         background-color: rgba(14, 14, 15, 0.33); /* SPHERE COLOR */
         box-shadow: 0 0 1em 1em #0000;
     }
+    6.67% {
+        color: rgba(255, 255, 255, 0.2);
+        background-color: #ffffff81; /* FLASH COLOR */
+        box-shadow: 0 0 1em 1em #ffffff30; /* PLANET GLOW */
+    }
 }
 
 /* ---------------------------------- */
@@ -119,12 +124,12 @@ div {
     0%, 13.33% {
         color: #ffca28;
         background-color: rgba(255, 202, 40, 0.2);
-        box-shadow: 0 0 1em 1em #0000;
+        box-shadow: 0 0 1em 1em #ffd00000;
     }
     6.67% {
-        color: rgba(255, 255, 255, 0.8);
-        background-color: rgba(255, 235, 59, 0.7);
-        box-shadow: 0 0 2em 2em rgba(255, 165, 0, 0.5);
+        color: rgba(255, 255, 255, 0.2);
+        background-color: rgba(255, 252, 59, 0.5);
+        box-shadow: 0 0 2em 2em rgba(255, 165, 0, 0.2);
     }
 }
 

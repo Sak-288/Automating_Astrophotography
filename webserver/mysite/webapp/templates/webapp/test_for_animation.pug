@@ -14,9 +14,9 @@
 
 <!-- Container for all planets to ensure they are above the background -->
 <div class="planets-container">
-<!-- SUN -->
-<div class="SUN">
-<div style="--t: {{ t2_plus_1 }}" class="sun-globe">
+<!-- MERCURY -->
+<div class="MERCURY">
+<div style="--t: {{ t2_plus_1 }}" class="mercury-globe">
 <div style="--c: {{ t }}" class="line radius h"></div>
 {% for line in positive_lines %}
 <div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h"></div>
@@ -27,9 +27,9 @@
 </div>
 </div>
 
-<!-- MERCURY -->
-<div class="MERCURY">
-<div style="--t: {{ t2_plus_1 }}" class="mercury-globe">
+<!-- SUN -->
+<div class="SUN">
+<div style="--t: {{ t2_plus_1 }}" class="sun-globe">
 <div style="--c: {{ t }}" class="line radius h"></div>
 {% for line in positive_lines %}
 <div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h"></div>
