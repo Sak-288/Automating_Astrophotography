@@ -9,7 +9,7 @@
     <body>
         <nav id="parallax_nav">
             <div id="shitty_container">
-                <h1 id="wlc_title">Auto_Astro</h1>
+                <h1 id="wlc_title">@Auto_Astro</h1>
                 {% if user.is_authenticated %}
                 <h2 id="wlc_greet">Welcome {{ user.first_name }} !</h2>
                 <form method="post" action="{% url 'logout' %}">
@@ -23,7 +23,8 @@
                 </form>
                 <a href="{% url 'login' %}" id="navLOG">&nbsp;Log in</a>
                 {% endif %}
-                <a href='' id="navUSE">Explore the Skies</a>
+                <h1>Auto_Astro</h1>
+                <!-- <a href='' id="navUSE">Explore the Skies</a> -->
                 <a href='' id="navABO">About</a>
                 <a href='' id="navCON">Contact&nbsp;Us</a>
             </div>
