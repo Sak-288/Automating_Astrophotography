@@ -34,7 +34,8 @@ div {
   
   /* COMBINE BOTH ANIMATIONS */
   animation: 
-    orbit-and-rotate 10s linear infinite;
+    orbit 30s linear infinite,
+    rotates 10s linear infinite;
 }
 
 
@@ -90,18 +91,28 @@ div {
   }
 }
 
-/* COMBINED KEYFRAMES - ORBIT + ROTATION */
-@keyframes orbit-and-rotate {
+/* ROTATING KEYFRAMES */
+@keyframes rotates {
   from {
     transform: 
-      rotate(0deg)
-      rotatex(45deg) rotatey(45deg) rotatez(15deg)
-      rotatex(0deg) rotatey(0deg) rotatez(0deg);
+      rotatex(0)
+      rotatey(0)
+      rotatez(0);
   }
   to {
     transform: 
-      rotate(360deg)
-      rotatex(45deg) rotatey(45deg) rotatez(15deg)
-      rotatex(360deg) rotatey(720deg) rotatez(360deg);
+      rotatex(360deg)
+      rotatey(720deg)
+      rotatez(360deg);
+  }
+}
+
+/* ORBITING KEYFRAMES */
+@keyframes orbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
