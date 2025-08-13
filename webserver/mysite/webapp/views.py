@@ -1,20 +1,18 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Contact
-import subprocess
+from django.core.mail import send_mail
+from django.conf import settings
 
 def home(request):
     return render(request, 'webapp/home.html')
 
 def contact(request):
     if request.method == "POST":
-        contact = Contact()
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        subject = request.POST.get('subject')
-        contact.name = name
-        contact .email = email
-        contact.subject = subject
-        contact.save()
+        subject = request.POST['subject']
+        name = request.POST['name']
+        email = request.POST['email']
+
+        send_mail(f'Message from {name}', subject, 'settings.EMAIL_HOST_USER', [email], fail_silently=False)
         return HttpResponse('<h1>Thanks for contacting us !</h1>')
     return render(request, 'webapp/contact.html')
