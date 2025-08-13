@@ -57,11 +57,11 @@
 
         <h1 id="text" class="mb-4">Register:</h1>
         <br/>
-        <br/>
         <form id="register_form" action="{% url 'register_astronomer' %}" method="POST">
             {% csrf_token %}
 
             {{ form }}
+            <br/>
             <br/>
             <input type="submit" value="Submit" class="btn btn-secondary">
         </form>
