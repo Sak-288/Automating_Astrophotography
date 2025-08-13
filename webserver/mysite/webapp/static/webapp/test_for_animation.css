@@ -29,6 +29,7 @@ div {
   position: absolute;
   top: calc(var(--yStarting) * 1%);
   left: calc(var(--xStarting) * 1%);
+  transform:translate(-50%, -50%);
   transform-origin: calc(var(--cc) * var(--RevR) * 1px) 0;
   
   /* COMBINE BOTH ANIMATIONS */
@@ -93,14 +94,12 @@ div {
 @keyframes orbit-and-rotate {
   from {
     transform: 
-      translate(-50%, -50%)
       rotate(0deg)
       rotatex(45deg) rotatey(45deg) rotatez(15deg)
       rotatex(0deg) rotatey(0deg) rotatez(0deg);
   }
   to {
     transform: 
-      translate(-50%, -50%)
       rotate(360deg)
       rotatex(45deg) rotatey(45deg) rotatez(15deg)
       rotatex(360deg) rotatey(720deg) rotatez(360deg);
