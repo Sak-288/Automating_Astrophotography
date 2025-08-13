@@ -1,7 +1,7 @@
 <div style="--t: {{ 2*t+1 }}" class="globe">
 <div style="--c: {{ t }}" class="line radius h"></div>
 
-    {% for i in range(1, t) %}
+{% for i in range(1, t) %}
         {% with c=t+i %}
             <div style="--dp: {{ i/t }}; --s:-1; --c: {{ c }}" class="line h"></div>
         {% endwith %}
