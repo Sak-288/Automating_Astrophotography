@@ -2,23 +2,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explore the Skies!</title>
-    <link rel="stylesheet" href="{% static 'webapp/test_for_animation.css' %}">
-    <link rel="icon" type="image/x-icon" href="{% static 'webapp/perfect_logo.png' %}">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explore the Skies!</title>
+<link rel="stylesheet" href="{% static 'webapp/test_for_animation.css' %}">
+<link rel="icon" type="image/x-icon" href="{% static 'webapp/perfect_logo.png' %}">
 </head>
 <body>
-    <div class="orbit-container">
-        <div style="--t: {{ t2_plus_1 }}" class="globe">
-            <div style="--c: {{ t }}" class="line radius h"></div>
-            {% for line in positive_lines %}
-            <div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h"></div>
-            {% endfor %}
-            {% for line in negative_lines %}
-            <div style="--dp: {{ line.dp }}; --s:1; --c: {{ line.c }}" class="line h"></div>
-            {% endfor %}
-        </div>
-    </div>
+<div class="orbit-container">
+<div style="--t: {{ t2_plus_1 }}" class="globe">
+<div style="--c: {{ t }}" class="line radius h"></div>
+{% for line in positive_lines %}
+<div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h"></div>
+{% endfor %}
+{% for line in negative_lines %}
+<div style="--dp: {{ line.dp }}; --s:1; --c: {{ line.c }}" class="line h"></div>
+{% endfor %}
+</div>
+</div>
 </body>
 </html>
