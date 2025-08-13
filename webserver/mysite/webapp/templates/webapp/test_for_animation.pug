@@ -2,156 +2,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Explore the Skies!</title>
-<link rel="stylesheet" href="{% static 'webapp/test_for_animation.css' %}">
-<link rel="icon" type="image/x-icon" href="{% static 'webapp/perfect_logo.png' %}">
-<style>
-/* General page layout */
-body {
-min-height: 100vh;
-margin: 0;
-display: grid;
-place-items: center;
-background: #1f2020;
-perspective: 1000px; /* Add perspective for 3D effect */
-overflow: hidden;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore the Skies!</title>
+    <link rel="stylesheet" href="{% static 'webapp/test_for_animation.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'webapp/perfect_logo.png' %}">
+    <style>
+        /* General page layout */
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            background: #1f2020;
+            perspective: 1000px; /* Add perspective for 3D effect */
+            overflow: hidden;
+        }
 
-div {
-transform-style: preserve-3d;
-box-sizing: border-box;
-}
+        div {
+            transform-style: preserve-3d;
+            box-sizing: border-box;
+        }
 
-/* ORBITING CONTAINER - This element handles the revolution around a central point */
-.orbit-container {
-/* Customize the orbit properties here */
---orbit-radius: 150px; /* Distance from the orbit center */
---orbit-speed: 10s;     /* Speed of the revolution */
---orbit-center-x: 50%;  /* X position of the orbit's center */
---orbit-center-y: 50%;  /* Y position of the orbit's center */
+        /* ORBITING CONTAINER - This element handles the revolution around a central point */
+        .orbit-container {
+            /* Customize the orbit properties here */
+            --orbit-radius: 150px; /* Distance from the orbit center */
+            --orbit-speed: 10s;     /* Speed of the revolution */
+            --orbit-center-x: 50%;  /* X position of the orbit's center */
+            --orbit-center-y: 50%;  /* Y position of the orbit's center */
+            
+            position: absolute;
+            top: var(--orbit-center-y);
+            left: var(--orbit-center-x);
+            transform-origin: 0 0;
+            transform: translate(-50%, -50%); /* Center the container itself */
+            animation: orbit-animation var(--orbit-speed) linear infinite;
+        }
 
-position: absolute;
-top: var(--orbit-center-y);
-left: var(--orbit-center-x);
-transform-origin: 0 0;
-transform: translate(-50%, -50%); /* Center the container itself */
-animation: orbit-animation var(--orbit-speed) linear infinite;
-}
+        /* GLOBE - This element is a child of the orbit container and handles its own rotation */
+        .globe {
+            --r: 10; /* Radius of the sphere */
+            --u: 1vmin;
+            --h: 2px;
+            
+            border-radius: 50%;
+            width: calc(var(--r) * var(--u) * 2);
+            height: calc(var(--r) * var(--u) * 2);
+            position: relative;
+            
+            /* Apply a slight initial rotation for a 3D view */
+            transform: rotatex(45deg) rotatey(45deg);
+            
+            /* Customize the rotation speed here */
+            --rotation-speed: 10s;
+            animation: rotates var(--rotation-speed) linear infinite;
+        }
 
-/* GLOBE - This element is a child of the orbit container and handles its own rotation */
-.globe {
---r: 10; /* Radius of the sphere */
---u: 1vmin;
---h: 2px;
+        /* Styles for the inner lines of the globe */
+        .line {
+            position: absolute;
+            height: var(--h);
+            border: 1px solid;
+            
+            --d: calc(var(--r) * var(--dp));
+            --w: calc(2 * sqrt(pow(var(--r),2) - pow(var(--d), 2)) * var(--u));
+            width: var(--w);
+            top: calc(50% - (var(--d) * var(--s) * var(--u)));
+            left: calc(50% - var(--w) / 2);
+            color: #aaa5;
+        }
 
-border-radius: 50%;
-width: calc(var(--r) * var(--u) * 2);
-height: calc(var(--r) * var(--u) * 2);
-position: relative;
+        .radius {
+            height: var(--h);
+            --w: calc(var(--r) * var(--u) * 2);
+            top: 50%;
+        }
 
-/* Apply a slight initial rotation for a 3D view */
-transform: rotatex(45deg) rotatey(45deg);
+        .h, .v {
+            --h: var(--w);
+            border-radius: 100vmax;
+            background-color: rgba(0, 128, 255, 0.2); /* Base color of the sphere */
+            top: 0;
+            left: 0;
+            box-shadow: 0 0 1em 1em #0000;
+        }
 
-/* Customize the rotation speed here */
---rotation-speed: 10s;
-animation: rotates var(--rotation-speed) linear infinite;
-}
+        .h {
+            translate: 
+                calc(var(--r) * var(--u) - var(--w) / 2)
+                calc(var(--r) * var(--u) - var(--w) / 2)
+                calc((var(--d) * var(--s) * var(--u)));
+            --del: 0.5s; /* Speed of the flash effect */
+            animation: flash linear var(--del) infinite;
+            animation-delay: calc(var(--c) * var(--del) / var(--t));
+        }
 
-/* Styles for the inner lines of the globe */
-.line {
-position: absolute;
-height: var(--h);
-border: 1px solid;
+        /* The horizontal lines are created with SCSS and a loop, which can be approximated with a set of elements */
+        /* For this example, we'll assume a single globe for simplicity, but you would duplicate the .line and .h elements
+           in the HTML and adjust the --c variable to simulate the SCSS loop. */
 
---d: calc(var(--r) * var(--dp));
---w: calc(2 * sqrt(pow(var(--r),2) - pow(var(--d), 2)) * var(--u));
-width: var(--w);
-top: calc(50% - (var(--d) * var(--s) * var(--u)));
-left: calc(50% - var(--w) / 2);
-color: #aaa5;
-}
+        /* Animation keyframes */
+        @keyframes flash {
+            0%, 13.33% {
+                color: #aaa3;
+                background-color: #3cf3;
+                box-shadow: 0 0 1em 1em #0000;
+            }
+            6.67% {
+                color: #f003;
+                background-color: #04ff0081; /* Color of the flash */
+                box-shadow: 0 0 1em 1em #39FF1430;
+            }
+        }
 
-.radius {
-height: var(--h);
---w: calc(var(--r) * var(--u) * 2);
-top: 50%;
-}
+        @keyframes rotates {
+            from {
+                transform: 
+                    rotatex(0)
+                    rotatey(0)
+                    rotatez(0);
+            }
+            to {
+                transform: 
+                    rotatex(360deg)
+                    rotatey(720deg)
+                    rotatez(360deg);
+            }
+        }
 
-.h, .v {
---h: var(--w);
-border-radius: 100vmax;
-background-color: rgba(0, 128, 255, 0.2); /* Base color of the sphere */
-top: 0;
-left: 0;
-box-shadow: 0 0 1em 1em #0000;
-}
-
-.h {
-translate: 
-calc(var(--r) * var(--u) - var(--w) / 2)
-calc(var(--r) * var(--u) - var(--w) / 2)
-calc((var(--d) * var(--s) * var(--u)));
---del: 0.5s; /* Speed of the flash effect */
-animation: flash linear var(--del) infinite;
-animation-delay: calc(var(--c) * var(--del) / var(--t));
-}
-
-/* The horizontal lines are created with SCSS and a loop, which can be approximated with a set of elements */
-/* For this example, we'll assume a single globe for simplicity, but you would duplicate the .line and .h elements
-in the HTML and adjust the --c variable to simulate the SCSS loop. */
-
-/* Animation keyframes */
-@keyframes flash {
-0%, 13.33% {
-color: #aaa3;
-background-color: #3cf3;
-box-shadow: 0 0 1em 1em #0000;
-}
-6.67% {
-color: #f003;
-background-color: #04ff0081; /* Color of the flash */
-box-shadow: 0 0 1em 1em #39FF1430;
-}
-}
-
-@keyframes rotates {
-from {
-transform: 
-    rotatex(0)
-    rotatey(0)
-    rotatez(0);
-}
-to {
-transform: 
-    rotatex(360deg)
-    rotatey(720deg)
-    rotatez(360deg);
-}
-}
-
-@keyframes orbit-animation {
-from {
-transform: rotate(0deg) translate(calc(var(--orbit-radius) * -1), 0);
-}
-to {
-transform: rotate(360deg) translate(calc(var(--orbit-radius) * -1), 0);
-}
-}
-</style>
+        @keyframes orbit-animation {
+            from {
+                transform: rotate(0deg) translate(calc(var(--orbit-radius) * -1), 0);
+            }
+            to {
+                transform: rotate(360deg) translate(calc(var(--orbit-radius) * -1), 0);
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="orbit-container">
-<div style="--t: {{ t2_plus_1 }}" class="globe">
-<div style="--c: {{ t }}" class="line radius h"></div>
-{% for line in positive_lines %}
-<div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h"></div>
-{% endfor %}
-{% for line in negative_lines %}
-<div style="--dp: {{ line.dp }}; --s:1; --c: {{ line.c }}" class="line h"></div>
-{% endfor %}
-</div>
-</div>
+    <div class="orbit-container">
+        <div style="--t: {{ t2_plus_1 }}" class="globe">
+            <div style="--c: {{ t }}" class="line radius h"></div>
+            {% for line in positive_lines %}
+            <div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h"></div>
+            {% endfor %}
+            {% for line in negative_lines %}
+            <div style="--dp: {{ line.dp }}; --s:1; --c: {{ line.c }}" class="line h"></div>
+            {% endfor %}
+        </div>
+    </div>
 </body>
 </html>
