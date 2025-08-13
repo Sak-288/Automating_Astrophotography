@@ -22,5 +22,16 @@ def contact_successful(request):
 
 def test_for_animation(request):
     t = 7
-    t2_plus_1 = 2*t + 1
-    return render(request, "webapp/test_for_animation.pug", {"t": t, "t2_plus_1": t2_plus_1})
+    t2_plus_1 = 2 * t + 1
+
+    # Create lists of data for the template
+    positive_lines = [{"i": i, "c": t + i, "dp": i / t} for i in range(1, t)]
+    negative_lines = [{"i": i, "c": t - i, "dp": i / t} for i in range(1, t)]
+
+    context = {
+        "t": t,
+        "t2_plus_1": t2_plus_1,
+        "positive_lines": positive_lines,
+        "negative_lines": negative_lines,
+    }
+    return render(request, "webapp/test_for_animation.pug", context)
