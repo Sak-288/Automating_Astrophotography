@@ -16,3 +16,9 @@ def contact(request):
         send_mail(f'Message from {name}', subject, email, [settings.EMAIL_HOST_USER], fail_silently=False)
         return render(request, 'webapp/contact_successful.html')
     return render(request, 'webapp/contact.html')
+
+def contact_successful(request):
+    return render(request, 'webapp/contact_successful.html')
+
+def test_for_animation(request):
+    return render(request, 'webapp/test_for_animation.html')
