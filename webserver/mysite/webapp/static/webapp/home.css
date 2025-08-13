@@ -55,7 +55,7 @@ body{
 #navREG, #navOUT{
   font-family:'Orbitron', sans-serif;
   position: absolute;
-  bottom: 20px;          /* close to bottom of nav */
+  bottom: 19px;          /* close to bottom of nav */
   font-weight: lighter;
   opacity: 1.0;
   color: #ffffff;
