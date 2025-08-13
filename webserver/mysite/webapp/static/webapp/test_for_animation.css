@@ -1,42 +1,35 @@
-/* ---------------------------------- */
-/* GENERAL PAGE LAYOUT           */
-/* ---------------------------------- */
+/* MERCURY */
 body {
     min-height: 100vh;
     margin: 0;
     display: grid;
     place-items: center;
     background-image: url('STARRY.gif');
-    background-repeat: repeat;
-    perspective: 1000px;
+    background-repeat:repeat;
+    perspective: 1000px; /* Add perspective for 3D effect */
     overflow: hidden;
 }
-
 div {
     transform-style: preserve-3d;
     box-sizing: border-box;
 }
-
-/* ---------------------------------- */
-/* MERCURY PROPERTIES           */
-/* ---------------------------------- */
+/* ORBITING CONTAINER - This element handles the revolution around a central point */
 .MERCURY {
-    /* Orbiting Container */
-    --orbit-radius: 100px;
-    --orbit-speed: 5s;
-    --orbit-center-x: 50%;
-    --orbit-center-y: 50%;
+    /* Customize the orbit properties here */
+    --orbit-radius: 10px; /* Distance from the orbit center */ /* ORBIT RADIUS */
+    --orbit-speed: 5s;     /* Speed of the revolution */ /* ORBIT SPEED */
+    --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
+    --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
     
     position: absolute;
     top: var(--orbit-center-y);
     left: var(--orbit-center-x);
     transform-origin: 0 0;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); /* Center the container itself */
     animation: orbit-animation var(--orbit-speed) linear infinite;
 }
-
+/* GLOBE - This element is a child of the orbit container and handles its own rotation */
 .mercury-globe {
-    /* Globe Properties */
     --r: 1; /* SPHERE RADIUS */
     --u: 1vmin;
     --h: 2px;
@@ -46,96 +39,14 @@ div {
     height: calc(var(--r) * var(--u) * 2);
     position: relative;
     
+    /* Apply a slight initial rotation for a 3D view */
     transform: rotatex(45deg) rotatey(45deg);
+    
+    /* Customize the rotation speed here */
     --rotation-speed: 10s;
     animation: rotates var(--rotation-speed) linear infinite;
 }
-
-.mercury-globe .h {
-    /* Flash Animation Trigger */
-    translate: 
-        calc(var(--r) * var(--u) - var(--w) / 2)
-        calc(var(--r) * var(--u) - var(--w) / 2)
-        calc((var(--d) * var(--s) * var(--u)));
-    --del: 0.5s;
-    animation: mercury-flash linear var(--del) infinite;
-    animation-delay: calc(var(--c) * var(--del) / var(--t));
-}
-
-@keyframes mercury-flash {
-    0%, 13.33% {
-        color: #aaa3;
-        background-color: rgba(14, 14, 15, 0.33); /* SPHERE COLOR */
-        box-shadow: 0 0 1em 1em #0000;
-    }
-    6.67% {
-        color: rgba(255, 255, 255, 0.2);
-        background-color: #ffffff81; /* FLASH COLOR */
-        box-shadow: 0 0 1em 1em #ffffff30; /* PLANET GLOW */
-    }
-}
-
-/* ---------------------------------- */
-/* SUN PROPERTIES             */
-/* ---------------------------------- */
-.SUN {
-    /* Orbiting Container */
-    --orbit-radius: 200px;
-    --orbit-speed: 5s;
-    --orbit-center-x: 50%;
-    --orbit-center-y: 50%;
-    
-    position: absolute;
-    top: var(--orbit-center-y);
-    left: var(--orbit-center-x);
-    transform-origin: 0 0;
-    transform: translate(-50%, -50%);
-    animation: orbit-animation var(--orbit-speed) linear infinite;
-}
-
-.sun-globe {
-    /* Globe Properties */
-    --r: 20; /* SPHERE RADIUS */
-    --u: 1vmin;
-    --h: 2px;
-    
-    border-radius: 50%;
-    width: calc(var(--r) * var(--u) * 2);
-    height: calc(var(--r) * var(--u) * 2);
-    position: relative;
-    
-    transform: rotatex(45deg) rotatey(45deg);
-    --rotation-speed: 10s;
-    animation: rotates var(--rotation-speed) linear infinite;
-}
-
-.sun-globe .h {
-    /* Flash Animation Trigger */
-    translate: 
-        calc(var(--r) * var(--u) - var(--w) / 2)
-        calc(var(--r) * var(--u) - var(--w) / 2)
-        calc((var(--d) * var(--s) * var(--u)));
-    --del: 0.5s;
-    animation: sun-flash linear var(--del) infinite;
-    animation-delay: calc(var(--c) * var(--del) / var(--t));
-}
-
-@keyframes sun-flash {
-    0%, 13.33% {
-        color: #ffca28;
-        background-color: rgba(255, 202, 40, 0.2);
-        box-shadow: 0 0 1em 1em #ffd00000;
-    }
-    6.67% {
-        color: rgba(255, 255, 255, 0.2);
-        background-color: rgba(255, 252, 59, 0.5);
-        box-shadow: 0 0 2em 2em rgba(255, 165, 0, 0.2);
-    }
-}
-
-/* ---------------------------------- */
-/* SHARED GLOBE PROPERTIES      */
-/* ---------------------------------- */
+/* Styles for the inner lines of the globe */
 .line {
     position: absolute;
     height: var(--h);
@@ -156,23 +67,48 @@ div {
 .h, .v {
     --h: var(--w);
     border-radius: 100vmax;
+    background-color: rgba(14, 14, 15, 0.2); /* SPHERE COLOR */
     top: 0;
     left: 0;
     box-shadow: 0 0 1em 1em #0000;
 }
-.globe .h, .globe .v {
-    background-color: rgba(14, 14, 15, 0.33); /* Default sphere color */
+.h {
+    translate: 
+        calc(var(--r) * var(--u) - var(--w) / 2)
+        calc(var(--r) * var(--u) - var(--w) / 2)
+        calc((var(--d) * var(--s) * var(--u)));
+    --del: 0.5s; /* FLASH SPEED */
+    animation: flash linear var(--del) infinite;
+    animation-delay: calc(var(--c) * var(--del) / var(--t));
 }
-
-/* ---------------------------------- */
-/* SHARED ANIMATIONS           */
-/* ---------------------------------- */
+/* The horizontal lines are created with SCSS and a loop, which can be approximated with a set of elements */
+/* For this example, we'll assume a single globe for simplicity, but you would duplicate the .line and .h elements
+   in the HTML and adjust the --c variable to simulate the SCSS loop. */
+/* Animation keyframes */
+@keyframes flash {
+    0%, 13.33% {
+        color: #aaa3;
+        background-color: #3cf3;
+        box-shadow: 0 0 1em 1em #0000;
+    }
+    6.67% {
+        color: rgba(255, 255, 255, 0.2);
+        background-color: #ffffff81; /* FLASH COLOR */
+        box-shadow: 0 0 1em 1em #ffffff30; /* PLANET GLOW */
+    }
+}
 @keyframes rotates {
     from {
-        transform: rotatex(0) rotatey(0) rotatez(0);
+        transform: 
+            rotatex(0)
+            rotatey(0)
+            rotatez(0);
     }
     to {
-        transform: rotatex(360deg) rotatey(720deg) rotatez(360deg);
+        transform: 
+            rotatex(360deg)
+            rotatey(720deg)
+            rotatez(360deg);
     }
 }
 @keyframes orbit-animation {
