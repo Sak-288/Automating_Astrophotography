@@ -69,7 +69,7 @@ body{
 
 /* Place them equally spaced by using left % */*
 #navREG { left: 8%; }
-#navLOG { left: 15.5%; }
+#navLOG { left: 15%; }
 #navOUT { left: 10%; }
 #navUSE { left: 30%; }
 #navABO { left: 60%; }
