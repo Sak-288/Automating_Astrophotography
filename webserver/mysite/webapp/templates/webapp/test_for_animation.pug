@@ -9,6 +9,19 @@
 <link rel="icon" type="image/x-icon" href="{% static 'webapp/perfect_logo.png' %}">
 </head>
 <body>
+//- SUN
+<div class="SUN">
+<div style="--t: {{ t2_plus_1 }}" class="globe">
+<div style="--c: {{ t }}" class="line radius h"></div>
+{% for line in positive_lines %}
+<div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h"></div>
+{% endfor %}
+{% for line in negative_lines %}
+<div style="--dp: {{ line.dp }}; --s:1; --c: {{ line.c }}" class="line h"></div>
+{% endfor %}
+</div>
+</div>
+//- MERCURY
 <div class="MERCURY">
 <div style="--t: {{ t2_plus_1 }}" class="globe">
 <div style="--c: {{ t }}" class="line radius h"></div>
@@ -20,6 +33,7 @@
 {% endfor %}
 </div>
 </div>
+//- SCRIPT FOR BACKGROUND PARALLAX
 <script>(function() {
 // Add event listener
 document.addEventListener("mousemove", parallax_body);
