@@ -24,7 +24,7 @@ div {
     rotatex(45deg)
     rotatey(45deg)
     rotatez(15deg);
-  /* animation: rotates 50s linear infinite; */
+  animation: rotates 50s linear infinite;
 }
 
 .line {
