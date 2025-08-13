@@ -9,19 +9,19 @@
     </head>
     <body>
         <h1>Hi ! This is the contact form !</h1>
-        <form class="" method="post">
+        <form class="was_validated" method="post">
             {% csrf_token %}
             <div class="mb-3">
                 <label for="fname">Name:</label>
-                <input  name="name" type="text" class="form-control" id="name" aria-describedby="emailHelp">
+                <input  name="name" type="text" class="form-control" id="name" aria-describedby="emailHelp" required>
             </div>
             <div class="mb-3">
                 <label name="email" for="EmailAddress" class="form-label">Email:</label>
-                <input name="email" type="email" class="form-control" id="email">
+                <input name="email" type="email" class="form-control" id="email" required>
             </div>
             <div class="mb-3">
                 <label for="subject" class="form-label">Subject:</label>
-                <textarea name="subject" class="form-control" id="subject" placeholder="How can you be so cool XD ?!"></textarea>
+                <textarea name="subject" class="form-control" id="subject" placeholder="How can you be so cool XD ?!" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
