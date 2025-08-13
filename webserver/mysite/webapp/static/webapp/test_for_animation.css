@@ -24,12 +24,13 @@ div {
     rotatex(45deg)
     rotatey(45deg)
     rotatez(15deg);
-  animation: rotates 10s linear infinite; /* CHANGE THIS TO CHANGE THE SPEED OF THE ROTATION */
+  animation: rotates 1s linear infinite; /* CHANGE THIS TO CHANGE THE SPEED OF THE ROTATION */
     
   /* ORBIT POSITIONING */
   position: absolute;
   top: 50%;           /* Y position of orbit center */ /* CHANGE THE X CENTER OF THE REVOLUTION */
   left: 50%;          /* X position of orbit center */ /* CHANGE THE Y CENTER OF THE REVOLUTION */
+  transform:translate(50%, 50%);
 
   transform: translateX(200px);
 
