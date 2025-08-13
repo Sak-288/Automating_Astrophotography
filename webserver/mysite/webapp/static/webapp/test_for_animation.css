@@ -28,8 +28,8 @@ div {
     
   /* ORBIT POSITIONING */
   position: absolute;
-  top: 50%;           /* Y position of orbit center */
-  left: 50%;          /* X position of orbit center */
+  top: 50%;           /* Y position of orbit center */ /* CHANGE THE X CENTER OF THE REVOLUTION */
+  left: 50%;          /* X position of orbit center */ /* CHANGE THE Y CENTER OF THE REVOLUTION */
   transform-origin: -100px 0; /* CHANGE THIS TO CHANGE THE RADIUS OF THE REVOLUTION */
   
   /* ORBIT ANIMATION */
