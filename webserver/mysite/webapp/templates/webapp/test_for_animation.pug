@@ -9,14 +9,9 @@
 <link rel="icon" type="image/x-icon" href="{% static 'webapp/perfect_logo.png' %}">
 </head>
 <body>
-<!-- The new background layer -->
-<div class="parallax-bg"></div>
-
-<!-- Container for all planets to ensure they are above the background -->
-<div class="planets-container">
-<!-- SUN -->
+//- SUN
 <div class="SUN">
-<div style="--t: {{ t2_plus_1 }}" class="sun-globe">
+<div style="--t: {{ t2_plus_1 }}" class="globe">
 <div style="--c: {{ t }}" class="line radius h"></div>
 {% for line in positive_lines %}
 <div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h"></div>
@@ -26,10 +21,9 @@
 {% endfor %}
 </div>
 </div>
-
-<!-- MERCURY -->
+//- MERCURY
 <div class="MERCURY">
-<div style="--t: {{ t2_plus_1 }}" class="mercury-globe">
+<div style="--t: {{ t2_plus_1 }}" class="globe">
 <div style="--c: {{ t }}" class="line radius h"></div>
 {% for line in positive_lines %}
 <div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h"></div>
@@ -39,13 +33,11 @@
 {% endfor %}
 </div>
 </div>
-</div>
-
 <!-- Parallax Effect for Dynamic Starry Background -->
 <script>(function() 
 {
 document.addEventListener("mousemove", parallax_body);
-const elem = document.querySelector(".parallax-bg"); // Target the new background div
+const elem = document.querySelector("body");
 
 function parallax_body(e) {
 let _w = window.innerWidth;
@@ -53,12 +45,11 @@ let _h = window.innerHeight;
 let _mouseX = e.clientX;
 let _mouseY = e.clientY;
 
-let offset_coeff = 0.05; // Increased coefficient for a more noticeable effect
+let offset_coeff = 0.005;
 let bg_Xoffset = -(_mouseX - _w / 2) * offset_coeff;
 let bg_Yoffset = -(_mouseY - _h / 2) * offset_coeff * -1.75;
 
-// Use CSS transform to move the entire element
-elem.style.transform = `translate(${bg_Xoffset}px, ${bg_Yoffset}px)`;
+elem.style.backgroundPosition = `${bg_Xoffset}% ${bg_Yoffset}%`;
 }
 })();
 </script>
