@@ -83,7 +83,7 @@ div {
     --orbit-radius: 0px;
     --orbit-speed: 5s;
     --orbit-center-x: 50%;
-    --orbit-center-y: 50%;
+    --orbit-center-y: 20%;
     
     position: absolute;
     top: var(--orbit-center-y);
