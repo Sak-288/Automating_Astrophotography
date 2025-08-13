@@ -25,7 +25,7 @@ div {
     --orbit-radius: 100px;
     --orbit-speed: 5s;
     --orbit-center-x: 50%;
-    --orbit-center-y: 10%;
+    --orbit-center-y: 50%;
     
     position: absolute;
     top: var(--orbit-center-y);
@@ -82,7 +82,7 @@ div {
     /* Orbiting Container */
     --orbit-radius: 0px;
     --orbit-speed: 5s;
-    --orbit-center-x: 50%;
+    --orbit-center-x: 80%;
     --orbit-center-y: 50%;
     
     position: absolute;
