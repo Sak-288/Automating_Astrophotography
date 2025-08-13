@@ -39,7 +39,7 @@ div {
   left: calc(var(--xStarting) * 1%); /* X position of orbit center */ /* CHANGE THE Y STARTING OF THE REVOLUTION */
   transform:translate(-50%, -50%); /* To offset the planet's dimensions against its orbit */
 
-  transform-origin: var(--cc)px 0; /* CHANGE THIS TO CHANGE THE RADIUS OF THE ORBIT */
+  transform-origin: calc(var(--cc) * 1px) 0; /* CHANGE THIS TO CHANGE THE RADIUS OF THE ORBIT */
   
   /* ORBIT ANIMATION */
   animation: orbit 10s linear infinite; /* CHANGE THIS TO CHANGE THE SPEED OF THE ORBIT */
