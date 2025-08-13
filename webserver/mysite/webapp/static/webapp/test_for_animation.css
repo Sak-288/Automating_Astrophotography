@@ -14,15 +14,13 @@ div {
   --r: 25;
   --u: 1vmin;
   --h: 2px;
-  /* border: 1px solid; */
   border-radius: 50%;
   width: calc(var(--r) * var(--u) * 2);
   height: calc(var(--r) * var(--u) * 2);
   place-self: center;
   position: relative;
-  /*
-  background-image: linear-gradient(90deg, #fc33 50%, #cf33 50%);
-  */
+  transform-style: preserve-3d;
+  transform: rotateX(181.368deg) rotateY(362.736deg) rotateZ(181.368deg);
 }
 
 .line {
@@ -31,8 +29,7 @@ div {
   border: 1px solid;
   
   --d: calc(var(--r) * var(--dp));
-  /* Replace pow/sqrt with simpler calc approximation or precompute */
-  --w: calc(2 * var(--r) * var(--u)); /* placeholder, adjust if needed */
+  --w: calc(2 * var(--r) * var(--u));
   
   width: var(--w);
   top: calc(50% - (var(--d) * var(--s) * var(--u)));
@@ -44,13 +41,6 @@ div {
   height: var(--h);
   --w: calc(var(--r) * var(--u) * 2);
   top: 50%;
-}
-
-.globe {
-  transform:
-    rotateX(45deg)
-    rotateY(45deg)
-    rotateZ(15deg);
 }
 
 .h,
@@ -70,7 +60,6 @@ div {
     calc((var(--d) * var(--s) * var(--u)));
   --del: 2s;
   animation: flash linear var(--del) infinite;
-  /* animation-delay can’t use Sass math, use a static or CSS calc */
   animation-delay: calc(var(--c) * var(--del) / var(--t, 7));
 }
 
@@ -86,18 +75,4 @@ div {
     background-color: #39FF1480;
     box-shadow: 0 0 1em 1em #39FF1430;
   }
-}
-
-@keyframes rotates {
-  from {
-    transform: rotateX(0) rotateY(0) rotateZ(0);
-  }
-  to {
-    transform: rotateX(360deg) rotateY(720deg) rotateZ(360deg);
-  }
-}
-
-/* Uncomment to enable rotation */
-.globe {
-    animation: rotates 50s linear infinite;
 }
