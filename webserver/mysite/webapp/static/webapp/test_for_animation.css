@@ -89,6 +89,7 @@ div {
     top: var(--orbit-center-y);
     left: var(--orbit-center-x);
     transform-origin: 0 0;
+    transform: translate(-50%, -50%);
     animation: orbit-animation var(--orbit-speed) linear infinite;
 }
 
