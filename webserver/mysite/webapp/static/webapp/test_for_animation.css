@@ -95,7 +95,7 @@ div {
 
 .sun-globe {
     /* Globe Properties */
-    --r: 50; /* SPHERE RADIUS */
+    --r: 20; /* SPHERE RADIUS */
     --u: 1vmin;
     --h: 2px;
     
