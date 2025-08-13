@@ -35,7 +35,7 @@ div {
   /* COMBINE BOTH ANIMATIONS */
   animation: 
     orbit 30s linear infinite,
-    rotates 10s linear infinite;
+    /* rotates 10s linear infinite; */
 }
 
 
@@ -91,7 +91,6 @@ div {
   }
 }
 
-/* ROTATING KEYFRAMES */
 @keyframes rotates {
   from {
     transform: 
