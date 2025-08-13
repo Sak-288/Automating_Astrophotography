@@ -227,3 +227,111 @@ div {
         transform: rotate(360deg) translate(calc(var(--orbit-radius) * -1), 0);
     }
 }
+
+/* VENUS */
+/* ORBITING CONTAINER - This element handles the revolution around a central point */
+.VENUS {
+    /* Customize the orbit properties here */
+    --orbit-radius: 100px; /* Distance from the orbit center */ /* ORBIT RADIUS */
+    --orbit-speed: 20s;      /* Speed of the revolution */ /* ORBIT SPEED */
+    --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
+    --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
+    
+    position: absolute;
+    top: var(--orbit-center-y);
+    left: var(--orbit-center-x);
+    transform-origin: 0 0;
+    transform: translate(-50%, -50%); /* Center the container itself */
+    animation: orbit-animation var(--orbit-speed) linear infinite;
+}
+/* GLOBE - This element is a child of the orbit container and handles its own rotation */
+.venus-globe {
+    --r: 2.5; /* SPHERE RADIUS */
+    --u: 1vmin;
+    --h: 2px;
+    
+    border-radius: 50%;
+    width: calc(var(--r) * var(--u) * 2);
+    height: calc(var(--r) * var(--u) * 2);
+    position: relative;
+    
+    /* Apply a slight initial rotation for a 3D view */
+    transform: rotatex(45deg) rotatey(45deg);
+    
+    /* Customize the rotation speed here */
+    --rotation-speed: 10s;
+    animation: rotates var(--rotation-speed) linear infinite;
+}
+/* Styles for the inner lines of the globe */
+.line {
+    position: absolute;
+    height: var(--h);
+    border: 1px solid;
+    
+    --d: calc(var(--r) * var(--dp));
+    --w: calc(2 * sqrt(pow(var(--r),2) - pow(var(--d), 2)) * var(--u));
+    width: var(--w);
+    top: calc(50% - (var(--d) * var(--s) * var(--u)));
+    left: calc(50% - var(--w) / 2);
+    color: #aaa5;
+}
+.radius {
+    height: var(--h);
+    --w: calc(var(--r) * var(--u) * 2);
+    top: 50%;
+}
+.h, .v {
+    --h: var(--w);
+    border-radius: 100vmax;
+    background-color: rgba(255, 211, 140, 0.2); /* SPHERE COLOR */
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 1em 1em #ffe5b800;
+}
+.venus-h {
+    translate: 
+        calc(var(--r) * var(--u) - var(--w) / 2)
+        calc(var(--r) * var(--u) - var(--w) / 2)
+        calc((var(--d) * var(--s) * var(--u)));
+    --del: 0.5s; /* FLASH SPEED */
+    animation: venus-flash linear var(--del) infinite;
+    animation-delay: calc(var(--c) * var(--del) / var(--t));
+}
+/* The horizontal lines are created with SCSS and a loop, which can be approximated with a set of elements */
+/* For this example, we'll assume a single globe for simplicity, but you would duplicate the .line and .h elements
+    in the HTML and adjust the --c variable to simulate the SCSS loop. */
+/* Animation keyframes */
+@keyframes venus-flash {
+    0%, 13.33% {
+        color: rgba(235, 172, 107, 0.2);
+        background-color: rgba(255, 128, 0, 0.2);
+        box-shadow: 0 0 1em 1em #ff800000;
+    }
+    6.67% {
+        color: rgba(255, 196, 128, 0.2);
+        background-color: #ff990081; /* FLASH COLOR */
+        box-shadow: 0 0 1em 1em #ffc26630; /* PLANET GLOW */
+    }
+}
+@keyframes rotates {
+    from {
+        transform: 
+            rotatex(0)
+            rotatey(0)
+            rotatez(0);
+    }
+    to {
+        transform: 
+            rotatex(360deg)
+            rotatey(720deg)
+            rotatez(360deg);
+    }
+}
+@keyframes orbit-animation {
+    from {
+        transform: rotate(0deg) translate(calc(var(--orbit-radius) * -1), 0);
+    }
+    to {
+        transform: rotate(360deg) translate(calc(var(--orbit-radius) * -1), 0);
+    }
+}
