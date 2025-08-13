@@ -9,7 +9,8 @@
     </head>
     <body>
         <h1>Hi ! This is the contact form !</h1>
-        <form class="" method="post" action="#">
+        <form class="" method="post">
+            {% csrf_token %}
             <div class="mb-3">
                 <label for="fname">Name:</label>
                 <input  name="name" type="text" class="form-control" id="name" aria-describedby="emailHelp">
