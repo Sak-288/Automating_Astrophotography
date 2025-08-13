@@ -52,7 +52,7 @@ body{
   margin: 0;             /* remove fixed margins */
   top: auto;             /* unset top */
 }
-#navOUT{
+#navREG, #navOUT{
   font-family:'Orbitron', sans-serif;
   position: absolute;
   bottom: 20px;          /* close to bottom of nav */
@@ -67,8 +67,9 @@ body{
   text-decoration:underline;
 }
 
-/* Place them equally spaced by using left % */
-#navLOG { left: 10%; }
+/* Place them equally spaced by using left % */*
+#navREG { left: 10%; }
+#navLOG { left: 20%; }
 #navOUT { left: 10%; }
 #navUSE { left: 30%; }
 #navABO { left: 60%; }

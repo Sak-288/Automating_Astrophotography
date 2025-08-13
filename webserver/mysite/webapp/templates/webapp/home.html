@@ -16,6 +16,10 @@
                     <button style="cursor: pointer;" id="navOUT" type="submit" class="btn btn-link">Log out</button>
                 </form>
                 {% else %}
+                <form method="post" action="{% url 'register_astronomer' %}">
+                    {% csrf_token %}
+                <button style="cursor: pointer;" id="navREG" type="submit" class="btn btn-link">Register</button>
+                </form>
                 <a href="{% url 'login' %}" id="navLOG">Log in</a>
                 {% endif %}
                 <a href='' id="navUSE">Explore the Skies</a>
