@@ -33,7 +33,7 @@ div {
   transform-origin: -100px 0; /* CHANGE THIS TO CHANGE THE RADIUS OF THE REVOLUTION */
   
   /* ORBIT ANIMATION */
-  animation: orbit 30s linear infinite; /* CHANGE THIS TO CHANGE THE SPEED OF THE ORBIT */
+  animation: orbit 5s linear infinite; /* CHANGE THIS TO CHANGE THE SPEED OF THE ORBIT */
 }
 
 .line {
