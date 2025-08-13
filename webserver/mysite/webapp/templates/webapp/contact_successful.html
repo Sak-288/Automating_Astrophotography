@@ -6,15 +6,37 @@
         {% load static %}
         <link rel="stylesheet" href="{% static 'webapp/home.css' %}">
         <link rel="icon" type="image/x-icon" href="{% static 'webapp/perfect_logo.png' %}">
+        <style>
+            #titles{
+                position:absolute;
+                top:50%;
+                left:50%;
+                color:white;
+                transform: translate(-50%, -50%);
+            }
+            #home_send{
+                position:absolute;
+                top:50%;
+                left:50%;
+                transform: translate(-50%, -50%);
+                border:none;
+                background-color:rgb(33, 33, 255);
+            }
+            #centering {
+                position:relative;
+            }
+        </style>
     </head>
     <body>
+        <div id='centering'>
         <h1>The message was successfully sent.</h1>
         <br/>
         <h2>Click the button below to go back to HOME page :</h2>
         <br/>
         <a href="{% url 'home' %}">
             <button id="home_send">Go Back</button>
-        </a>                
+        </a>            
+        </div>    
         <!-- Parallax Effect for Dynamic Starry Background in Body-->
         <script>
             (function() {
