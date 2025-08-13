@@ -80,7 +80,7 @@ div {
 /* ---------------------------------- */
 .SUN {
     /* Orbiting Container */
-    --orbit-radius: 0px;
+    --orbit-radius: 20px;
     --orbit-speed: 5s;
     --orbit-center-x: 50%;
     --orbit-center-y: 50%;
