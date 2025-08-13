@@ -19,6 +19,13 @@
             font-family:'Orbitron', sans-serif;
             color:white;
         }
+        #title{
+            font-family:'Orbitron', sans-serif;
+            color:white;
+            position:absolute;
+            left:20%;
+            top:5%;
+        }
         #contact_form{
             position:absolute;
             width:65%;
@@ -30,7 +37,7 @@
     </style>
     </head>
     <body>
-        <h1>Hi ! This is the contact form !</h1>
+        <h1 id="title">Hi ! This is the contact form !</h1>
         <form id="contact_form" class="was_validated" method="post">
             {% csrf_token %}
             <div class="mb-3">
