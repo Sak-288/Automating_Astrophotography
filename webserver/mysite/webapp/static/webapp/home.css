@@ -74,3 +74,10 @@ body{
 #navUSE { left: 30%; }
 #navABO { left: 60%; }
 #navCON { right: 10%; }
+
+#wlc_greet {
+  color:white;
+  position:absolute;
+  top:5%;
+  left:5%;
+}
