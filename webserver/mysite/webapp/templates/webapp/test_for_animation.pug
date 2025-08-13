@@ -33,25 +33,25 @@
 {% endfor %}
 </div>
 </div>
-//- SCRIPT FOR BACKGROUND PARALLAX
-<script>(function() {
-// Add event listener
-document.addEventListener("mousemove", parallax_body);
-    const elem = document.querySelector("body");
+<!-- Parallax Effect for Dynamic Starry Background -->
+<script>
+    (function() {
+        document.addEventListener("mousemove", parallax_body);
+        const elem = document.querySelector("body");
+        
+        function parallax_body(e) {
+            let _w = window.innerWidth;
+            let _h = window.innerHeight;
+            let _mouseX = e.clientX;
+            let _mouseY = e.clientY;
 
-    // Magic happens here
-    function parallax_body(e) {
-        let _w = window.innerWidth;
-        let _h = window.innerHeight;
-        let _mouseX = e.clientX;
-        let _mouseY = e.clientY;
+            let offset_coeff = 0.005;
+            let bg_Xoffset = -(_mouseX - _w / 2) * offset_coeff;
+            let bg_Yoffset = -(_mouseY - _h / 2) * offset_coeff * -1.75;
 
-        let offset_coeff = 0.005;
-        let bg_Xoffset = -(_mouseX - _w/2) * offset_coeff;
-        let bg_Yoffset = -(_mouseY - _h/2) * offset_coeff * -1.75;
-
-    elem.style.backgroundPosition = `${bg_Xoffset}% ${bg_Yoffset}%`;}
-})();
+            elem.style.backgroundPosition = `${bg_Xoffset}% ${bg_Yoffset}%`;
+        }
+    })();
 </script>
 </body>
 </html>
