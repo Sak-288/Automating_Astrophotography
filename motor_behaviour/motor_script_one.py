@@ -3,6 +3,7 @@ GPIO.setwarnings(False) # Add this line to the top of your script
 import time
 
 # Pin Definitions
+EN = 9
 DIR = 20  # Direction pin
 STEP = 21 # Step pin
 MS1 = 14  # Microstepping pin 1
@@ -13,6 +14,7 @@ MS3 = 18  # Microstepping pin 3
 GPIO.setmode(GPIO.BCM)
 
 # Setup all pins as outputs
+GPIO.setup(EN, GPIO.OUT)
 GPIO.setup(DIR, GPIO.OUT)
 GPIO.setup(STEP, GPIO.OUT)
 GPIO.setup(MS1, GPIO.OUT)
@@ -23,6 +25,7 @@ GPIO.setup(MS3, GPIO.OUT)
 GPIO.output(DIR, GPIO.HIGH)
 
 # Set microstepping to full-step mode (all LOW)
+GPIO.output(EN, GPIO.LOW)
 GPIO.output(MS1, GPIO.LOW)
 GPIO.output(MS2, GPIO.LOW)
 GPIO.output(MS3, GPIO.LOW)
