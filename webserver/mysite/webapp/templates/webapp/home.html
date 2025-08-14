@@ -2,18 +2,31 @@
 <html lang="en">
     <head>
         <meta charset='utf-8'>
-        <title>@auto_astro.beginners</title>
+        <title>Automating Astrophotography - A SOM Project by Sakoute Amine</title>
         {% load static %}
         <link rel="stylesheet" href="{% static 'webapp/home.css' %}">
+        <link rel="icon" type="image/x-icon" href="{% static 'webapp/perfect_logo.png' %}">
     </head>
     <body>
         <nav id="parallax_nav">
             <div id="shitty_container">
-                <h1 id="wlc_title">@auto_astro</h1>
-                <a href='' id="navLOG">Sign Up / Log in</a>
-                <a href='' id="navUSE">Explore the Skies</a>
-                <a href='' id="navABO">About</a>
-                <a href='' id="navCON">Contact&nbsp;Us</a>
+                <h1 id="wlc_title">@Auto_Astro</h1>
+                {% if user.is_authenticated %}
+                <h2 id="wlc_greet">Welcome {{ user.first_name }} !</h2>
+                <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button style="cursor: pointer;" id="navOUT" type="submit" class="btn btn-link">Log out</button>
+                </form>
+                {% else %}
+                <form method="post" action="{% url 'register_astronomer' %}">
+                    {% csrf_token %}
+                <button style="cursor: pointer;" id="navREG" type="submit" class="btn btn-link">Register / </button>
+                </form>
+                <a href="{% url 'login' %}" id="navLOG">&nbsp;Log in</a>
+                {% endif %}
+                <a href="{% url 'test_for_animation' %}" id="navUSE">Explore the Skies</a>
+                <a href="" id="navABO">About</a>
+                <a href="{% url 'contact' %}" id="navCON">Contact&nbsp;Us</a> 
             </div>
         </nav>
         <!-- Parallax for Proportional Solar System in NAV -->
@@ -39,8 +52,8 @@
                     let _depth5 = `${50 - (_mouseX - _w) * 0.04 * damening_factor}% ${50 - (_mouseY - _h) * 0.04 * damening_factor}%`;
                     let _depth6 = `${50 - (_mouseX - _w) * 0.135 * damening_factor}% ${50 - (_mouseY - _h) * 0.135 * damening_factor}%`;
                     let _depth7 = `${50 - (_mouseX - _w) * 0.246 * damening_factor}% ${50 - (_mouseY - _h) * 0.246 * damening_factor}%`;
-                    let _depth8 = `${50 - (_mouseX - _w) * 0.5 * damening_factor}% ${50 - (_mouseY - _h) * 0.5 * damening_factor}%`;
-                    let _depth9 = `${50 - (_mouseX - _w) * 0.77 * damening_factor}% ${50 - (_mouseY - _h) * 0.77 * damening_factor}%`;
+                    let _depth8 = `${50 - (_mouseX - _w) * 0.27 * damening_factor}% ${50 - (_mouseY - _h) * 0.27 * damening_factor}%`;
+                    let _depth9 = `${50 - (_mouseX - _w) * 0.31 * damening_factor}% ${50 - (_mouseY - _h) * 0.31 * damening_factor}%`;
                     let x = `${_depth9}, ${_depth8}, ${_depth7}, ${_depth6}, ${_depth5}, ${_depth4}, ${_depth3}, ${_depth2}, ${_depth1}`;
                     elem.style.backgroundPosition = x;
                 }
@@ -62,7 +75,7 @@
 
                     let offset_coeff = 0.005;
                     let bg_Xoffset = -(_mouseX - _w/2) * offset_coeff;
-                    let bg_Yoffset = -(_mouseY - _h/2) * offset_coeff * 1.75;
+                    let bg_Yoffset = -(_mouseY - _h/2) * offset_coeff * -1.75;
 
                     elem.style.backgroundPosition = `${bg_Xoffset}% ${bg_Yoffset}%`;
                 }

@@ -5,8 +5,6 @@ body{
   background-image:url('STARRY.gif');
   font-family: 'Orbitron', sans-serif;
   margin: 0;
-  background-color: #000000;
-  background-image: url('STARRY.gif');
   background-repeat: repeat;
   background-position: center;
 }
@@ -44,7 +42,7 @@ body{
   0 0 20px #99EBEB,
   0 0 30px #66E0E0;
 }
-#navLOG, #navUSE, #navABO, #navCON {
+#navLOG, #navUSE, #navABO, #navCON{
   position: absolute;
   bottom: 20px;          /* close to bottom of nav */
   font-weight: lighter;
@@ -54,9 +52,33 @@ body{
   margin: 0;             /* remove fixed margins */
   top: auto;             /* unset top */
 }
+#navREG, #navOUT{
+  font-family:'Orbitron', sans-serif;
+  position: absolute;
+  bottom: 19px;          /* close to bottom of nav */
+  font-weight: lighter;
+  opacity: 1.0;
+  color: #ffffff;
+  font-size: 15px;
+  margin: 0;             /* remove fixed margins */
+  top: auto; 
+  background-color:transparent;  
+  border:none;
+  text-decoration:underline;
+}
 
-/* Place them equally spaced by using left % */
-#navLOG { left: 10%; }
-#navUSE { left: 36.6%; }
-#navABO { left: 63.3%; }
+/* Place them equally spaced by using left % */*
+#navREG { left: 8%; }
+#navLOG { left: 15%; }
+#navOUT { left: 10%; }
+#navUSE { left: 30%; }
+#navABO { left: 60%; }
 #navCON { right: 10%; }
+
+#wlc_greet {
+  color:white;
+  position:absolute;
+  top:2%;
+  left:2%;
+  font-size:25px;
+}
