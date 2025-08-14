@@ -3,7 +3,6 @@ GPIO.setwarnings(False) # Add this line to the top of your script
 import time
 
 # Pin Definitions
-EN = 9
 DIR = 20  # Direction pin
 STEP = 21 # Step pin
 MS1 = 14  # Microstepping pin 1
@@ -14,7 +13,6 @@ MS3 = 18  # Microstepping pin 3
 GPIO.setmode(GPIO.BCM)
 
 # Setup all pins as outputs
-GPIO.setup(EN, GPIO.OUT)
 GPIO.setup(DIR, GPIO.OUT)
 GPIO.setup(STEP, GPIO.OUT)
 GPIO.setup(MS1, GPIO.OUT)
@@ -25,15 +23,14 @@ GPIO.setup(MS3, GPIO.OUT)
 GPIO.output(DIR, GPIO.HIGH)
 
 # Set microstepping to full-step mode (all LOW)
-GPIO.output(EN, GPIO.LOW)
-GPIO.output(MS1, GPIO.HIGH)
-GPIO.output(MS2, GPIO.HIGH)
-GPIO.output(MS3, GPIO.HIGH)
+GPIO.output(MS1, GPIO.LOW)
+GPIO.output(MS2, GPIO.LOW)
+GPIO.output(MS3, GPIO.LOW)
 
 # Define motor parameters
 # A typical stepper motor has 200 steps per revolution (360 / 1.8 = 200)
-DEGREES_PER_STEP = float(1.8/16)
-TARGET_ANGLE = 180
+DEGREES_PER_STEP = 1.8
+TARGET_ANGLE = 90
 STEPS_PER_REVOLUTION = 360 / DEGREES_PER_STEP
 
 # Calculate the number of steps needed for the target angle
