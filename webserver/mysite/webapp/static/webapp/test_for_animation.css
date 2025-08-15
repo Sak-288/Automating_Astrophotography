@@ -804,10 +804,10 @@ div {
 }
 @keyframes rotate-earth {
     from {
-        transform: translate(-50%, -50%) rotate(98deg);
+        transform: translate(-50%, -50%) rotate(38deg);
     }
     to {
-        transform: translate(-50%, -50%) rotate(458deg);
+        transform: translate(-50%, -50%) rotate(398deg);
     }
 }
 @keyframes rotate-mars {
@@ -898,9 +898,9 @@ div {
     transform:translate(-50%, -50%);
     height:380px;
     width:380px;
-    border-color: transparent transparent white transparent;
+    border-color: white transparent transparent transparent;
     border-radius:50%;
-    border-width: 0 0.1em 0.1em 0; /* Note: The original had different border widths */
+    border-width: 0.1 0.1em 0 0; /* Note: The original had different border widths */
     border-style: solid;
 }
 /* MARS TRAIL */
