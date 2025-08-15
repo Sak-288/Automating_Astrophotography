@@ -135,6 +135,7 @@ div {
 /* SUN */
 /* ORBITING CONTAINER - This element handles the revolution around a central point */
 .SUN {
+    transform-style: preserve-3d;
     /* Customize the orbit properties here */
     --orbit-radius: 10px; /* Distance from the orbit center */ /* ORBIT RADIUS */
     --orbit-speed: 5s;      /* Speed of the revolution */ /* ORBIT SPEED */
