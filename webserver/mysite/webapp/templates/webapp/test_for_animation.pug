@@ -13,13 +13,10 @@
 <div id="explain_box">
 <h1>Hello everyone !</h1>
 </div>
-
 <div id="solar_system" class="planets-container">
 
-<!-- MERCURY -->
 <div class="MERCURY">
-<div class="planet-tilt">
-<div class="planet-spin" style="--t: {{ t2_plus_1 }}">
+<div style="--t: {{ t2_plus_1 }}" class="mercury-globe">
 <div style="--c: {{ t }}" class="line radius h mercury-h"></div>
 {% for line in positive_lines %}
 <div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h mercury-h"></div>
@@ -29,12 +26,9 @@
 {% endfor %}
 </div>
 </div>
-</div>
 
-<!-- SUN -->
 <div class="SUN">
-<div class="planet-tilt">
-<div class="planet-spin" style="--t: {{ t2_plus_1 }}">
+<div style="--t: {{ t2_plus_1 }}" class="sun-globe">
 <div style="--c: {{ t }}" class="line radius h sun-h"></div>
 {% for line in positive_lines %}
 <div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h sun-h"></div>
@@ -44,12 +38,9 @@
 {% endfor %}
 </div>
 </div>
-</div>
 
-<!-- VENUS -->
 <div class="VENUS">
-<div class="planet-tilt">
-<div class="planet-spin" style="--t: {{ t2_plus_1 }}">
+<div style="--t: {{ t2_plus_1 }}" class="venus-globe">
 <div style="--c: {{ t }}" class="line radius h venus-h"></div>
 {% for line in positive_lines %}
 <div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h venus-h"></div>
@@ -59,12 +50,9 @@
 {% endfor %}
 </div>
 </div>
-</div>
 
-<!-- EARTH -->
 <div class="EARTH">
-<div class="planet-tilt">
-<div class="planet-spin" style="--t: {{ t2_plus_1 }}">
+<div style="--t: {{ t2_plus_1 }}" class="earth-globe">
 <div style="--c: {{ t }}" class="line radius h earth-h"></div>
 {% for line in positive_lines %}
 <div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h earth-h"></div>
@@ -74,12 +62,9 @@
 {% endfor %}
 </div>
 </div>
-</div>
 
-<!-- MARS -->
 <div class="MARS">
-<div class="planet-tilt">
-<div class="planet-spin" style="--t: {{ t2_plus_1 }}">
+<div style="--t: {{ t2_plus_1 }}" class="mars-globe">
 <div style="--c: {{ t }}" class="line radius h mars-h"></div>
 {% for line in positive_lines %}
 <div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h mars-h"></div>
@@ -89,12 +74,9 @@
 {% endfor %}
 </div>
 </div>
-</div>
 
-<!-- JUPITER -->
 <div class="JUPITER">
-<div class="planet-tilt">
-<div class="planet-spin" style="--t: {{ t2_plus_1 }}">
+<div style="--t: {{ t2_plus_1 }}" class="jupiter-globe">
 <div style="--c: {{ t }}" class="line radius h jupiter-h"></div>
 {% for line in positive_lines %}
 <div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h jupiter-h"></div>
@@ -104,12 +86,9 @@
 {% endfor %}
 </div>
 </div>
-</div>
 
-<!-- SATURNE -->
 <div class="SATURNE">
-<div class="planet-tilt">
-<div class="planet-spin" style="--t: {{ t2_plus_1 }}">
+<div style="--t: {{ t2_plus_1 }}" class="saturne-globe">
 <div style="--c: {{ t }}" class="line radius h saturne-h"></div>
 {% for line in positive_lines %}
 <div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h saturne-h"></div>
@@ -119,12 +98,9 @@
 {% endfor %}
 </div>
 </div>
-</div>
 
-<!-- URANUS -->
 <div class="URANUS">
-<div class="planet-tilt">
-<div class="planet-spin" style="--t: {{ t2_plus_1 }}">
+<div style="--t: {{ t2_plus_1 }}" class="uranus-globe">
 <div style="--c: {{ t }}" class="line radius h uranus-h"></div>
 {% for line in positive_lines %}
 <div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h uranus-h"></div>
@@ -134,12 +110,9 @@
 {% endfor %}
 </div>
 </div>
-</div>
 
-<!-- NEPTUNE -->
 <div class="NEPTUNE">
-<div class="planet-tilt">
-<div class="planet-spin" style="--t: {{ t2_plus_1 }}">
+<div style="--t: {{ t2_plus_1 }}" class="neptune-globe">
 <div style="--c: {{ t }}" class="line radius h neptune-h"></div>
 {% for line in positive_lines %}
 <div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h neptune-h"></div>
@@ -147,7 +120,6 @@
 {% for line in negative_lines %}
 <div style="--dp: {{ line.dp }}; --s:1; --c: {{ line.c }}" class="line h neptune-h"></div>
 {% endfor %}
-</div>
 </div>
 </div>
 
