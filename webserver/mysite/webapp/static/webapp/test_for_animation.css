@@ -788,10 +788,10 @@ div {
 }
 @keyframes rotate-mercury {
     from {
-        transform: translate(-50%, -50%) rotate(36deg);
+        transform: translate(-50%, -50%) rotate(30deg);
     }
     to {
-        transform: translate(-50%, -50%) rotate(396deg);
+        transform: translate(-50%, -50%) rotate(390deg);
     }
 }
 @keyframes rotate-venus {
