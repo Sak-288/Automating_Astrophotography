@@ -190,7 +190,7 @@ function spawnPoint() {
         const angle = Math.atan2(dy, dx) * 180 / Math.PI;
 
         line.style.width = length + 'px';
-        line.style.height = '2px'; // thickness of the trail
+        line.style.height = '4px'; // thickness of the trail
         line.style.left = lastX + 'px';
         line.style.top = lastY + 'px';
         line.style.transformOrigin = '0 0';
@@ -204,7 +204,7 @@ function spawnPoint() {
 }
 
 // Spawn a point every 25ms (faster = smoother line)
-setInterval(spawnPoint, 10);
+setInterval(spawnPoint, 1);
 </script>
 
 </body>
