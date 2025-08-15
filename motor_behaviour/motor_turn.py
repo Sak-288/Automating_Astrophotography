@@ -22,14 +22,14 @@ GPIO.setup(MS3, GPIO.OUT)
 GPIO.output(DIR, GPIO.HIGH)
 
 # Set microstepping to full-step mode (all LOW)
-GPIO.output(MS1, GPIO.LOW)
-GPIO.output(MS2, GPIO.LOW)
-GPIO.output(MS3, GPIO.LOW)
+GPIO.output(MS1, GPIO.HIGH)
+GPIO.output(MS2, GPIO.HIGH)
+GPIO.output(MS3, GPIO.HIGH)
 
 # Define motor parameters
 # A typical stepper motor has 200 steps per revolution (360 / 1.8 = 200)
-DEGREES_PER_STEP = 1.8
-TARGET_ANGLE = 90
+DEGREES_PER_STEP = float(1.8/16)
+TARGET_ANGLE = 60
 STEPS_PER_REVOLUTION = 360 / DEGREES_PER_STEP
 
 # Calculate the number of steps needed for the target angle
