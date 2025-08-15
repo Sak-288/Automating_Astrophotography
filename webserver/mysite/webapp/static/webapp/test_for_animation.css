@@ -989,24 +989,7 @@ div {
     border-width: 0 0 0.1em 0.1em;
     border-style: solid;
 }
-#solar_system:hover .MERCURY,
-#solar_system:hover .VENUS,
-#solar_system:hover .EARTH,
-#solar_system:hover .MARS,
-#solar_system:hover .JUPITER,
-#solar_system:hover .SATURNE,
-#solar_system:hover .URANUS,
-#solar_system:hover .NEPTUNE,
-#solar_system:hover .MOON,
-#solar_system:hover .SUN,
-#solar_system:hover #mercury_trail, /* NOT SURE ABOUT THIS YET */
-#solar_system:hover #venus_trail,
-#solar_system:hover #earth_trail,
-#solar_system:hover #mars_trail,
-#solar_system:hover #jupiter_trail,
-#solar_system:hover #saturne_trail,
-#solar_system:hover #uranus_trail,
-#solar_system:hover #neptune_trail,
-#solar_system:hover #moon_trail {
-    animation-play-state: paused;
+
+.SUN:hover{
+    animation-play-state:paused;
 }
