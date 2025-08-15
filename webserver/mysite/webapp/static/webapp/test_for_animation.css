@@ -650,19 +650,20 @@ div {
         box-shadow: 0 0 1em 1em #4682b460; /* Steel Blue Glow */
     }
 }
-.planet-tilt {
-  transform: rotateY(20deg); /* adjust tilt angle */
-  transform-style: preserve-3d;
-}
 
-.planet-spin {
-  animation: spin-x 6s linear infinite;
-  transform-style: preserve-3d;
-} 
-
-@keyframes spin-x {
-  from { transform: rotateX(0deg); }
-  to { transform: rotateX(360deg); }
+@keyframes rotates {
+    from {
+        transform: 
+            rotatex(0)
+            rotatey(0)
+            rotatez(0);
+    }
+    to {
+        transform: 
+            rotatex(360deg)
+            rotatey(720deg)
+            rotatez(360deg);
+    }
 }
 
 @keyframes orbit-animation {
