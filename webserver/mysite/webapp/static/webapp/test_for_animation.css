@@ -230,8 +230,8 @@ div {
     to {
         transform: 
             rotatex(360deg)
-            rotatey(720deg)
-            rotatez(360deg);
+            rotatey(0deg)
+            rotatez(0deg);
     }
 }
 @keyframes orbit-animation {
