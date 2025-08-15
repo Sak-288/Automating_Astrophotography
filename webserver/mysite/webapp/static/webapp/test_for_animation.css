@@ -19,7 +19,6 @@ div {
     box-sizing: border-box;
 }
 #solar_system {
-    transform-style: preserve-3d;
     position:absolute;
     margin-top:50px;
 }
@@ -56,7 +55,7 @@ div {
     position: relative;
     
     /* Apply a slight initial rotation for a 3D view */
-    transform: rotatex(45deg) rotatey(45deg);
+    transform: rotatex(0deg) rotatey(0deg);
     
     /* Customize the rotation speed here */
     --rotation-speed: 10s;
