@@ -790,14 +790,14 @@ div {
     animation: rotate-image 90s linear infinite;
 }
 #earth_trail{
-    transform:rotate(120deg);
     position:absolute;
     top:50%;
     left:50%;
-    transform:translate(-50%, -50%);
+    /* Combine both transformations into a single line */
+    transform:translate(-50%, -50%) rotate(30deg); 
     height:380px;
     width:380px;
-    border-color: transparent white transparent transparent;
+    border-color: transparent transparent white transparent;
     border-radius:50%;
     border-width: 0 0.1em 0.1em 0;
     border-style: solid;
