@@ -660,9 +660,9 @@ div {
     }
     to {
         transform: 
-            rotatex(360deg)
+            rotatex(0deg)
             rotatey(720deg)
-            rotatez(360deg);
+            rotatez(0deg);
     }
 }
 
