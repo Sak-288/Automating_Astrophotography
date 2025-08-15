@@ -190,7 +190,7 @@ div {
 .h, .v {
     --h: var(--w);
     border-radius: 100vmax;
-    background-color: rgba(255, 242, 0, 0.507); /* SPHERE COLOR */
+    background-color: rgba(255, 215, 0, 0.8); /* SPHERE COLOR */
     top: 0;
     left: 0;
     box-shadow: 0 0 1em 1em #0000;
@@ -210,14 +210,14 @@ div {
 /* Animation keyframes */
 @keyframes sun-flash {
     0%, 13.33% {
-        color: rgba(255, 166, 0, 0.2);
-        background-color: rgba(255, 149, 0, 0.2);
-        box-shadow: 0 0 1em 1em #ffb70000;
+        color: rgba(255, 204, 0, 0.7); /* Brighter Orange-Yellow */
+        background-color: rgba(255, 187, 0, 0.7); /* More intense Orange */
+        box-shadow: 0 0 1em 1em #ffdd0030; /* Brighter Glow */
     }
     6.67% {
-        color: rgba(255, 136, 0, 0.2);
-        background-color: #ff840081; /* FLASH COLOR */
-        box-shadow: 0 0 1em 1em #ffbf0030; /* PLANET GLOW */
+        color: rgba(255, 170, 0, 0.7); /* Even brighter Orange */
+        background-color: #ff990099; /* Very Flashy Orange */
+        box-shadow: 0 0 1em 1em #ffcc0060; /* More Intense Glow */
     }
 }
 @keyframes rotates {
