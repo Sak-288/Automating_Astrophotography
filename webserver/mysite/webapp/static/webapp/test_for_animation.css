@@ -62,6 +62,13 @@ div {
     animation: rotates var(--rotation-speed) linear infinite;
 }
 /* Styles for the inner lines of the globe */
+.h, .v {
+        --h: var(--w);
+        border-radius: 100vmax;
+        top: 0;
+        left: 0;
+        box-shadow: 0 0 1em 1em #0000;
+}
 .line {
     position: absolute;
     height: var(--h);
