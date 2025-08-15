@@ -64,25 +64,25 @@
 <div id="trail"></div>
 </div>
 <script>
-    document.addEventListener('mousemove', function(e) {
-        // Create a new trail element
-        const trailElement = document.createElement('div');
-        trailElement.textContent = '⸱';
-        trailElement.classList.add('trailing');
+document.addEventListener('mousemove', function(e) {
+// Create a new trail element
+const trailElement = document.createElement('div');
+trailElement.textContent = '⸱';
+trailElement.classList.add('trailing');
 
-        // Position the trail element at the mouse cursor's location
-        trailElement.style.left = e.clientX + 'px';
-        trailElement.style.top = e.clientY + 'px';
+// Position the trail element at the mouse cursor's location
+trailElement.style.left = e.clientX + 'px';
+trailElement.style.top = e.clientY + 'px';
 
-        // Add the new element to the container
-        document.getElementById('trail').appendChild(trailElement);
+// Add the new element to the container
+document.getElementById('trail').appendChild(trailElement);
 
-        // Remove the element after the animation is complete (5 seconds)
-        // This prevents the DOM from getting too large and slowing down the page
-        setTimeout(() => {
-            trailElement.remove();
-        }, 5000);
-    });
+// Remove the element after the animation is complete (5 seconds)
+// This prevents the DOM from getting too large and slowing down the page
+setTimeout(() => {
+trailElement.remove();
+}, 5000);
+});
 </script>
 
 <div class="MOON">
