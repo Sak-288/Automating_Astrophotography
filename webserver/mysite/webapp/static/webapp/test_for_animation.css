@@ -1,167 +1,110 @@
-/* GLOBAL STYLES */
+/* MERCURY */
 body {
     min-height: 100vh;
     margin: 0;
     display: grid;
     place-items: center;
     background-image: url('STARRY.gif');
-    background-repeat: repeat;
-    perspective: 1000px;
+    background-repeat:repeat;
+    perspective: 1000px; /* Add perspective for 3D effect */
     overflow: hidden;
-    font-family: 'Orbitron', sans-serif;
-    color: white;
-    position: relative;
+    font-family:'Orbitron', sans-serif;
+    color:white;
+    position:relative;
     overflow-y: scroll;
     max-height: 1080px;
 }
-
 div {
     transform-style: preserve-3d;
     box-sizing: border-box;
 }
-
 #solar_system {
-    position: absolute;
-    margin-top: 50px;
+    position:absolute;
+    margin-top:50px;
 }
-
 #explain_box {
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position:absolute;
+    top:5%;
+    left:50%;
+    transform:translate(-50%, -50%);
 }
-
-/* KEYFRAMES */
-@keyframes rotates {
-    from { transform: rotatex(0deg) rotatey(0deg); }
-    to { transform: rotatex(360deg) rotatey(360deg); }
-}
-
-@keyframes orbit-animation {
-    from { transform: rotate(0deg) translate(calc(var(--orbit-radius) * -1), 0); }
-    to { transform: rotate(360deg) translate(calc(var(--orbit-radius) * -1), 0); }
-}
-
-/* SUN (CENTER) */
-.SUN {
-    --orbit-radius: 10px;
-    --orbit-speed: 5s;
-    --orbit-center-x: 50%;
-    --orbit-center-y: 50%;
-    
-    position: absolute;
-    top: var(--orbit-center-y);
-    left: var(--orbit-center-x);
-    transform-origin: 0 0;
-    transform: translate(-50%, -50%);
-    animation: none;
-}
-
-.sun-globe {
-    --r: 10;
-    --u: 1vmin;
-    --h: 2px;
-    --dp: 0.5;
-    --d: calc(var(--r) * var(--dp));
-    --w: calc(2 * sqrt(pow(var(--r), 2) - pow(var(--d), 2)) * var(--u));
-    
-    border-radius: 50%;
-    width: calc(var(--r) * var(--u) * 2);
-    height: calc(var(--r) * var(--u) * 2);
-    position: relative;
-    transform: rotatex(45deg) rotatey(45deg);
-    --rotation-speed: 10s;
-    animation: rotates var(--rotation-speed) linear infinite;
-}
-
-.sun-h .h,
-.sun-h .v {
-    --h: var(--w);
-    border-radius: 100vmax;
-    background-color: rgba(255, 215, 0, 0.8);
-    top: 0;
-    left: 0;
-    box-shadow: 0 0 1em 1em transparent;
-}
-
-.sun-h {
-    transform: translate3d(
-        calc(var(--r) * var(--u) - var(--w) / 2),
-        calc(var(--r) * var(--u) - var(--w) / 2),
-        calc(var(--d) * var(--s) * var(--u))
-    );
-    --del: 0.5s;
-    animation: sun-flash linear var(--del) infinite;
-    animation-delay: calc(var(--c) * var(--del) / var(--t));
-}
-
-@keyframes sun-flash {
-    0%, 13.33% {
-        color: rgba(255, 204, 0, 0.7);
-        background-color: rgba(255, 187, 0, 0.7);
-        box-shadow: 0 0 1em 1em #ffdd0030;
-    }
-    6.67% {
-        color: rgba(255, 170, 0, 0.7);
-        background-color: #ff990099;
-        box-shadow: 0 0 1em 1em #ffcc0060;
-    }
-}
-
-/* MERCURY */
+/* ORBITING CONTAINER - This element handles the revolution around a central point */
 .MERCURY {
-    --orbit-radius: 50px;
-    --orbit-speed: 10s;
-    --orbit-center-x: 50%;
-    --orbit-center-y: 50%;
+    /* Customize the orbit properties here */
+    --orbit-radius: 50px; /* Distance from the orbit center */ /* ORBIT RADIUS */
+    --orbit-speed: 10s;      /* Speed of the revolution */ /* ORBIT SPEED */
+    --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
+    --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
     
     position: absolute;
     top: var(--orbit-center-y);
     left: var(--orbit-center-x);
     transform-origin: 0 0;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); /* Center the container itself */
     animation: orbit-animation var(--orbit-speed) linear infinite;
 }
-
+/* GLOBE - This element is a child of the orbit container and handles its own rotation */
 .mercury-globe {
-    --r: 1;
+    --r: 1; /* SPHERE RADIUS */
     --u: 1vmin;
     --h: 2px;
-    --dp: 0.5;
-    --d: calc(var(--r) * var(--dp));
-    --w: calc(2 * sqrt(pow(var(--r), 2) - pow(var(--d), 2)) * var(--u));
     
     border-radius: 50%;
     width: calc(var(--r) * var(--u) * 2);
     height: calc(var(--r) * var(--u) * 2);
     position: relative;
+    
+    /* Apply a slight initial rotation for a 3D view */
     transform: rotatex(45deg) rotatey(45deg);
+    
+    /* Customize the rotation speed here */
     --rotation-speed: 10s;
     animation: rotates var(--rotation-speed) linear infinite;
 }
-
-.mercury-h .h,
-.mercury-h .v {
-    --h: var(--w);
-    border-radius: 100vmax;
-    background-color: rgba(169, 169, 169, 0.7);
-    top: 0;
-    left: 0;
-    box-shadow: 0 0 1em 1em transparent;
+/* Styles for the inner lines of the globe */
+.h, .v {
+        --h: var(--w);
+        border-radius: 100vmax;
+        top: 0;
+        left: 0;
+        box-shadow: 0 0 1em 1em #0000;
 }
-
+.line {
+    position: absolute;
+    height: var(--h);
+    border: 1px solid;
+    
+    --d: calc(var(--r) * var(--dp));
+    --w: calc(2 * sqrt(pow(var(--r),2) - pow(var(--d), 2)) * var(--u));
+    width: var(--w);
+    top: calc(50% - (var(--d) * var(--s) * var(--u)));
+    left: calc(50% - var(--w) / 2);
+    color: #aaa5;
+}
+.radius {
+    height: var(--h);
+    --w: calc(var(--r) * var(--u) * 2);
+    top: 50%;
+}
 .mercury-h {
-    transform: translate3d(
-        calc(var(--r) * var(--u) - var(--w) / 2),
-        calc(var(--r) * var(--u) - var(--w) / 2),
-        calc(var(--d) * var(--s) * var(--u))
-    );
-    --del: 0.5s;
+    .h,
+    .v {
+        --h: var(--w);
+        border-radius: 100vmax;
+        background-color: rgba(169, 169, 169, 0.7); /* SPHERE COLOR */
+        top: 0;
+        left: 0;
+        box-shadow: 0 0 1em 1em #0000;
+    }
+    translate: calc(var(--r) * var(--u) - var(--w) / 2) calc(var(--r) * var(--u) - var(--w) / 2) calc((var(--d) * var(--s) * var(--u)));
+    --del: 0.5s; /* FLASH SPEED */
     animation: mercury-flash linear var(--del) infinite;
     animation-delay: calc(var(--c) * var(--del) / var(--t));
 }
-
+/* The horizontal lines are created with SCSS and a loop, which can be approximated with a set of elements */
+/* For this example, we'll assume a single globe for simplicity, but you would duplicate the .line and .h elements
+    in the HTML and adjust the --c variable to simulate the SCSS loop. */
+/* Animation keyframes */
 @keyframes mercury-flash {
     0%, 13.33% {
         color: rgba(200, 200, 200, 0.6);
@@ -170,64 +113,131 @@ div {
     }
     6.67% {
         color: rgba(220, 220, 220, 0.8);
-        background-color: #cccccc99;
-        box-shadow: 0 0 1em 1em #cccccc60;
+        background-color: #cccccc99; /* FLASH COLOR */
+        box-shadow: 0 0 1em 1em #cccccc60; /* PLANET GLOW */
     }
 }
-
-/* VENUS */
-.VENUS {
-    --orbit-radius: 100px;
-    --orbit-speed: 20s;
-    --orbit-center-x: 50%;
-    --orbit-center-y: 50%;
+/* SUN */
+/* ORBITING CONTAINER - This element handles the revolution around a central point */
+.SUN {
+    /* Customize the orbit properties here */
+    --orbit-radius: 10px; /* Distance from the orbit center */ /* ORBIT RADIUS */
+    --orbit-speed: 5s;      /* Speed of the revolution */ /* ORBIT SPEED */
+    --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
+    --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
     
     position: absolute;
     top: var(--orbit-center-y);
     left: var(--orbit-center-x);
     transform-origin: 0 0;
-    transform: translate(-50%, -50%);
-    animation: orbit-animation var(--orbit-speed) linear infinite;
+    transform: translate(-50%, -50%); /* Center the container itself */
+    animation: none; /* Disabled because SUN == Unmoving Center */
 }
-
-.venus-globe {
-    --r: 2.5;
+/* GLOBE - This element is a child of the orbit container and handles its own rotation */
+.sun-globe {
+    --r: 10; /* SPHERE RADIUS */
     --u: 1vmin;
     --h: 2px;
-    --dp: 0.5;
-    --d: calc(var(--r) * var(--dp));
-    --w: calc(2 * sqrt(pow(var(--r), 2) - pow(var(--d), 2)) * var(--u));
     
     border-radius: 50%;
     width: calc(var(--r) * var(--u) * 2);
     height: calc(var(--r) * var(--u) * 2);
     position: relative;
+    
+    /* Apply a slight initial rotation for a 3D view */
     transform: rotatex(45deg) rotatey(45deg);
+    
+    /* Customize the rotation speed here */
     --rotation-speed: 10s;
     animation: rotates var(--rotation-speed) linear infinite;
 }
-
-.venus-h .h,
-.venus-h .v {
-    --h: var(--w);
-    border-radius: 100vmax;
-    background-color: rgba(255, 179, 102, 0.7);
-    top: 0;
-    left: 0;
-    box-shadow: 0 0 1em 1em transparent;
+/* Styles for the inner lines of the globe */
+.sun-h {
+    .h,
+    .v {
+        --h: var(--w);
+        border-radius: 100vmax;
+        background-color: rgba(255, 215, 0, 0.8); /* SPHERE COLOR */
+        top: 0;
+        left: 0;
+        box-shadow: 0 0 1em 1em #0000;
+    }
+    translate: calc(var(--r) * var(--u) - var(--w) / 2) calc(var(--r) * var(--u) - var(--w) / 2) calc((var(--d) * var(--s) * var(--u)));
+    --del: 0.5s; /* FLASH SPEED */
+    animation: sun-flash linear var(--del) infinite;
+    animation-delay: calc(var(--c) * var(--del) / var(--t));
+}
+/* The horizontal lines are created with SCSS and a loop, which can be approximated with a set of elements */
+/* For this example, we'll assume a single globe for simplicity, but you would duplicate the .line and .h elements
+    in the HTML and adjust the --c variable to simulate the SCSS loop. */
+/* Animation keyframes */
+@keyframes sun-flash {
+    0%, 13.33% {
+        color: rgba(255, 204, 0, 0.7); /* Brighter Orange-Yellow */
+        background-color: rgba(255, 187, 0, 0.7); /* More intense Orange */
+        box-shadow: 0 0 1em 1em #ffdd0030; /* Brighter Glow */
+    }
+    6.67% {
+        color: rgba(255, 170, 0, 0.7); /* Even brighter Orange */
+        background-color: #ff990099; /* Very Flashy Orange */
+        box-shadow: 0 0 1em 1em #ffcc0060; /* More Intense Glow */
+    }
 }
 
+/* VENUS */
+/* ORBITING CONTAINER - This element handles the revolution around a central point */
+.VENUS {
+    /* Customize the orbit properties here */
+    --orbit-radius: 100px; /* Distance from the orbit center */ /* ORBIT RADIUS */
+    --orbit-speed: 20s;      /* Speed of the revolution */ /* ORBIT SPEED */
+    --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
+    --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
+    
+    position: absolute;
+    top: var(--orbit-center-y);
+    left: var(--orbit-center-x);
+    transform-origin: 0 0;
+    transform: translate(-50%, -50%); /* Center the container itself */
+    animation: orbit-animation var(--orbit-speed) linear infinite;
+}
+/* GLOBE - This element is a child of the orbit container and handles its own rotation */
+.venus-globe {
+    --r: 2.5; /* SPHERE RADIUS */
+    --u: 1vmin;
+    --h: 2px;
+    
+    border-radius: 50%;
+    width: calc(var(--r) * var(--u) * 2);
+    height: calc(var(--r) * var(--u) * 2);
+    position: relative;
+    
+    /* Apply a slight initial rotation for a 3D view */
+    transform: rotatex(45deg) rotatey(45deg);
+    
+    /* Customize the rotation speed here */
+    --rotation-speed: 10s;
+    animation: rotates var(--rotation-speed) linear infinite;
+}
+/* Styles for the inner lines of the globe */
 .venus-h {
-    transform: translate3d(
-        calc(var(--r) * var(--u) - var(--w) / 2),
-        calc(var(--r) * var(--u) - var(--w) / 2),
-        calc(var(--d) * var(--s) * var(--u))
-    );
-    --del: 0.5s;
+    .h,
+    .v {
+        --h: var(--w);
+        border-radius: 100vmax;
+        background-color: rgba(255, 179, 102, 0.7); /* SPHERE COLOR */
+        top: 0;
+        left: 0;
+        box-shadow: 0 0 1em 1em #ffe5b800;
+    }
+    translate: calc(var(--r) * var(--u) - var(--w) / 2) calc(var(--r) * var(--u) - var(--w) / 2) calc((var(--d) * var(--s) * var(--u)));
+    --del: 0.5s; /* FLASH SPEED */
     animation: venus-flash linear var(--del) infinite;
     animation-delay: calc(var(--c) * var(--del) / var(--t));
 }
-
+/* The horizontal lines are created with SCSS and a loop, which can be approximated with a set of elements */
+/* For this example, we'll assume a single globe for simplicity, but you would duplicate the .line and .h elements
+    in the HTML and adjust the --c variable to simulate the SCSS loop. */
+/* Animation keyframes */
 @keyframes venus-flash {
     0%, 13.33% {
         color: rgba(255, 204, 153, 0.6);
@@ -236,419 +246,430 @@ div {
     }
     6.67% {
         color: rgba(255, 196, 128, 0.7);
-        background-color: #ffb36699;
-        box-shadow: 0 0 1em 1em #ffcc9960;
+        background-color: #ffb36699; /* FLASH COLOR */
+        box-shadow: 0 0 1em 1em #ffcc9960; /* PLANET GLOW */
     }
 }
-
 /* EARTH */
+/* ORBITING CONTAINER - This element handles the revolution around a central point */
 .EARTH {
-    --orbit-radius: 150px;
-    --orbit-speed: 20s;
-    --orbit-center-x: 50%;
-    --orbit-center-y: 50%;
+    /* Customize the orbit properties here */
+    --orbit-radius: 150px; /* Distance from the orbit center */ /* ORBIT RADIUS */
+    --orbit-speed: 20s;      /* Speed of the revolution */ /* ORBIT SPEED */
+    --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
+    --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
     
     position: absolute;
     top: var(--orbit-center-y);
     left: var(--orbit-center-x);
     transform-origin: 0 0;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); /* Center the container itself */
     animation: orbit-animation var(--orbit-speed) linear infinite;
 }
-
+/* GLOBE - This element is a child of the orbit container and handles its own rotation */
 .earth-globe {
-    --r: 2.5;
+    --r: 2.5; /* SPHERE RADIUS */
     --u: 1vmin;
     --h: 2px;
-    --dp: 0.5;
-    --d: calc(var(--r) * var(--dp));
-    --w: calc(2 * sqrt(pow(var(--r), 2) - pow(var(--d), 2)) * var(--u));
     
     border-radius: 50%;
     width: calc(var(--r) * var(--u) * 2);
     height: calc(var(--r) * var(--u) * 2);
     position: relative;
+    
+    /* Apply a slight initial rotation for a 3D view */
     transform: rotatex(45deg) rotatey(45deg);
+    
+    /* Customize the rotation speed here */
     --rotation-speed: 10s;
     animation: rotates var(--rotation-speed) linear infinite;
 }
-
-.earth-h .h,
-.earth-h .v {
-    --h: var(--w);
-    border-radius: 100vmax;
-    background-color: rgba(65, 105, 225, 0.7);
-    top: 0;
-    left: 0;
-    box-shadow: 0 0 1em 1em transparent;
-}
-
+/* Styles for the inner lines of the globe */
 .earth-h {
-    transform: translate3d(
-        calc(var(--r) * var(--u) - var(--w) / 2),
-        calc(var(--r) * var(--u) - var(--w) / 2),
-        calc(var(--d) * var(--s) * var(--u))
-    );
-    --del: 0.5s;
+    .h,
+    .v {
+        --h: var(--w);
+        border-radius: 100vmax;
+        background-color: rgba(65, 105, 225, 0.7); /* SPHERE COLOR (Ocean Blue) */
+        top: 0;
+        left: 0;
+        box-shadow: 0 0 1em 1em #0000;
+    }
+    translate: calc(var(--r) * var(--u) - var(--w) / 2) calc(var(--r) * var(--u) - var(--w) / 2) calc((var(--d) * var(--s) * var(--u)));
+    --del: 0.5s; /* FLASH SPEED */
     animation: earth-flash linear var(--del) infinite;
     animation-delay: calc(var(--c) * var(--del) / var(--t));
 }
-
+/* The horizontal lines are created with SCSS and a loop, which can be approximated with a set of elements */
+/* For this example, we'll assume a single globe for simplicity, but you would duplicate the .line and .h elements
+    in the HTML and adjust the --c variable to simulate the SCSS loop. */
+/* Animation keyframes */
 @keyframes earth-flash {
     0%, 13.33% {
-        color: rgba(34, 139, 34, 0.6);
-        background-color: rgba(65, 105, 225, 0.6);
-        box-shadow: 0 0 1em 1em #00640030;
+        color: rgba(34, 139, 34, 0.6); /* Forest Green */
+        background-color: rgba(65, 105, 225, 0.6); /* Royal Blue */
+        box-shadow: 0 0 1em 1em #00640030; /* Dark Green Glow */
     }
     6.67% {
-        color: rgba(34, 139, 34, 0.8);
-        background-color: #4169e199;
-        box-shadow: 0 0 1em 1em #228b2260;
+        color: rgba(34, 139, 34, 0.8); /* More Opaque Green */
+        background-color: #4169e199; /* Flashy Blue */
+        box-shadow: 0 0 1em 1em #228b2260; /* Brighter Green Glow */
     }
 }
 
 /* MARS */
+/* ORBITING CONTAINER - This element handles the revolution around a central point */
 .MARS {
-    --orbit-radius: 200px;
-    --orbit-speed: 20s;
-    --orbit-center-x: 50%;
-    --orbit-center-y: 50%;
+    /* Customize the orbit properties here */
+    --orbit-radius: 200px; /* Distance from the orbit center */ /* ORBIT RADIUS */
+    --orbit-speed: 20s;      /* Speed of the revolution */ /* ORBIT SPEED */
+    --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
+    --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
     
     position: absolute;
     top: var(--orbit-center-y);
     left: var(--orbit-center-x);
     transform-origin: 0 0;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); /* Center the container itself */
     animation: orbit-animation var(--orbit-speed) linear infinite;
 }
-
+/* GLOBE - This element is a child of the orbit container and handles its own rotation */
 .mars-globe {
-    --r: 2.5;
+    --r: 2.5; /* SPHERE RADIUS */
     --u: 1vmin;
     --h: 2px;
-    --dp: 0.5;
-    --d: calc(var(--r) * var(--dp));
-    --w: calc(2 * sqrt(pow(var(--r), 2) - pow(var(--d), 2)) * var(--u));
     
     border-radius: 50%;
     width: calc(var(--r) * var(--u) * 2);
     height: calc(var(--r) * var(--u) * 2);
     position: relative;
+    
+    /* Apply a slight initial rotation for a 3D view */
     transform: rotatex(45deg) rotatey(45deg);
+    
+    /* Customize the rotation speed here */
     --rotation-speed: 10s;
     animation: rotates var(--rotation-speed) linear infinite;
 }
-
-.mars-h .h,
-.mars-h .v {
-    --h: var(--w);
-    border-radius: 100vmax;
-    background-color: rgba(255, 212, 144, 0.5);
-    top: 0;
-    left: 0;
-    box-shadow: 0 0 1em 1em transparent;
-}
-
+/* Styles for the inner lines of the globe */
 .mars-h {
-    transform: translate3d(
-        calc(var(--r) * var(--u) - var(--w) / 2),
-        calc(var(--r) * var(--u) - var(--w) / 2),
-        calc(var(--d) * var(--s) * var(--u))
-    );
-    --del: 0.5s;
+    .h,
+    .v {
+        --h: var(--w);
+        border-radius: 100vmax;
+        background-color: rgba(255, 212, 144, 0.5); /* SPHERE COLOR */
+        top: 0;
+        left: 0;
+        box-shadow: 0 0 1em 1em #ffe5b800;
+    }
+    translate: calc(var(--r) * var(--u) - var(--w) / 2) calc(var(--r) * var(--u) - var(--w) / 2) calc((var(--d) * var(--s) * var(--u)));
+    --del: 0.5s; /* FLASH SPEED */
     animation: mars-flash linear var(--del) infinite;
     animation-delay: calc(var(--c) * var(--del) / var(--t));
 }
-
+/* The horizontal lines are created with SCSS and a loop, which can be approximated with a set of elements */
+/* For this example, we'll assume a single globe for simplicity, but you would duplicate the .line and .h elements
+    in the HTML and adjust the --c variable to simulate the SCSS loop. */
+/* Animation keyframes */
 @keyframes mars-flash {
     0%, 13.33% {
         color: rgba(255, 255, 255, 0.2);
         background-color: rgba(255, 255, 255, 0.2);
-        box-shadow: 0 0 1em 1em transparent;
+        box-shadow: 0 0 1em 1em #ffffff00;
     }
     6.67% {
         color: rgba(255, 196, 128, 0.2);
-        background-color: #ffffff81;
-        box-shadow: 0 0 1em 1em #ffcd8230;
+        background-color: #ffffff81; /* FLASH COLOR */
+        box-shadow: 0 0 1em 1em #ffcd8230; /* PLANET GLOW */
     }
 }
 
 /* JUPITER */
+/* ORBITING CONTAINER - This element handles the revolution around a central point */
 .JUPITER {
-    --orbit-radius: 250px;
-    --orbit-speed: 20s;
-    --orbit-center-x: 50%;
-    --orbit-center-y: 50%;
+    /* Customize the orbit properties here */
+    --orbit-radius: 250px; /* Distance from the orbit center */ /* ORBIT RADIUS */
+    --orbit-speed: 20s;      /* Speed of the revolution */ /* ORBIT SPEED */
+    --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
+    --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
     
     position: absolute;
     top: var(--orbit-center-y);
     left: var(--orbit-center-x);
     transform-origin: 0 0;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); /* Center the container itself */
     animation: orbit-animation var(--orbit-speed) linear infinite;
 }
-
+/* GLOBE - This element is a child of the orbit container and handles its own rotation */
 .jupiter-globe {
-    --r: 2.5;
+    --r: 2.5; /* SPHERE RADIUS */
     --u: 1vmin;
     --h: 2px;
-    --dp: 0.5;
-    --d: calc(var(--r) * var(--dp));
-    --w: calc(2 * sqrt(pow(var(--r), 2) - pow(var(--d), 2)) * var(--u));
     
     border-radius: 50%;
     width: calc(var(--r) * var(--u) * 2);
     height: calc(var(--r) * var(--u) * 2);
     position: relative;
+    
+    /* Apply a slight initial rotation for a 3D view */
     transform: rotatex(45deg) rotatey(45deg);
+    
+    /* Customize the rotation speed here */
     --rotation-speed: 10s;
     animation: rotates var(--rotation-speed) linear infinite;
 }
-
-.jupiter-h .h,
-.jupiter-h .v {
-    --h: var(--w);
-    border-radius: 100vmax;
-    background-color: rgba(220, 150, 80, 0.7);
-    top: 0;
-    left: 0;
-    box-shadow: 0 0 1em 1em transparent;
-}
-
+/* Styles for the inner lines of the globe */
 .jupiter-h {
-    transform: translate3d(
-        calc(var(--r) * var(--u) - var(--w) / 2),
-        calc(var(--r) * var(--u) - var(--w) / 2),
-        calc(var(--d) * var(--s) * var(--u))
-    );
-    --del: 0.5s;
+    .h,
+    .v {
+        --h: var(--w);
+        border-radius: 100vmax;
+        background-color: rgba(220, 150, 80, 0.7); /* SPHERE COLOR (Tan-Orange) */
+        top: 0;
+        left: 0;
+        box-shadow: 0 0 1em 1em #0000;
+    }
+    translate: calc(var(--r) * var(--u) - var(--w) / 2) calc(var(--r) * var(--u) - var(--w) / 2) calc((var(--d) * var(--s) * var(--u)));
+    --del: 0.5s; /* FLASH SPEED */
     animation: jupiter-flash linear var(--del) infinite;
     animation-delay: calc(var(--c) * var(--del) / var(--t));
 }
-
+/* The horizontal lines are created with SCSS and a loop, which can be approximated with a set of elements */
+/* For this example, we'll assume a single globe for simplicity, but you would duplicate the .line and .h elements
+    in the HTML and adjust the --c variable to simulate the SCSS loop. */
+/* Animation keyframes */
 @keyframes jupiter-flash {
     0%, 13.33% {
-        color: rgba(240, 200, 160, 0.6);
-        background-color: rgba(180, 120, 70, 0.6);
-        box-shadow: 0 0 1em 1em #8b451330;
+        color: rgba(240, 200, 160, 0.6); /* Lighter Tan */
+        background-color: rgba(180, 120, 70, 0.6); /* Darker Orange */
+        box-shadow: 0 0 1em 1em #8b451330; /* Saddle Brown Glow */
     }
     6.67% {
-        color: rgba(255, 100, 100, 0.8);
-        background-color: #d2691e99;
-        box-shadow: 0 0 1em 1em #a52a2a60;
+        color: rgba(255, 100, 100, 0.8); /* Red for the Great Red Spot */
+        background-color: #d2691e99; /* Chocolate Brown Flash */
+        box-shadow: 0 0 1em 1em #a52a2a60; /* Brown Glow */
     }
 }
 
-/* SATURNE (French Spelling) */
+/* SATURNE */
+/* ORBITING CONTAINER - This element handles the revolution around a central point */
 .SATURNE {
-    --orbit-radius: 300px;
-    --orbit-speed: 20s;
-    --orbit-center-x: 50%;
-    --orbit-center-y: 50%;
+    /* Customize the orbit properties here */
+    --orbit-radius: 300px; /* Distance from the orbit center */ /* ORBIT RADIUS */
+    --orbit-speed: 20s;      /* Speed of the revolution */ /* ORBIT SPEED */
+    --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
+    --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
     
     position: absolute;
     top: var(--orbit-center-y);
     left: var(--orbit-center-x);
     transform-origin: 0 0;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); /* Center the container itself */
     animation: orbit-animation var(--orbit-speed) linear infinite;
 }
-
+/* GLOBE - This element is a child of the orbit container and handles its own rotation */
 .saturne-globe {
-    --r: 2.5;
+    --r: 2.5; /* SPHERE RADIUS */
     --u: 1vmin;
     --h: 2px;
-    --dp: 0.5;
-    --d: calc(var(--r) * var(--dp));
-    --w: calc(2 * sqrt(pow(var(--r), 2) - pow(var(--d), 2)) * var(--u));
     
     border-radius: 50%;
     width: calc(var(--r) * var(--u) * 2);
     height: calc(var(--r) * var(--u) * 2);
     position: relative;
+    
+    /* Apply a slight initial rotation for a 3D view */
     transform: rotatex(45deg) rotatey(45deg);
+    
+    /* Customize the rotation speed here */
     --rotation-speed: 10s;
     animation: rotates var(--rotation-speed) linear infinite;
 }
-
-.saturne-h .h,
-.saturne-h .v {
-    --h: var(--w);
-    border-radius: 100vmax;
-    background-color: rgba(210, 180, 140, 0.7);
-    top: 0;
-    left: 0;
-    box-shadow: 0 0 1em 1em transparent;
-}
-
 .saturne-h {
-    transform: translate3d(
-        calc(var(--r) * var(--u) - var(--w) / 2),
-        calc(var(--r) * var(--u) - var(--w) / 2),
-        calc(var(--d) * var(--s) * var(--u))
-    );
-    --del: 0.5s;
+    .h,
+    .v {
+        --h: var(--w);
+        border-radius: 100vmax;
+        background-color: rgba(210, 180, 140, 0.7); /* SPHERE COLOR (Light Tan-Gold) */
+        top: 0;
+        left: 0;
+        box-shadow: 0 0 1em 1em #0000;
+    }
+    translate: calc(var(--r) * var(--u) - var(--w) / 2) calc(var(--r) * var(--u) - var(--w) / 2) calc((var(--d) * var(--s) * var(--u)));
+    --del: 0.5s; /* FLASH SPEED */
     animation: saturne-flash linear var(--del) infinite;
     animation-delay: calc(var(--c) * var(--del) / var(--t));
 }
-
+/* The horizontal lines are created with SCSS and a loop, which can be approximated with a set of elements */
+/* For this example, we'll assume a single globe for simplicity, but you would duplicate the .line and .h elements
+    in the HTML and adjust the --c variable to simulate the SCSS loop. */
+/* Animation keyframes */
 @keyframes saturne-flash {
     0%, 13.33% {
-        color: rgba(240, 230, 140, 0.6);
-        background-color: rgba(218, 165, 32, 0.6);
-        box-shadow: 0 0 1em 1em #ffd70030;
+        color: rgba(240, 230, 140, 0.6); /* Pale Goldenrod */
+        background-color: rgba(218, 165, 32, 0.6); /* Goldenrod */
+        box-shadow: 0 0 1em 1em #ffd70030; /* Gold Glow */
     }
     6.67% {
-        color: rgba(255, 255, 255, 0.8);
-        background-color: #f5deb399;
-        box-shadow: 0 0 1em 1em #f5f5dc60;
+        color: rgba(255, 255, 255, 0.8); /* White Flash */
+        background-color: #f5deb399; /* Wheat Flash */
+        box-shadow: 0 0 1em 1em #f5f5dc60; /* Beige Glow */
     }
 }
 
 /* URANUS */
+/* ORBITING CONTAINER - This element handles the revolution around a central point */
 .URANUS {
-    --orbit-radius: 350px;
-    --orbit-speed: 20s;
-    --orbit-center-x: 50%;
-    --orbit-center-y: 50%;
+    /* Customize the orbit properties here */
+    --orbit-radius: 350px; /* Distance from the orbit center */ /* ORBIT RADIUS */
+    --orbit-speed: 20s;      /* Speed of the revolution */ /* ORBIT SPEED */
+    --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
+    --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
     
     position: absolute;
     top: var(--orbit-center-y);
     left: var(--orbit-center-x);
     transform-origin: 0 0;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); /* Center the container itself */
     animation: orbit-animation var(--orbit-speed) linear infinite;
 }
-
+/* GLOBE - This element is a child of the orbit container and handles its own rotation */
 .uranus-globe {
-    --r: 2.5;
+    --r: 2.5; /* SPHERE RADIUS */
     --u: 1vmin;
     --h: 2px;
-    --dp: 0.5;
-    --d: calc(var(--r) * var(--dp));
-    --w: calc(2 * sqrt(pow(var(--r), 2) - pow(var(--d), 2)) * var(--u));
     
     border-radius: 50%;
     width: calc(var(--r) * var(--u) * 2);
     height: calc(var(--r) * var(--u) * 2);
     position: relative;
+    
+    /* Apply a slight initial rotation for a 3D view */
     transform: rotatex(45deg) rotatey(45deg);
+    
+    /* Customize the rotation speed here */
     --rotation-speed: 10s;
     animation: rotates var(--rotation-speed) linear infinite;
 }
-
-.uranus-h .h,
-.uranus-h .v {
-    --h: var(--w);
-    border-radius: 100vmax;
-    background-color: rgba(135, 206, 235, 0.7);
-    top: 0;
-    left: 0;
-    box-shadow: 0 0 1em 1em transparent;
-}
-
+/* Styles for the inner lines of the globe */
 .uranus-h {
-    transform: translate3d(
-        calc(var(--r) * var(--u) - var(--w) / 2),
-        calc(var(--r) * var(--u) - var(--w) / 2),
-        calc(var(--d) * var(--s) * var(--u))
-    );
-    --del: 0.5s;
+    .h,
+    .v {
+        --h: var(--w);
+        border-radius: 100vmax;
+        background-color: rgba(135, 206, 235, 0.7); /* SPHERE COLOR (Light Sky Blue) */
+        top: 0;
+        left: 0;
+        box-shadow: 0 0 1em 1em #0000;
+    }
+    translate: calc(var(--r) * var(--u) - var(--w) / 2) calc(var(--r) * var(--u) - var(--w) / 2) calc((var(--d) * var(--s) * var(--u)));
+    --del: 0.5s; /* FLASH SPEED */
     animation: uranus-flash linear var(--del) infinite;
     animation-delay: calc(var(--c) * var(--del) / var(--t));
 }
-
+/* The horizontal lines are created with SCSS and a loop, which can be approximated with a set of elements */
+/* For this example, we'll assume a single globe for simplicity, but you would duplicate the .line and .h elements
+    in the HTML and adjust the --c variable to simulate the SCSS loop. */
+/* Animation keyframes */
 @keyframes uranus-flash {
     0%, 13.33% {
-        color: rgba(0, 191, 255, 0.6);
-        background-color: rgba(0, 255, 255, 0.6);
-        box-shadow: 0 0 1em 1em #87ceeb30;
+        color: rgba(0, 191, 255, 0.6); /* Deep Sky Blue */
+        background-color: rgba(0, 255, 255, 0.6); /* Cyan */
+        box-shadow: 0 0 1em 1em #87ceeb30; /* Sky Blue Glow */
     }
     6.67% {
-        color: rgba(0, 206, 209, 0.8);
-        background-color: #40e0d099;
-        box-shadow: 0 0 1em 1em #20b2aa60;
+        color: rgba(0, 206, 209, 0.8); /* Dark Cyan */
+        background-color: #40e0d099; /* Turquoise */
+        box-shadow: 0 0 1em 1em #20b2aa60; /* Light Sea Green Glow */
     }
 }
 
 /* NEPTUNE */
+/* ORBITING CONTAINER - This element handles the revolution around a central point */
 .NEPTUNE {
-    --orbit-radius: 400px;
-    --orbit-speed: 20s;
-    --orbit-center-x: 50%;
-    --orbit-center-y: 50%;
+    /* Customize the orbit properties here */
+    --orbit-radius: 400px; /* Distance from the orbit center */ /* ORBIT RADIUS */
+    --orbit-speed: 20s;      /* Speed of the revolution */ /* ORBIT SPEED */
+    --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
+    --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
     
     position: absolute;
     top: var(--orbit-center-y);
     left: var(--orbit-center-x);
     transform-origin: 0 0;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); /* Center the container itself */
     animation: orbit-animation var(--orbit-speed) linear infinite;
 }
-
+/* GLOBE - This element is a child of the orbit container and handles its own rotation */
 .neptune-globe {
-    --r: 2.5;
+    --r: 2.5; /* SPHERE RADIUS */
     --u: 1vmin;
     --h: 2px;
-    --dp: 0.5;
-    --d: calc(var(--r) * var(--dp));
-    --w: calc(2 * sqrt(pow(var(--r), 2) - pow(var(--d), 2)) * var(--u));
     
     border-radius: 50%;
     width: calc(var(--r) * var(--u) * 2);
     height: calc(var(--r) * var(--u) * 2);
     position: relative;
+    
+    /* Apply a slight initial rotation for a 3D view */
     transform: rotatex(45deg) rotatey(45deg);
+    
+    /* Customize the rotation speed here */
     --rotation-speed: 10s;
     animation: rotates var(--rotation-speed) linear infinite;
 }
-
-.neptune-h .h,
-.neptune-h .v {
-    --h: var(--w);
-    border-radius: 100vmax;
-    background-color: rgba(30, 144, 255, 0.7);
-    top: 0;
-    left: 0;
-    box-shadow: 0 0 1em 1em transparent;
-}
-
+/* Styles for the inner lines of the globe */
 .neptune-h {
-    transform: translate3d(
-        calc(var(--r) * var(--u) - var(--w) / 2),
-        calc(var(--r) * var(--u) - var(--w) / 2),
-        calc(var(--d) * var(--s) * var(--u))
-    );
-    --del: 0.5s;
+    .h,
+    .v {
+        --h: var(--w);
+        border-radius: 100vmax;
+        background-color: rgba(30, 144, 255, 0.7); /* SPHERE COLOR (Dodge Blue) */
+        top: 0;
+        left: 0;
+        box-shadow: 0 0 1em 1em #0000;
+    }
+    translate: calc(var(--r) * var(--u) - var(--w) / 2) calc(var(--r) * var(--u) - var(--w) / 2) calc((var(--d) * var(--s) * var(--u)));
+    --del: 0.5s; /* FLASH SPEED */
     animation: neptune-flash linear var(--del) infinite;
     animation-delay: calc(var(--c) * var(--del) / var(--t));
 }
-
+/* The horizontal lines are created with SCSS and a loop, which can be approximated with a set of elements */
+/* For this example, we'll assume a single globe for simplicity, but you would duplicate the .line and .h elements
+    in the HTML and adjust the --c variable to simulate the SCSS loop. */
+/* Animation keyframes */
 @keyframes neptune-flash {
     0%, 13.33% {
-        color: rgba(0, 0, 139, 0.6);
-        background-color: rgba(0, 0, 205, 0.6);
-        box-shadow: 0 0 1em 1em #1e90ff30;
+        color: rgba(0, 0, 139, 0.6); /* Dark Blue */
+        background-color: rgba(0, 0, 205, 0.6); /* Medium Blue */
+        box-shadow: 0 0 1em 1em #1e90ff30; /* Dodge Blue Glow */
     }
     6.67% {
-        color: rgba(0, 0, 255, 0.8);
-        background-color: #4169e199;
-        box-shadow: 0 0 1em 1em #4682b460;
+        color: rgba(0, 0, 255, 0.8); /* Pure Blue */
+        background-color: #4169e199; /* Royal Blue */
+        box-shadow: 0 0 1em 1em #4682b460; /* Steel Blue Glow */
     }
 }
-
-/* PLANET TILT & SPIN (3D EFFECTS) */
 .planet-tilt {
-    transform: rotateY(20deg);
-    transform-style: preserve-3d;
+  transform: rotateY(20deg); /* adjust tilt angle */
+  transform-style: preserve-3d;
 }
 
 .planet-spin {
-    animation: spin-x 6s linear infinite;
-    transform-style: preserve-3d;
-}
+  animation: spin-x 6s linear infinite;
+  transform-style: preserve-3d;
+} 
 
 @keyframes spin-x {
-    from { transform: rotateX(0deg); }
-    to { transform: rotateX(360deg); }
+  from { transform: rotateX(0deg); }
+  to { transform: rotateX(360deg); }
+}
+
+@keyframes orbit-animation {
+    from {
+        transform: rotate(0deg) translate(calc(var(--orbit-radius) * -1), 0);
+    }
+    to {
+        transform: rotate(360deg) translate(calc(var(--orbit-radius) * -1), 0);
+    }
 }
