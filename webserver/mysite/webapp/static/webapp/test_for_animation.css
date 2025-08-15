@@ -91,7 +91,7 @@ div {
     .v {
         --h: var(--w);
         border-radius: 100vmax;
-        background-color: rgba(169, 169, 169, 0.7); /* SPHERE COLOR */
+        background-color: rgba(74, 73, 73, 0.7); /* SPHERE COLOR */
         top: 0;
         left: 0;
         box-shadow: 0 0 1em 1em #0000;
@@ -109,7 +109,7 @@ div {
     0%, 13.33% {
         color: rgba(200, 200, 200, 0.6);
         background-color: rgba(180, 180, 180, 0.6);
-        box-shadow: 0 0 1em 0.1em #cccccc30;
+        box-shadow: 0 0 1em 0.1em #c6c6c630;
     }
     6.67% {
         color: rgba(220, 220, 220, 0.8);
@@ -356,7 +356,7 @@ div {
     .v {
         --h: var(--w);
         border-radius: 100vmax;
-        background-color: rgba(255, 212, 144, 0.5); /* SPHERE COLOR */
+        background-color: rgba(255, 39, 39, 0.7); /* SPHERE COLOR */
         top: 0;
         left: 0;
         box-shadow: 0 0 1em 1em #ffe5b800;
@@ -372,14 +372,14 @@ div {
 /* Animation keyframes */
 @keyframes mars-flash {
     0%, 13.33% {
-        color: rgba(255, 255, 255, 0.2);
-        background-color: rgba(255, 255, 255, 0.2);
+        color: rgba(255, 59, 59, 0.2);
+        background-color: rgba(255, 106, 106, 0.2);
         box-shadow: 0 0 1em 0.1em #ffffff00;
     }
     6.67% {
-        color: rgba(255, 196, 128, 0.2);
-        background-color: #ffffff81; /* FLASH COLOR */
-        box-shadow: 0 0 1em 0.1em #ffcd8230; /* PLANET GLOW */
+        color: rgba(255, 108, 108, 0.2);
+        background-color: #ff6b6b81; /* FLASH COLOR */
+        box-shadow: 0 0 1em 0.1em #ff646430; /* PLANET GLOW */
     }
 }
 
@@ -423,7 +423,7 @@ div {
     .v {
         --h: var(--w);
         border-radius: 100vmax;
-        background-color: rgba(220, 150, 80, 0.7); /* SPHERE COLOR (Tan-Orange) */
+        background-color: rgba(255, 161, 66, 0.7); /* SPHERE COLOR (Tan-Orange) */
         top: 0;
         left: 0;
         box-shadow: 0 0 1em 1em #0000;
