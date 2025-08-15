@@ -63,7 +63,7 @@ div {
     
     /* Customize the rotation speed here */
     --rotation-speed: 3000s;
-    animation: rotates var(--rotation-speed) linear infinite;
+    animation: none;
 }
 /* Styles for the inner lines of the globe */
 .line {
@@ -220,7 +220,7 @@ div {
     
     /* Customize the rotation speed here */
     --rotation-speed: 30s;
-    animation: rotates var(--rotation-speed) linear infinite;
+    animation: none;
 }
 /* Styles for the inner lines of the globe */
 .venus-h {
@@ -286,7 +286,7 @@ div {
     
     /* Customize the rotation speed here */
     --rotation-speed: 30s;
-    animation: rotates var(--rotation-speed) linear infinite;
+    animation: none;
 }
 /* Styles for the inner lines of the globe */
 .earth-h {
@@ -352,7 +352,7 @@ div {
     
     /* Customize the rotation speed here */
     --rotation-speed: 30s;
-    animation: rotates var(--rotation-speed) linear infinite;
+    animation: none;
 }
 /* Styles for the inner lines of the globe */
 .mars-h {
@@ -419,7 +419,7 @@ div {
     
     /* Customize the rotation speed here */
     --rotation-speed: 30s;
-    animation: rotates var(--rotation-speed) linear infinite;
+    animation: none;
 }
 /* Styles for the inner lines of the globe */
 .jupiter-h {
@@ -486,7 +486,7 @@ div {
     
     /* Customize the rotation speed here */
     --rotation-speed: 30s;
-    animation: rotates var(--rotation-speed) linear infinite;
+    animation: none;
 }
 .saturne-h {
     .h,
@@ -552,7 +552,7 @@ div {
     
     /* Customize the rotation speed here */
     --rotation-speed: 30s;
-    animation: rotates var(--rotation-speed) linear infinite;
+    animation: none;
 }
 /* Styles for the inner lines of the globe */
 .uranus-h {
@@ -619,7 +619,7 @@ div {
     
     /* Customize the rotation speed here */
     --rotation-speed: 30s;
-    animation: rotates var(--rotation-speed) linear infinite;
+    animation: none;
 }
 /* Styles for the inner lines of the globe */
 .neptune-h {
@@ -686,7 +686,7 @@ div {
     
     /* Customize the rotation speed here */
     --rotation-speed: 30s;
-    animation: rotates var(--rotation-speed) linear infinite;
+    animation: none;
 }
 /* Styles for the inner lines of the globe */
 .moon-h {
