@@ -786,7 +786,71 @@ div {
         transform: translate(-50%, -50%) rotate(360deg);
     }
 }
-@keyframes rotate-trail {
+@keyframes rotate-mercury {
+    from {
+        transform: translate(-50%, -50%) rotate(36deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(396deg);
+    }
+}
+@keyframes rotate-venus {
+    from {
+        transform: translate(-50%, -50%) rotate(38deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(398deg);
+    }
+}
+@keyframes rotate-earth {
+    from {
+        transform: translate(-50%, -50%) rotate(38deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(398deg);
+    }
+}
+@keyframes rotate-mars {
+    from {
+        transform: translate(-50%, -50%) rotate(38deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(398deg);
+    }
+}
+@keyframes rotate-jupiter {
+    from {
+        transform: translate(-50%, -50%) rotate(38deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(398deg);
+    }
+}
+@keyframes rotate-saturne {
+    from {
+        transform: translate(-50%, -50%) rotate(38deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(398deg);
+    }
+}
+@keyframes rotate-uranus {
+    from {
+        transform: translate(-50%, -50%) rotate(38deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(398deg);
+    }
+}
+@keyframes rotate-neptune {
+    from {
+        transform: translate(-50%, -50%) rotate(38deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(398deg);
+    }
+}
+@keyframes rotate-moon {
     from {
         transform: translate(-50%, -50%) rotate(38deg);
     }
@@ -799,7 +863,7 @@ div {
 }
 /* MERCURY TRAIL */
 #mercury_trail {
-    animation: rotate-trail 6s linear infinite;
+    animation: rotate-mercury 6s linear infinite;
     position:absolute;
     top:50%;
     left:50%;
@@ -813,7 +877,7 @@ div {
 }
 /* VENUS TRAIL */
 #venus_trail {
-    animation: rotate-trail 9s linear infinite;
+    animation: rotate-venus 9s linear infinite;
     position:absolute;
     top:50%;
     left:50%;
@@ -827,7 +891,7 @@ div {
 }
 /* EARTH TRAIL */
 #earth_trail {
-    animation: rotate-trail 12s linear infinite;
+    animation: rotate-earth 12s linear infinite;
     position:absolute;
     top:50%;
     left:50%;
@@ -841,7 +905,7 @@ div {
 }
 /* MARS TRAIL */
 #mars_trail {
-    animation: rotate-trail 15s linear infinite;
+    animation: rotate-mars 15s linear infinite;
     position:absolute;
     top:50%;
     left:50%;
@@ -855,7 +919,7 @@ div {
 }
 /* JUPITER TRAIL */
 #jupiter_trail {
-    animation: rotate-trail 18s linear infinite;
+    animation: rotate-jupiter 18s linear infinite;
     position:absolute;
     top:50%;
     left:50%;
@@ -869,7 +933,7 @@ div {
 }
 /* SATURN TRAIL */
 #saturne_trail {
-    animation: rotate-trail 21s linear infinite;
+    animation: rotate-saturne 21s linear infinite;
     position:absolute;
     top:50%;
     left:50%;
@@ -883,7 +947,7 @@ div {
 }
 /* URANUS TRAIL */
 #uranus_trail {
-    animation: rotate-trail 24s linear infinite;
+    animation: rotate-uranus 24s linear infinite;
     position:absolute;
     top:50%;
     left:50%;
@@ -897,7 +961,7 @@ div {
 }
 /* NEPTUNE TRAIL */
 #neptune_trail {
-    animation: rotate-trail 27s linear infinite;
+    animation: rotate-neptune 27s linear infinite;
     position:absolute;
     top:50%;
     left:50%;
@@ -911,7 +975,7 @@ div {
 }
 /* MOON TRAIL */
 #moon_trail {
-    animation: rotate-trail 1s linear infinite;
+    animation: rotate-moon 1s linear infinite;
     position:absolute;
     top:50%;
     left:50%;
