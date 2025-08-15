@@ -797,9 +797,9 @@ div {
     transform:translate(-50%, -50%);
     height:380px;
     width:380px;
-    border-color: transparent transparent transparent white;
+    border-color: transparent white transparent transparent;
     border-radius:50%;
-    border-width: 0 0 0.1em 0.1em;
+    border-width: 0 0.1em 0.1em 0;
     border-style: solid;
 }
 .earth_trail{
