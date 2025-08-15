@@ -653,10 +653,16 @@ div {
 
 @keyframes rotates {
     from {
-        transform: rotateY(30deg) rotateX(0deg);
+        transform: 
+            rotatex(0)
+            rotatey(0)
+            rotatez(0);
     }
     to {
-        transform: rotateY(30deg) rotateX(360deg);
+        transform: 
+            rotatex(0deg)
+            rotatey(720deg)
+            rotatez(0deg);
     }
 }
 
