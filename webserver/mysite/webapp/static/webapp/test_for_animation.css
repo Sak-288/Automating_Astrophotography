@@ -740,7 +740,7 @@ div {
     }
 }
 #trail{
-    font-size:5px;
+    font-size:30px;
     font-family:sans-serif;
     font-weight:bolder;
     color:white;
@@ -760,7 +760,7 @@ div {
     }
     to {
         transform: translate(-50%, -200px); 
-        opacity: 0;
+        opacity: 1;
     }
 }
 #ASTEROID {
