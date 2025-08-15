@@ -496,24 +496,27 @@ div {
     animation: rotates var(--rotation-speed) linear infinite;
 }
 /* Styles for the inner lines of the globe */
-
-
-.h, .v {
+/* -planet.h */
+.saturne-h {
+  /* Common styles for both .h and .v */
+  .h,
+  .v {
     --h: var(--w);
     border-radius: 100vmax;
     background-color: rgba(210, 180, 140, 0.7); /* SPHERE COLOR (Light Tan-Gold) */
     top: 0;
     left: 0;
     box-shadow: 0 0 1em 1em #0000;
-}
-.saturne-h {
-    translate: 
-        calc(var(--r) * var(--u) - var(--w) / 2)
-        calc(var(--r) * var(--u) - var(--w) / 2)
-        calc((var(--d) * var(--s) * var(--u)));
-    --del: 0.5s; /* FLASH SPEED */
-    animation: saturne-flash linear var(--del) infinite;
-    animation-delay: calc(var(--c) * var(--del) / var(--t));
+  }
+
+  /* Specific styles for .saturne-h */
+  translate:
+    calc(var(--r) * var(--u) - var(--w) / 2)
+    calc(var(--r) * var(--u) - var(--w) / 2)
+    calc((var(--d) * var(--s) * var(--u)));
+  --del: 0.5s; /* FLASH SPEED */
+  animation: saturne-flash linear var(--del) infinite;
+  animation-delay: calc(var(--c) * var(--del) / var(--t));
 }
 /* The horizontal lines are created with SCSS and a loop, which can be approximated with a set of elements */
 /* For this example, we'll assume a single globe for simplicity, but you would duplicate the .line and .h elements
