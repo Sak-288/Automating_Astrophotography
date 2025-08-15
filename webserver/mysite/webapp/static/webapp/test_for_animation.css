@@ -651,13 +651,10 @@ div {
     }
 }
 @keyframes rotates {
-  from {
-    transform: rotateY(0deg);
-  }
-  to {
-    transform: rotateY(360deg);
-  }
+  from { transform: rotateX(0deg) rotateY(0deg); }
+  to { transform: rotateX(360deg) rotateY(360deg); }
 }
+
 @keyframes orbit-animation {
     from {
         transform: rotate(0deg) translate(calc(var(--orbit-radius) * -1), 0);
