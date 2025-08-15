@@ -631,6 +631,7 @@ div {
     6.67% {
         color: rgba(0, 0, 255, 0.8); /* Pure Blue */
         background-color: #4169e199; /* Royal Blue */
+        box-shadow: 0 0 1em 1em #4682b460; /* Steel Blue Glow */
     }
 }
 
