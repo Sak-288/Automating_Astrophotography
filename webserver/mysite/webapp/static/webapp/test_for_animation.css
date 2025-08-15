@@ -675,13 +675,13 @@ div {
 }
 #ASTEROID {
     opacity:0.25;
-    width:545px;
+    width:550px;
     height:auto;
     position:absolute;
     top:50%;
     left:50%;
     transform:translate(-50%, -50%);
 }
-.ASTEROID{
-    animation: rotate 2s linear infinite;
+.ASTEROID {
+    animation: rotates 2s linear infinite;
 }
