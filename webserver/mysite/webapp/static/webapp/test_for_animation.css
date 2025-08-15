@@ -13,7 +13,7 @@ body {
     color:white;
     position:relative;
     overflow-y: scroll;
-    height:5000px;
+    height:auto;
 }
 div {
     transform-style: preserve-3d;
@@ -21,7 +21,7 @@ div {
 }
 #solar_system {
     position:absolute;
-    top:10%;
+    top:50%;
     left:50%;
     transform:translate(-50%, -50%);
     height:50%;
