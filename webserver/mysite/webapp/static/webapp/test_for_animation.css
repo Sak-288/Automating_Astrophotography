@@ -797,6 +797,35 @@ div {
 .ASTEROID {
     animation: rotate-image 90s linear infinite;
 }
+/* MERCURY TRAIL */
+#mercury_trail {
+    animation: rotate-trail 6s linear infinite;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    height:180px;
+    width:180px;
+    border-color: transparent transparent white transparent;
+    border-radius:50%;
+    border-width: 0 0 0.1em 0.1em;
+    border-style: solid;
+}
+/* VENUS TRAIL */
+#venus_trail {
+    animation: rotate-trail 9s linear infinite;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    height:280px;
+    width:280px;
+    border-color: transparent transparent white transparent;
+    border-radius:50%;
+    border-width: 0 0 0.1em 0.1em;
+    border-style: solid;
+}
+/* EARTH TRAIL */
 #earth_trail {
     animation: rotate-trail 12s linear infinite;
     position:absolute;
@@ -805,6 +834,90 @@ div {
     transform:translate(-50%, -50%);
     height:380px;
     width:380px;
+    border-color: transparent transparent white transparent;
+    border-radius:50%;
+    border-width: 0 0.1em 0.1em 0; /* Note: The original had different border widths */
+    border-style: solid;
+}
+/* MARS TRAIL */
+#mars_trail {
+    animation: rotate-trail 15s linear infinite;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    height:480px;
+    width:480px;
+    border-color: transparent transparent white transparent;
+    border-radius:50%;
+    border-width: 0 0 0.1em 0.1em;
+    border-style: solid;
+}
+/* JUPITER TRAIL */
+#jupiter_trail {
+    animation: rotate-trail 18s linear infinite;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    height:580px;
+    width:580px;
+    border-color: transparent transparent white transparent;
+    border-radius:50%;
+    border-width: 0 0 0.1em 0.1em;
+    border-style: solid;
+}
+/* SATURN TRAIL */
+#saturne_trail {
+    animation: rotate-trail 21s linear infinite;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    height:680px;
+    width:680px;
+    border-color: transparent transparent white transparent;
+    border-radius:50%;
+    border-width: 0 0 0.1em 0.1em;
+    border-style: solid;
+}
+/* URANUS TRAIL */
+#uranus_trail {
+    animation: rotate-trail 24s linear infinite;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    height:780px;
+    width:780px;
+    border-color: transparent transparent white transparent;
+    border-radius:50%;
+    border-width: 0 0 0.1em 0.1em;
+    border-style: solid;
+}
+/* NEPTUNE TRAIL */
+#neptune_trail {
+    animation: rotate-trail 27s linear infinite;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    height:880px;
+    width:880px;
+    border-color: transparent transparent white transparent;
+    border-radius:50%;
+    border-width: 0 0 0.1em 0.1em;
+    border-style: solid;
+}
+/* MOON TRAIL */
+#moon_trail {
+    animation: rotate-trail 1s linear infinite;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    height:54px;
+    width:54px;
     border-color: transparent transparent white transparent;
     border-radius:50%;
     border-width: 0 0 0.1em 0.1em;
