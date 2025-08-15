@@ -79,7 +79,7 @@ div {
     --w: calc(var(--r) * var(--u) * 2);
     top: 50%;
 }
-.h, .v {
+.mercury.h, .mercury.v {
     --h: var(--w);
     border-radius: 100vmax;
     background-color: rgba(169, 169, 169, 0.7); /* SPHERE COLOR */
@@ -187,7 +187,7 @@ div {
     --w: calc(var(--r) * var(--u) * 2);
     top: 50%;
 }
-.h, .v {
+.sun.h, .sun.v {
     --h: var(--w);
     border-radius: 100vmax;
     background-color: rgba(255, 215, 0, 0.8); /* SPHERE COLOR */
@@ -891,3 +891,110 @@ div {
     }
 }
 
+/* NEPTUNE */
+/* ORBITING CONTAINER - This element handles the revolution around a central point */
+.NEPTUNE {
+    /* Customize the orbit properties here */
+    --orbit-radius: 400px; /* Distance from the orbit center */ /* ORBIT RADIUS */
+    --orbit-speed: 20s;      /* Speed of the revolution */ /* ORBIT SPEED */
+    --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
+    --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
+    
+    position: absolute;
+    top: var(--orbit-center-y);
+    left: var(--orbit-center-x);
+    transform-origin: 0 0;
+    transform: translate(-50%, -50%); /* Center the container itself */
+    animation: orbit-animation var(--orbit-speed) linear infinite;
+}
+/* GLOBE - This element is a child of the orbit container and handles its own rotation */
+.neptune-globe {
+    --r: 2.5; /* SPHERE RADIUS */
+    --u: 1vmin;
+    --h: 2px;
+    
+    border-radius: 50%;
+    width: calc(var(--r) * var(--u) * 2);
+    height: calc(var(--r) * var(--u) * 2);
+    position: relative;
+    
+    /* Apply a slight initial rotation for a 3D view */
+    transform: rotatex(45deg) rotatey(45deg);
+    
+    /* Customize the rotation speed here */
+    --rotation-speed: 10s;
+    animation: rotates var(--rotation-speed) linear infinite;
+}
+/* Styles for the inner lines of the globe */
+.line {
+    position: absolute;
+    height: var(--h);
+    border: 1px solid;
+    
+    --d: calc(var(--r) * var(--dp));
+    --w: calc(2 * sqrt(pow(var(--r),2) - pow(var(--d), 2)) * var(--u));
+    width: var(--w);
+    top: calc(50% - (var(--d) * var(--s) * var(--u)));
+    left: calc(50% - var(--w) / 2);
+    color: #aaa5;
+}
+.radius {
+    height: var(--h);
+    --w: calc(var(--r) * var(--u) * 2);
+    top: 50%;
+}
+.h, .v {
+    --h: var(--w);
+    border-radius: 100vmax;
+    background-color: rgba(30, 144, 255, 0.7); /* SPHERE COLOR (Dodge Blue) */
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 1em 1em #0000;
+}
+.neptune-h {
+    translate: 
+        calc(var(--r) * var(--u) - var(--w) / 2)
+        calc(var(--r) * var(--u) - var(--w) / 2)
+        calc((var(--d) * var(--s) * var(--u)));
+    --del: 0.5s; /* FLASH SPEED */
+    animation: neptune-flash linear var(--del) infinite;
+    animation-delay: calc(var(--c) * var(--del) / var(--t));
+}
+/* The horizontal lines are created with SCSS and a loop, which can be approximated with a set of elements */
+/* For this example, we'll assume a single globe for simplicity, but you would duplicate the .line and .h elements
+    in the HTML and adjust the --c variable to simulate the SCSS loop. */
+/* Animation keyframes */
+@keyframes neptune-flash {
+    0%, 13.33% {
+        color: rgba(0, 0, 139, 0.6); /* Dark Blue */
+        background-color: rgba(0, 0, 205, 0.6); /* Medium Blue */
+        box-shadow: 0 0 1em 1em #1e90ff30; /* Dodge Blue Glow */
+    }
+    6.67% {
+        color: rgba(0, 0, 255, 0.8); /* Pure Blue */
+        background-color: #4169e199; /* Royal Blue */
+        box-shadow: 0 0 1em 1em #4682b460; /* Steel Blue Glow */
+    }
+}
+@keyframes rotates {
+    from {
+        transform: 
+            rotatex(0)
+            rotatey(0)
+            rotatez(0);
+    }
+    to {
+        transform: 
+            rotatex(360deg)
+            rotatey(720deg)
+            rotatez(360deg);
+    }
+}
+@keyframes orbit-animation {
+    from {
+        transform: rotate(0deg) translate(calc(var(--orbit-radius) * -1), 0);
+    }
+    to {
+        transform: rotate(360deg) translate(calc(var(--orbit-radius) * -1), 0);
+    }
+}
