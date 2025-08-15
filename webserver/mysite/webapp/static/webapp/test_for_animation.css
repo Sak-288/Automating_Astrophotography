@@ -18,7 +18,7 @@ div {
 #solar_system {
     position:absolute;
     margin-top:200px;
-    overflow-y: auto;
+    overflow-y: scroll;
     max-height: 1080px;
 }
 /* ORBITING CONTAINER - This element handles the revolution around a central point */
