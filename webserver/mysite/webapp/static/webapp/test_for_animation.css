@@ -900,7 +900,7 @@ div {
     width:380px;
     border-color: white transparent transparent transparent;
     border-radius:50%;
-    border-width: 0.1 0.1em 0 0; /* Note: The original had different border widths */
+    border-width: 0.1em 0.1em 0 0; /* Note: The original had different border widths */
     border-style: solid;
 }
 /* MARS TRAIL */
