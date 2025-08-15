@@ -22,14 +22,14 @@ GPIO.setup(MS3, GPIO.OUT)
 GPIO.output(DIR, GPIO.HIGH)
 
 # Set microstepping to full-step mode (all LOW)
-GPIO.output(MS1, GPIO.HIGH)
-GPIO.output(MS2, GPIO.HIGH)
-GPIO.output(MS3, GPIO.HIGH)
+GPIO.output(MS1, GPIO.LOW)
+GPIO.output(MS2, GPIO.HIGH) # This is for 1/4 step
+GPIO.output(MS3, GPIO.LOW)
 
 # Define motor parameters
 # A typical stepper motor has 200 steps per revolution (360 / 1.8 = 200)
-DEGREES_PER_STEP = float(1.8/16)
-TARGET_ANGLE = 60
+DEGREES_PER_STEP = float(1.8/4)
+TARGET_ANGLE = 90
 STEPS_PER_REVOLUTION = 360 / DEGREES_PER_STEP
 
 # Calculate the number of steps needed for the target angle
@@ -38,7 +38,7 @@ nSteps = int(TARGET_ANGLE / DEGREES_PER_STEP)
 
 # A more reasonable delay for a faster step
 # This gives a pulse rate of ~250 Hz (1 / (0.002 * 2))
-DELAY = 0.01
+DELAY = 0.001
 
 print(f"Moving {TARGET_ANGLE} degrees, which is {nSteps} steps.")
 print(f"Using a delay of {DELAY} seconds.")
