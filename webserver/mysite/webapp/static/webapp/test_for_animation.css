@@ -32,7 +32,7 @@ div {
 .MERCURY {
     /* Customize the orbit properties here */
     --orbit-radius: 100px; /* Distance from the orbit center */ /* ORBIT RADIUS */
-    --orbit-speed: 10s;      /* Speed of the revolution */ /* ORBIT SPEED */
+    --orbit-speed: 5s;      /* Speed of the revolution */ /* ORBIT SPEED */
     --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
     --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
     
@@ -45,7 +45,7 @@ div {
 }
 /* GLOBE - This element is a child of the orbit container and handles its own rotation */
 .mercury-globe {
-    --r: 1; /* SPHERE RADIUS */
+    --r: 0.5; /* SPHERE RADIUS */
     --u: 1vmin;
     --h: 2px;
     
@@ -189,7 +189,7 @@ div {
 .VENUS {
     /* Customize the orbit properties here */
     --orbit-radius: 150px; /* Distance from the orbit center */ /* ORBIT RADIUS */
-    --orbit-speed: 20s;      /* Speed of the revolution */ /* ORBIT SPEED */
+    --orbit-speed: 10s;      /* Speed of the revolution */ /* ORBIT SPEED */
     --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
     --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
     
@@ -255,7 +255,7 @@ div {
 .EARTH {
     /* Customize the orbit properties here */
     --orbit-radius: 200px; /* Distance from the orbit center */ /* ORBIT RADIUS */
-    --orbit-speed: 20s;      /* Speed of the revolution */ /* ORBIT SPEED */
+    --orbit-speed: 15s;      /* Speed of the revolution */ /* ORBIT SPEED */
     --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
     --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
     
@@ -268,7 +268,7 @@ div {
 }
 /* GLOBE - This element is a child of the orbit container and handles its own rotation */
 .earth-globe {
-    --r: 2.5; /* SPHERE RADIUS */
+    --r: 3; /* SPHERE RADIUS */
     --u: 1vmin;
     --h: 2px;
     
@@ -334,7 +334,7 @@ div {
 }
 /* GLOBE - This element is a child of the orbit container and handles its own rotation */
 .mars-globe {
-    --r: 2.5; /* SPHERE RADIUS */
+    --r: 1.5; /* SPHERE RADIUS */
     --u: 1vmin;
     --h: 2px;
     
@@ -388,7 +388,7 @@ div {
 .JUPITER {
     /* Customize the orbit properties here */
     --orbit-radius: 300px; /* Distance from the orbit center */ /* ORBIT RADIUS */
-    --orbit-speed: 20s;      /* Speed of the revolution */ /* ORBIT SPEED */
+    --orbit-speed: 25s;      /* Speed of the revolution */ /* ORBIT SPEED */
     --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
     --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
     
@@ -401,7 +401,7 @@ div {
 }
 /* GLOBE - This element is a child of the orbit container and handles its own rotation */
 .jupiter-globe {
-    --r: 2.5; /* SPHERE RADIUS */
+    --r: 33; /* SPHERE RADIUS */
     --u: 1vmin;
     --h: 2px;
     
@@ -455,7 +455,7 @@ div {
 .SATURNE {
     /* Customize the orbit properties here */
     --orbit-radius: 350px; /* Distance from the orbit center */ /* ORBIT RADIUS */
-    --orbit-speed: 20s;      /* Speed of the revolution */ /* ORBIT SPEED */
+    --orbit-speed: 30s;      /* Speed of the revolution */ /* ORBIT SPEED */
     --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
     --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
     
@@ -468,7 +468,7 @@ div {
 }
 /* GLOBE - This element is a child of the orbit container and handles its own rotation */
 .saturne-globe {
-    --r: 2.5; /* SPHERE RADIUS */
+    --r: 25; /* SPHERE RADIUS */
     --u: 1vmin;
     --h: 2px;
     
@@ -521,7 +521,7 @@ div {
 .URANUS {
     /* Customize the orbit properties here */
     --orbit-radius: 400px; /* Distance from the orbit center */ /* ORBIT RADIUS */
-    --orbit-speed: 20s;      /* Speed of the revolution */ /* ORBIT SPEED */
+    --orbit-speed: 35s;      /* Speed of the revolution */ /* ORBIT SPEED */
     --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
     --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
     
@@ -534,7 +534,7 @@ div {
 }
 /* GLOBE - This element is a child of the orbit container and handles its own rotation */
 .uranus-globe {
-    --r: 2.5; /* SPHERE RADIUS */
+    --r: 8; /* SPHERE RADIUS */
     --u: 1vmin;
     --h: 2px;
     
@@ -588,7 +588,7 @@ div {
 .NEPTUNE {
     /* Customize the orbit properties here */
     --orbit-radius: 450px; /* Distance from the orbit center */ /* ORBIT RADIUS */
-    --orbit-speed: 20s;      /* Speed of the revolution */ /* ORBIT SPEED */
+    --orbit-speed: 40s;      /* Speed of the revolution */ /* ORBIT SPEED */
     --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
     --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
     
@@ -601,7 +601,7 @@ div {
 }
 /* GLOBE - This element is a child of the orbit container and handles its own rotation */
 .neptune-globe {
-    --r: 2.5; /* SPHERE RADIUS */
+    --r: 7; /* SPHERE RADIUS */
     --u: 1vmin;
     --h: 2px;
     
