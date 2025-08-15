@@ -980,8 +980,8 @@ div {
     top:50%;
     left:50%;
     transform:translate(-50%, -50%);
-    height:54px;
-    width:54px;
+    height:57px;
+    width:57px;
     border-color: transparent transparent white transparent;
     border-radius:50%;
     border-width: 0 0 0.1em 0.1em;
