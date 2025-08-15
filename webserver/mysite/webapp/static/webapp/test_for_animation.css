@@ -788,10 +788,10 @@ div {
 }
 @keyframes rotate-trail {
     from {
-        transform: translate(-50%, -50%) rotate(40deg);
+        transform: translate(-50%, -50%) rotate(38deg);
     }
     to {
-        transform: translate(-50%, -50%) rotate(400deg);
+        transform: translate(-50%, -50%) rotate(398deg);
     }
 }
 .ASTEROID {
