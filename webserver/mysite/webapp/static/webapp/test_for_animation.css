@@ -796,7 +796,7 @@ div {
     transform:translate(-50%, -50%);
     height:380px;
     width:380px;
-    border-color: transparent transparent white transparent;
+    border-color: transparent transparent white white;
     border-radius:50%;
     border-width: 0 0 0.1em 0.1em;
     border-style: solid;
