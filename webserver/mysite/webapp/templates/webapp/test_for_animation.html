@@ -66,15 +66,17 @@
   </div>
 
   <!-- EARTH -->
-  <div id="EARTH" class="EARTH">
+    <div id="EARTH" class="EARTH">
     <div style="--t: {{ t2_plus_1 }}" class="earth-globe">
-      <div style="--c: {{ t }}" class="line radius h earth-h"></div>
-      {% for line in positive_lines %}
-      <div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h earth-h"></div>
-      {% endfor %}
-      {% for line in negative_lines %}
-      <div style="--dp: {{ line.dp }}; --s:1; --c: {{ line.c }}" class="line h earth-h"></div>
-      {% endfor %}
+        <div style="--c: {{ t }}" class="line radius h earth-h"></div>
+        {% for line in positive_lines %}
+        <div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h earth-h"></div>
+        {% endfor %}
+        {% for line in negative_lines %}
+        <div style="--dp: {{ line.dp }}; --s:1; --c: {{ line.c }}" class="line h earth-h"></div>
+        {% endfor %}
+    </div>
+    <div id="earth-trail" class="trail-container"></div> <!-- THIS IS THE LINE -->
     </div>
 
     <!-- MOON -->
@@ -162,34 +164,45 @@
   </div>
 
 </div>
-
-<!-- JavaScript for spawning points -->
 <script>
-</script>
+    const earthElement = document.getElementById('EARTH');
+    const earthTrailContainer = document.getElementById('earth-trail');
 
-</script>
-<!-- Parallax Effect for Dynamic Starry Background in Body-->
-    <script>
-    (function() {
-        // Add event listener
-        document.addEventListener("mousemove", parallax_body);
-        const elem = document.querySelector("body");
+    // Interval (in milliseconds) for creating a new trail particle
+    const trailInterval = 50; 
+    let lastPosition = { x: 0, y: 0 };
+    
+    // Function to create a new trail particle
+    function createTrailParticle() {
+        // Get the current position of the Earth element
+        const rect = earthElement.getBoundingClientRect();
         
-        // Magic happens here
-        function parallax_body(e) {
-            let _w = window.innerWidth;
-            let _h = window.innerHeight;
-            let _mouseX = e.clientX;
-            let _mouseY = e.clientY;
-
-            let offset_coeff = 0.005;
-            let bg_Xoffset = -(_mouseX - _w/2) * offset_coeff * 1.35;
-            let bg_Yoffset = -(_mouseY - _h/2) * offset_coeff * 5;
-
-            elem.style.backgroundPosition = `${bg_Xoffset}% ${bg_Yoffset}%`;
+        // Calculate the center point of the Earth element
+        const currentX = rect.left + rect.width / 2;
+        const currentY = rect.top + rect.height / 2;
+        
+        // Only create a new particle if the planet has moved significantly
+        if (Math.abs(currentX - lastPosition.x) > 1 || Math.abs(currentY - lastPosition.y) > 1) {
+            const particle = document.createElement('div');
+            particle.classList.add('trail-particle');
+            
+            // Position the particle relative to the container
+            particle.style.left = (currentX - rect.left) + 'px';
+            particle.style.top = (currentY - rect.top) + 'px';
+            
+            earthTrailContainer.appendChild(particle);
+            
+            // Remove the particle after its animation is complete
+            setTimeout(() => {
+                particle.remove();
+            }, 2000); // Matches the animation duration
+            
+            lastPosition = { x: currentX, y: currentY };
         }
-    })();
-</script>
+    }
 
+    // Use a loop to continuously check the position and create trails
+    setInterval(createTrailParticle, trailInterval);
+</script>
 </body>
-</html>
+</html> 
