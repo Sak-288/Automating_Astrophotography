@@ -51,7 +51,7 @@
 </div>
 </div>
 
-<div class="EARTH">
+<div id="EARTH" class="EARTH">
 <div style="--t: {{ t2_plus_1 }}" class="earth-globe">
 <div style="--c: {{ t }}" class="line radius h earth-h"></div>
 {% for line in positive_lines %}
@@ -60,9 +60,6 @@
 {% for line in negative_lines %}
 <div style="--dp: {{ line.dp }}; --s:1; --c: {{ line.c }}" class="line h earth-h"></div>
 {% endfor %}
-</div>
-<div id="trail">
-<script src="{% static 'webapp/trail.js' %}"></script>
 </div>
 <div class="MOON">
 <div style="--t: {{ t2_plus_1 }}" class="moon-globe">
@@ -76,6 +73,21 @@
 </div>
 </div>
 </div>
+
+script.
+const container = document.getElementById('EARTH');
+function spawnPoint() {
+const point = document.createElement('div');
+point.classList.add('point');
+// Position at the exact center of the container
+const centerX = (container.clientWidth / 2) - (point.clientWidth / 2);
+const centerY = (container.clientHeight / 2) - (point.clientHeight / 2);
+point.style.left = centerX + 'px';
+point.style.top = centerY + 'px';
+container.appendChild(point);
+}
+// Spawn a point every 100 milliseconds
+setInterval(spawnPoint, 100);
 
 <div class="MARS">
 <div style="--t: {{ t2_plus_1 }}" class="mars-globe">
