@@ -794,7 +794,7 @@ div {
     top:50%;
     left:50%;
     /* Combine both transformations into a single line */
-    transform:translate(-50%, -50%) rotate(210deg); 
+    transform:translate(-50%, -50%); 
     height:380px;
     width:380px;
     border-color: white transparent transparent transparent;
