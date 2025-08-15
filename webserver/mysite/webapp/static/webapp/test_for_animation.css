@@ -23,6 +23,7 @@ div {
     margin-top:50px;
 }
 #explain_box {
+    font-family:'Orbitron', sans-serif;
     position:absolute;
     top:5%;
     left:50%;

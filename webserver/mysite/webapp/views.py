@@ -34,4 +34,4 @@ def test_for_animation(request):
         "positive_lines": positive_lines,
         "negative_lines": negative_lines,
     }
-    return render(request, "webapp/test_for_animation.pug", context)
+    return render(request, "webapp/test_for_animation.html", context)
