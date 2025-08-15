@@ -790,7 +790,7 @@ div {
     animation: rotate-image 90s linear infinite;
 }
 #earth_trail{
-    transform:rotate(180deg);
+    transform:rotate(120deg);
     position:absolute;
     top:50%;
     left:50%;
