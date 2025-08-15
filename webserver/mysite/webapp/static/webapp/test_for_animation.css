@@ -283,7 +283,7 @@ div {
 .h, .v {
     --h: var(--w);
     border-radius: 100vmax;
-    background-color: rgba(255, 211, 140, 0.2); /* SPHERE COLOR */
+    background-color: rgba(255, 212, 144, 0.5); /* SPHERE COLOR */
     top: 0;
     left: 0;
     box-shadow: 0 0 1em 1em #ffe5b800;
@@ -303,14 +303,14 @@ div {
 /* Animation keyframes */
 @keyframes venus-flash {
     0%, 13.33% {
-        color: rgba(235, 172, 107, 0.2);
-        background-color: rgba(255, 128, 0, 0.2);
-        box-shadow: 0 0 1em 1em #ff800000;
+        color: rgba(255, 255, 255, 0.2);
+        background-color: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 0 1em 1em #ffffff00;
     }
     6.67% {
         color: rgba(255, 196, 128, 0.2);
-        background-color: #ff990081; /* FLASH COLOR */
-        box-shadow: 0 0 1em 1em #ffc26630; /* PLANET GLOW */
+        background-color: #ffffff81; /* FLASH COLOR */
+        box-shadow: 0 0 1em 1em #ffcd8230; /* PLANET GLOW */
     }
 }
 @keyframes rotates {
