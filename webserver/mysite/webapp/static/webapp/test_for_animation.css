@@ -650,9 +650,20 @@ div {
         box-shadow: 0 0 1em 1em #4682b460; /* Steel Blue Glow */
     }
 }
+
 @keyframes rotates {
-  from { transform: rotateX(0deg) rotateY(0deg); }
-  to { transform: rotateX(360deg) rotateY(360deg); }
+    from {
+        transform: 
+            rotatex(0)
+            rotatey(0)
+            rotatez(0);
+    }
+    to {
+        transform: 
+            rotatex(360deg)
+            rotatey(720deg)
+            rotatez(360deg);
+    }
 }
 
 @keyframes orbit-animation {
