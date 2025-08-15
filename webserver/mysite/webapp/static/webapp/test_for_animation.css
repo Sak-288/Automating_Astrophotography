@@ -32,7 +32,7 @@ div {
 .MERCURY {
     /* Customize the orbit properties here */
     --orbit-radius: 100px; /* Distance from the orbit center */ /* ORBIT RADIUS */
-    --orbit-speed: 2s;      /* Speed of the revolution */ /* ORBIT SPEED */
+    --orbit-speed: 6s;      /* Speed of the revolution */ /* ORBIT SPEED */
     --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
     --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
     
@@ -122,7 +122,7 @@ div {
 .SUN {
     /* Customize the orbit properties here */
     --orbit-radius: 10px; /* Distance from the orbit center */ /* ORBIT RADIUS */
-    --orbit-speed: 5s;      /* Speed of the revolution */ /* ORBIT SPEED */
+    --orbit-speed: 10s;      /* Speed of the revolution */ /* ORBIT SPEED */
     --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
     --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
     
@@ -189,7 +189,7 @@ div {
 .VENUS {
     /* Customize the orbit properties here */
     --orbit-radius: 150px; /* Distance from the orbit center */ /* ORBIT RADIUS */
-    --orbit-speed: 3s;      /* Speed of the revolution */ /* ORBIT SPEED */
+    --orbit-speed: 9s;      /* Speed of the revolution */ /* ORBIT SPEED */
     --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
     --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
     
@@ -255,7 +255,7 @@ div {
 .EARTH {
     /* Customize the orbit properties here */
     --orbit-radius: 200px; /* Distance from the orbit center */ /* ORBIT RADIUS */
-    --orbit-speed: 4s;      /* Speed of the revolution */ /* ORBIT SPEED */
+    --orbit-speed: 12s;      /* Speed of the revolution */ /* ORBIT SPEED */
     --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
     --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
     
@@ -321,7 +321,7 @@ div {
 .MARS {
     /* Customize the orbit properties here */
     --orbit-radius: 250px; /* Distance from the orbit center */ /* ORBIT RADIUS */
-    --orbit-speed: 5s;      /* Speed of the revolution */ /* ORBIT SPEED */
+    --orbit-speed: 15s;      /* Speed of the revolution */ /* ORBIT SPEED */
     --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
     --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
     
@@ -388,7 +388,7 @@ div {
 .JUPITER {
     /* Customize the orbit properties here */
     --orbit-radius: 300px; /* Distance from the orbit center */ /* ORBIT RADIUS */
-    --orbit-speed: 6s;      /* Speed of the revolution */ /* ORBIT SPEED */
+    --orbit-speed: 18s;      /* Speed of the revolution */ /* ORBIT SPEED */
     --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
     --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
     
@@ -455,7 +455,7 @@ div {
 .SATURNE {
     /* Customize the orbit properties here */
     --orbit-radius: 350px; /* Distance from the orbit center */ /* ORBIT RADIUS */
-    --orbit-speed: 7s;      /* Speed of the revolution */ /* ORBIT SPEED */
+    --orbit-speed: 21s;      /* Speed of the revolution */ /* ORBIT SPEED */
     --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
     --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
     
@@ -521,7 +521,7 @@ div {
 .URANUS {
     /* Customize the orbit properties here */
     --orbit-radius: 400px; /* Distance from the orbit center */ /* ORBIT RADIUS */
-    --orbit-speed: 8s;      /* Speed of the revolution */ /* ORBIT SPEED */
+    --orbit-speed: 24s;      /* Speed of the revolution */ /* ORBIT SPEED */
     --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
     --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
     
@@ -588,7 +588,7 @@ div {
 .NEPTUNE {
     /* Customize the orbit properties here */
     --orbit-radius: 450px; /* Distance from the orbit center */ /* ORBIT RADIUS */
-    --orbit-speed: 9s;      /* Speed of the revolution */ /* ORBIT SPEED */
+    --orbit-speed: 27s;      /* Speed of the revolution */ /* ORBIT SPEED */
     --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
     --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
     
@@ -655,7 +655,7 @@ div {
 .MOON {
     /* Customize the orbit properties here */
     --orbit-radius: 35px; /* Distance from the orbit center */ /* ORBIT RADIUS */
-    --orbit-speed: 2s;      /* Speed of the revolution */ /* ORBIT SPEED */
+    --orbit-speed: 1s;      /* Speed of the revolution */ /* ORBIT SPEED */
     --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
     --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
     
