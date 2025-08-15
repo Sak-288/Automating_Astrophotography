@@ -802,5 +802,5 @@ div {
     border-style: solid;
 }
 .earth_trail{
-    animation: rotate-image 6s linear infinite;
+    animation: rotate-image 12s linear infinite;
 }
