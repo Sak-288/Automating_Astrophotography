@@ -166,27 +166,45 @@
 <!-- JavaScript for spawning points -->
 <script>
 const earthDiv = document.getElementById('earth_simp');
-const container = document.body; // append points to body so they stay in place
+const container = document.body; // append points to body
+
+let lastX = null;
+let lastY = null;
 
 function spawnPoint() {
-    const point = document.createElement('div');
-    point.classList.add('point');
-
-    // Get Earth’s current position in the viewport
+    // Get Earth's current position
     const rect = earthDiv.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
+    const x = rect.left + rect.width / 2;
+    const y = rect.top + rect.height / 2;
 
-    // Position point absolutely relative to the page
-    point.style.position = 'absolute';
-    point.style.left = centerX + 'px';
-    point.style.top = centerY + 'px';
+    if (lastX !== null && lastY !== null) {
+        // create a line connecting last point to current point
+        const line = document.createElement('div');
+        line.style.position = 'absolute';
+        line.style.backgroundColor = 'white';
+        
+        // Calculate distance and angle
+        const dx = x - lastX;
+        const dy = y - lastY;
+        const length = Math.sqrt(dx*dx + dy*dy);
+        const angle = Math.atan2(dy, dx) * 180 / Math.PI;
 
-    container.appendChild(point);
+        line.style.width = length + 'px';
+        line.style.height = '2px'; // thickness of the trail
+        line.style.left = lastX + 'px';
+        line.style.top = lastY + 'px';
+        line.style.transformOrigin = '0 0';
+        line.style.transform = `rotate(${angle}deg)`;
+
+        container.appendChild(line);
+    }
+
+    lastX = x;
+    lastY = y;
 }
 
-// Spawn a point every 100 milliseconds
-setInterval(spawnPoint, 25);
+// Spawn a point every 50ms (faster = smoother line)
+setInterval(spawnPoint, 50);
 </script>
 
 </body>
