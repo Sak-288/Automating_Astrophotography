@@ -786,11 +786,12 @@ div {
     animation: rotate-image 90s linear infinite;
 }
 .point {
-    width: 5px;
-    height: 5px;
+    width: 3Opx;
+    height: 30px;
     color:white;
     position: absolute;
     border-radius: 50%;
+    opacity:1;
 }
 #earth_simp{
     position:absolute;
