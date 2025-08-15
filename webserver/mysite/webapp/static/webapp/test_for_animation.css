@@ -58,7 +58,7 @@ div {
     transform: rotatex(45deg) rotatey(45deg);
     
     /* Customize the rotation speed here */
-    --rotation-speed: 10s;
+    --rotation-speed: 30s;
     animation: rotates var(--rotation-speed) linear infinite;
 }
 /* Styles for the inner lines of the globe */
@@ -148,7 +148,7 @@ div {
     transform: rotatex(45deg) rotatey(45deg);
     
     /* Customize the rotation speed here */
-    --rotation-speed: 10s;
+    --rotation-speed: 30s;
     animation: rotates var(--rotation-speed) linear infinite;
 }
 /* Styles for the inner lines of the globe */
@@ -215,7 +215,7 @@ div {
     transform: rotatex(45deg) rotatey(45deg);
     
     /* Customize the rotation speed here */
-    --rotation-speed: 10s;
+    --rotation-speed: 30s;
     animation: rotates var(--rotation-speed) linear infinite;
 }
 /* Styles for the inner lines of the globe */
@@ -281,7 +281,7 @@ div {
     transform: rotatex(45deg) rotatey(45deg);
     
     /* Customize the rotation speed here */
-    --rotation-speed: 10s;
+    --rotation-speed: 30s;
     animation: rotates var(--rotation-speed) linear infinite;
 }
 /* Styles for the inner lines of the globe */
@@ -347,7 +347,7 @@ div {
     transform: rotatex(45deg) rotatey(45deg);
     
     /* Customize the rotation speed here */
-    --rotation-speed: 10s;
+    --rotation-speed: 30s;
     animation: rotates var(--rotation-speed) linear infinite;
 }
 /* Styles for the inner lines of the globe */
@@ -414,7 +414,7 @@ div {
     transform: rotatex(45deg) rotatey(45deg);
     
     /* Customize the rotation speed here */
-    --rotation-speed: 10s;
+    --rotation-speed: 30s;
     animation: rotates var(--rotation-speed) linear infinite;
 }
 /* Styles for the inner lines of the globe */
@@ -481,7 +481,7 @@ div {
     transform: rotatex(45deg) rotatey(45deg);
     
     /* Customize the rotation speed here */
-    --rotation-speed: 10s;
+    --rotation-speed: 30s;
     animation: rotates var(--rotation-speed) linear infinite;
 }
 .saturne-h {
@@ -547,7 +547,7 @@ div {
     transform: rotatex(45deg) rotatey(45deg);
     
     /* Customize the rotation speed here */
-    --rotation-speed: 10s;
+    --rotation-speed: 30s;
     animation: rotates var(--rotation-speed) linear infinite;
 }
 /* Styles for the inner lines of the globe */
@@ -614,7 +614,7 @@ div {
     transform: rotatex(45deg) rotatey(45deg);
     
     /* Customize the rotation speed here */
-    --rotation-speed: 10s;
+    --rotation-speed: 30s;
     animation: rotates var(--rotation-speed) linear infinite;
 }
 /* Styles for the inner lines of the globe */
@@ -681,7 +681,7 @@ div {
     transform: rotatex(45deg) rotatey(45deg);
     
     /* Customize the rotation speed here */
-    --rotation-speed: 10s;
+    --rotation-speed: 30s;
     animation: rotates var(--rotation-speed) linear infinite;
 }
 /* Styles for the inner lines of the globe */
@@ -739,6 +739,28 @@ div {
         transform: rotate(360deg) translate(calc(var(--orbit-radius) * -1), 0);
     }
 }
+#trail{
+    --trailing_speed: 5s;
+    font-size:5px;
+    font-family:sans-serif;
+    font-weight:bolder;
+    color:white;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+}
+.trail{
+    animation: trailing var(--trailing_speed) linear infinite;
+}
+@keyframes trailing {
+    from {
+        opacity:1;
+    }
+    to {
+        opacity:0;
+    }
+}
 #ASTEROID {
     opacity:0.25;
     width:553px;
@@ -757,5 +779,5 @@ div {
     }
 }
 .ASTEROID {
-    animation: rotate-image 15s linear infinite;
+    animation: rotate-image 90s linear infinite;
 }
