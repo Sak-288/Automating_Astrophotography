@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 /* MERCURY */
 body {
     min-height: 100vh;
@@ -23,7 +24,6 @@ div {
     margin-top:50px;
 }
 #explain_box {
-    font-family:'Orbitron', sans-serif;
     position:absolute;
     top:5%;
     left:50%;
