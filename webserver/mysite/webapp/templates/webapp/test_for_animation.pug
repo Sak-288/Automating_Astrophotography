@@ -74,20 +74,22 @@
 </div>
 </div>
 
+<div id="container"></div>
+
 script.
-const container = document.getElementById('EARTH');
-function spawnPoint() {
-const point = document.createElement('div');
-point.classList.add('point');
-// Position at the exact center of the container
-const centerX = (container.clientWidth / 2) - (point.clientWidth / 2);
-const centerY = (container.clientHeight / 2) - (point.clientHeight / 2);
-point.style.left = centerX + 'px';
-point.style.top = centerY + 'px';
-container.appendChild(point);
-}
-// Spawn a point every 100 milliseconds
-setInterval(spawnPoint, 100);
+    const container = document.getElementById('container');
+    function spawnPoint() {
+    const point = document.createElement('div');
+    point.classList.add('point');
+    // Position at the exact center of the container
+    const centerX = (container.clientWidth / 2) - (point.clientWidth / 2);
+    const centerY = (container.clientHeight / 2) - (point.clientHeight / 2);
+    point.style.left = centerX + 'px';
+    point.style.top = centerY + 'px';
+    container.appendChild(point);
+    }
+    // Spawn a point every 100 milliseconds
+    setInterval(spawnPoint, 100);
 
 <div class="MARS">
 <div style="--t: {{ t2_plus_1 }}" class="mars-globe">
