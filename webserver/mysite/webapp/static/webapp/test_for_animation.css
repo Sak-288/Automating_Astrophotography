@@ -9,6 +9,7 @@ body {
     perspective: 1000px; /* Add perspective for 3D effect */
     overflow: hidden;
     font-family:'Orbitron', sans-serif;
+    color:white;
 }
 div {
     transform-style: preserve-3d;
@@ -17,6 +18,8 @@ div {
 #solar_system {
     position:absolute;
     margin-top:200px;
+    overflow-y: auto;
+    max-height: 1080px;
 }
 /* ORBITING CONTAINER - This element handles the revolution around a central point */
 .MERCURY {
