@@ -109,12 +109,12 @@ div {
     0%, 13.33% {
         color: rgba(200, 200, 200, 0.6);
         background-color: rgba(180, 180, 180, 0.6);
-        box-shadow: 0 0 1em 0.2em #cccccc30;
+        box-shadow: 0 0 1em 0.1em #cccccc30;
     }
     6.67% {
         color: rgba(220, 220, 220, 0.8);
         background-color: #cccccc99; /* FLASH COLOR */
-        box-shadow: 0 0 1em 0.2em #cccccc60; /* PLANET GLOW */
+        box-shadow: 0 0 1em 0.1em #cccccc60; /* PLANET GLOW */
     }
 }
 /* SUN */
@@ -175,12 +175,12 @@ div {
     0%, 13.33% {
         color: rgba(255, 204, 0, 0.7); /* Brighter Orange-Yellow */
         background-color: rgba(255, 187, 0, 0.7); /* More intense Orange */
-        box-shadow: 0 0 1em 1em #ffdd0030; /* Brighter Glow */
+        box-shadow: 0 0 1em 0.1em #ffdd0030; /* Brighter Glow */
     }
     6.67% {
         color: rgba(255, 170, 0, 0.7); /* Even brighter Orange */
         background-color: #ff990099; /* Very Flashy Orange */
-        box-shadow: 0 0 1em 1em #ffcc0060; /* More Intense Glow */
+        box-shadow: 0 0 1em 0.1em #ffcc0060; /* More Intense Glow */
     }
 }
 
@@ -242,12 +242,12 @@ div {
     0%, 13.33% {
         color: rgba(255, 204, 153, 0.6);
         background-color: rgba(255, 179, 102, 0.6);
-        box-shadow: 0 0 1em 1em #ffcc9930;
+        box-shadow: 0 0 1em 0.1em #ffcc9930;
     }
     6.67% {
         color: rgba(255, 196, 128, 0.7);
         background-color: #ffb36699; /* FLASH COLOR */
-        box-shadow: 0 0 1em 1em #ffcc9960; /* PLANET GLOW */
+        box-shadow: 0 0 1em 0.1em #ffcc9960; /* PLANET GLOW */
     }
 }
 /* EARTH */
@@ -308,12 +308,12 @@ div {
     0%, 13.33% {
         color: rgba(34, 139, 34, 0.6); /* Forest Green */
         background-color: rgba(65, 105, 225, 0.6); /* Royal Blue */
-        box-shadow: 0 0 1em 1em #00640030; /* Dark Green Glow */
+        box-shadow: 0 0 1em 0.1em #00640030; /* Dark Green Glow */
     }
     6.67% {
         color: rgba(34, 139, 34, 0.8); /* More Opaque Green */
         background-color: #4169e199; /* Flashy Blue */
-        box-shadow: 0 0 1em 1em #228b2260; /* Brighter Green Glow */
+        box-shadow: 0 0 1em 0.1em #228b2260; /* Brighter Green Glow */
     }
 }
 /* MARS */
@@ -374,12 +374,12 @@ div {
     0%, 13.33% {
         color: rgba(255, 255, 255, 0.2);
         background-color: rgba(255, 255, 255, 0.2);
-        box-shadow: 0 0 1em 1em #ffffff00;
+        box-shadow: 0 0 1em 0.1em #ffffff00;
     }
     6.67% {
         color: rgba(255, 196, 128, 0.2);
         background-color: #ffffff81; /* FLASH COLOR */
-        box-shadow: 0 0 1em 1em #ffcd8230; /* PLANET GLOW */
+        box-shadow: 0 0 1em 0.1em #ffcd8230; /* PLANET GLOW */
     }
 }
 
@@ -441,12 +441,12 @@ div {
     0%, 13.33% {
         color: rgba(240, 200, 160, 0.6); /* Lighter Tan */
         background-color: rgba(180, 120, 70, 0.6); /* Darker Orange */
-        box-shadow: 0 0 1em 1em #8b451330; /* Saddle Brown Glow */
+        box-shadow: 0 0 1em 0.1em #8b451330; /* Saddle Brown Glow */
     }
     6.67% {
         color: rgba(255, 100, 100, 0.8); /* Red for the Great Red Spot */
         background-color: #d2691e99; /* Chocolate Brown Flash */
-        box-shadow: 0 0 1em 1em #a52a2a60; /* Brown Glow */
+        box-shadow: 0 0 1em 0.1em #a52a2a60; /* Brown Glow */
     }
 }
 
@@ -507,12 +507,12 @@ div {
     0%, 13.33% {
         color: rgba(240, 230, 140, 0.6); /* Pale Goldenrod */
         background-color: rgba(218, 165, 32, 0.6); /* Goldenrod */
-        box-shadow: 0 0 1em 1em #ffd70030; /* Gold Glow */
+        box-shadow: 0 0 1em 0.1em #ffd70030; /* Gold Glow */
     }
     6.67% {
         color: rgba(255, 255, 255, 0.8); /* White Flash */
         background-color: #f5deb399; /* Wheat Flash */
-        box-shadow: 0 0 1em 1em #f5f5dc60; /* Beige Glow */
+        box-shadow: 0 0 1em 0.1em #f5f5dc60; /* Beige Glow */
     }
 }
 
@@ -574,12 +574,12 @@ div {
     0%, 13.33% {
         color: rgba(0, 191, 255, 0.6); /* Deep Sky Blue */
         background-color: rgba(0, 255, 255, 0.6); /* Cyan */
-        box-shadow: 0 0 1em 1em #87ceeb30; /* Sky Blue Glow */
+        box-shadow: 0 0 1em 0.1em #87ceeb30; /* Sky Blue Glow */
     }
     6.67% {
         color: rgba(0, 206, 209, 0.8); /* Dark Cyan */
         background-color: #40e0d099; /* Turquoise */
-        box-shadow: 0 0 1em 1em #20b2aa60; /* Light Sea Green Glow */
+        box-shadow: 0 0 1em 0.1em #20b2aa60; /* Light Sea Green Glow */
     }
 }
 
@@ -641,12 +641,12 @@ div {
     0%, 13.33% {
         color: rgba(0, 0, 139, 0.6); /* Dark Blue */
         background-color: rgba(0, 0, 205, 0.6); /* Medium Blue */
-        box-shadow: 0 0 1em 1em #1e90ff30; /* Dodge Blue Glow */
+        box-shadow: 0 0 1em 0.1em #1e90ff30; /* Dodge Blue Glow */
     }
     6.67% {
         color: rgba(0, 0, 255, 0.8); /* Pure Blue */
         background-color: #4169e199; /* Royal Blue */
-        box-shadow: 0 0 1em 1em #4682b460; /* Steel Blue Glow */
+        box-shadow: 0 0 1em 0.1em #4682b460; /* Steel Blue Glow */
     }
 }
 
