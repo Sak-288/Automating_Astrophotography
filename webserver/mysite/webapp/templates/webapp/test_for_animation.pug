@@ -47,6 +47,78 @@
 </div>
 </div>
 
+<div class="EARTH">
+<div style="--t: {{ t2_plus_1 }}" class="earth-globe">
+<div style="--c: {{ t }}" class="line radius h earth-h"></div>
+{% for line in positive_lines %}
+<div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h earth-h"></div>
+{% endfor %}
+{% for line in negative_lines %}
+<div style="--dp: {{ line.dp }}; --s:1; --c: {{ line.c }}" class="line h earth-h"></div>
+{% endfor %}
+</div>
+</div>
+
+<div class="MARS">
+<div style="--t: {{ t2_plus_1 }}" class="mars-globe">
+<div style="--c: {{ t }}" class="line radius h mars-h"></div>
+{% for line in positive_lines %}
+<div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h mars-h"></div>
+{% endfor %}
+{% for line in negative_lines %}
+<div style="--dp: {{ line.dp }}; --s:1; --c: {{ line.c }}" class="line h mars-h"></div>
+{% endfor %}
+</div>
+</div>
+
+<div class="JUPITER">
+<div style="--t: {{ t2_plus_1 }}" class="jupiter-globe">
+<div style="--c: {{ t }}" class="line radius h jupiter-h"></div>
+{% for line in positive_lines %}
+<div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h jupiter-h"></div>
+{% endfor %}
+{% for line in negative_lines %}
+<div style="--dp: {{ line.dp }}; --s:1; --c: {{ line.c }}" class="line h jupiter-h"></div>
+{% endfor %}
+</div>
+</div>
+
+<div class="SATURNE">
+<div style="--t: {{ t2_plus_1 }}" class="saturne-globe">
+<div style="--c: {{ t }}" class="line radius h saturne-h"></div>
+{% for line in positive_lines %}
+<div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h saturne-h"></div>
+{% endfor %}
+{% for line in negative_lines %}
+<div style="--dp: {{ line.dp }}; --s:1; --c: {{ line.c }}" class="line h saturne-h"></div>
+{% endfor %}
+</div>
+</div>
+
+<div class="URANUS">
+<div style="--t: {{ t2_plus_1 }}" class="uranus-globe">
+<div style="--c: {{ t }}" class="line radius h uranus-h"></div>
+{% for line in positive_lines %}
+<div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h uranus-h"></div>
+{% endfor %}
+{% for line in negative_lines %}
+<div style="--dp: {{ line.dp }}; --s:1; --c: {{ line.c }}" class="line h uranus-h"></div>
+{% endfor %}
+</div>
+</div>
+
+<div class="NEPTUNE">
+<div style="--t: {{ t2_plus_1 }}" class="neptune-globe">
+<div style="--c: {{ t }}" class="line radius h neptune-h"></div>
+{% for line in positive_lines %}
+<div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h neptune-h"></div>
+{% endfor %}
+{% for line in negative_lines %}
+<div style="--dp: {{ line.dp }}; --s:1; --c: {{ line.c }}" class="line h neptune-h"></div>
+{% endfor %}
+</div>
+</div>
+
 </div>
 </body>
 </html>
