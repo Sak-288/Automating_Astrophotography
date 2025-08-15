@@ -165,46 +165,30 @@
 
 <!-- JavaScript for spawning points -->
 <script>
-const earthDiv = document.getElementById('earth_simp');
-const container = document.body; // append points to body
+</script>
 
-let lastX = null;
-let lastY = null;
-
-function spawnPoint() {
-    // Get Earth's current position
-    const rect = earthDiv.getBoundingClientRect();
-    const x = rect.left + rect.width / 2;
-    const y = rect.top + rect.height / 2;
-
-    if (lastX !== null && lastY !== null) {
-        // create a line connecting last point to current point
-        const line = document.createElement('div');
-        line.style.position = 'absolute';
-        line.style.backgroundColor = 'white';
+</script>
+<!-- Parallax Effect for Dynamic Starry Background in Body-->
+    <script>
+    (function() {
+        // Add event listener
+        document.addEventListener("mousemove", parallax_body);
+        const elem = document.querySelector("body");
         
-        // Calculate distance and angle
-        const dx = x - lastX;
-        const dy = y - lastY;
-        const length = Math.sqrt(dx*dx + dy*dy);
-        const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+        // Magic happens here
+        function parallax_body(e) {
+            let _w = window.innerWidth;
+            let _h = window.innerHeight;
+            let _mouseX = e.clientX;
+            let _mouseY = e.clientY;
 
-        line.style.width = 4 + 'px';
-        line.style.height = '1px'; // thickness of the trail
-        line.style.left = lastX + 'px';
-        line.style.top = lastY + 'px';
-        line.style.transformOrigin = '0 0';
-        line.style.transform = `rotate(${angle}deg)`;
+            let offset_coeff = 0.005;
+            let bg_Xoffset = -(_mouseX - _w/2) * offset_coeff;
+            let bg_Yoffset = -(_mouseY - _h/2) * offset_coeff * -1.75;
 
-        container.appendChild(line);
-    }
-
-    lastX = x;
-    lastY = y;
-}
-
-// Spawn a point every 50ms (faster = smoother line)
-setInterval(spawnPoint, 10);
+            elem.style.backgroundPosition = `${bg_Xoffset}% ${bg_Yoffset}%`;
+        }
+    })();
 </script>
 
 </body>
