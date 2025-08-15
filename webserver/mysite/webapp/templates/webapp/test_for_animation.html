@@ -25,6 +25,7 @@
 </div>
 
 <div id="solar_system" class="planets-container">
+    <div id="trail-container"></div>
 
   <!-- MERCURY -->
   <div class="MERCURY">
@@ -76,7 +77,6 @@
         <div style="--dp: {{ line.dp }}; --s:1; --c: {{ line.c }}" class="line h earth-h"></div>
         {% endfor %}
     </div>
-    <div id="earth-trail" class="trail-container"></div> <!-- THIS IS THE LINE -->
 
     <!-- MOON -->
     <div class="MOON">
@@ -163,7 +163,7 @@
 </div>
 <script>
     const earthElement = document.getElementById('EARTH');
-    const earthTrailContainer = document.getElementById('earth-trail');
+    const trailContainer = document.getElementById('trail-container'); // Get the new container
 
     // Interval (in milliseconds) for creating a new trail particle
     const trailInterval = 50; 
@@ -171,9 +171,12 @@
     
     // Function to create a new trail particle
     function createTrailParticle() {
-        // Get the current position of the Earth element
+        // Get the current position of the Earth element relative to the viewport
         const rect = earthElement.getBoundingClientRect();
         
+        // Get the position of the trail container relative to the viewport
+        const containerRect = trailContainer.getBoundingClientRect();
+
         // Calculate the center point of the Earth element
         const currentX = rect.left + rect.width / 2;
         const currentY = rect.top + rect.height / 2;
@@ -183,11 +186,11 @@
             const particle = document.createElement('div');
             particle.classList.add('trail-particle');
             
-            // Position the particle relative to the container
-            particle.style.left = (currentX - rect.left) + 'px';
-            particle.style.top = (currentY - rect.top) + 'px';
+            // Position the particle relative to the new trail container's top-left corner
+            particle.style.left = (currentX - containerRect.left) + 'px';
+            particle.style.top = (currentY - containerRect.top) + 'px';
             
-            earthTrailContainer.appendChild(particle);
+            trailContainer.appendChild(particle); // Append to the new container
             
             // Remove the particle after its animation is complete
             setTimeout(() => {
