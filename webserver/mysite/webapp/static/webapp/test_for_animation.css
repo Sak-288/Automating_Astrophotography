@@ -755,11 +755,11 @@ div {
 }
 @keyframes trailing {
     from {
-        transform: translate(-50%, -50%); /* Starting point, centered */
+        transform: translate(-50%, -50%);
         opacity: 1;
     }
     to {
-        transform: translate(-50%, -200px); /* Ending point, moved upwards */
+        transform: translate(-50%, -200px); 
         opacity: 0;
     }
 }
