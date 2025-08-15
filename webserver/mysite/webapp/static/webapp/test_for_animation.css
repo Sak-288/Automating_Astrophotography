@@ -812,10 +812,10 @@ div {
 }
 @keyframes rotate-mars {
     from {
-        transform: translate(-50%, -50%) rotate(38deg);
+        transform: translate(-50%, -50%) rotate(40deg);
     }
     to {
-        transform: translate(-50%, -50%) rotate(398deg);
+        transform: translate(-50%, -50%) rotate(400deg);
     }
 }
 @keyframes rotate-jupiter {
