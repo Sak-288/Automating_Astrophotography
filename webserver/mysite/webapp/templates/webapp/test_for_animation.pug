@@ -61,6 +61,18 @@
 <div style="--dp: {{ line.dp }}; --s:1; --c: {{ line.c }}" class="line h earth-h"></div>
 {% endfor %}
 </div>
+//- MOON STARTS HERE --->
+<div class="MOON">
+<div style="--t: {{ t2_plus_1 }}" class="moon-globe">
+<div style="--c: {{ t }}" class="line radius h moon-h"></div>
+{% for line in positive_lines %}
+<div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h moonearth-h"></div>
+{% endfor %}
+{% for line in negative_lines %}
+<div style="--dp: {{ line.dp }}; --s:1; --c: {{ line.c }}" class="line h moon-h"></div>
+{% endfor %}
+</div>
+</div>
 </div>
 
 <div class="MARS">

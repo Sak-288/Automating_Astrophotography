@@ -650,6 +650,72 @@ div {
     }
 }
 
+/* MOON */
+/* ORBITING CONTAINER - This element handles the revolution around a central point */
+.MOON {
+    /* Customize the orbit properties here */
+    --orbit-radius: 20px; /* Distance from the orbit center */ /* ORBIT RADIUS */
+    --orbit-speed: 2s;      /* Speed of the revolution */ /* ORBIT SPEED */
+    --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
+    --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
+    
+    position: absolute;
+    top: var(--orbit-center-y);
+    left: var(--orbit-center-x);
+    transform-origin: 0 0;
+    transform: translate(-50%, -50%); /* Center the container itself */
+    animation: orbit-animation var(--orbit-speed) linear infinite;
+}
+/* GLOBE - This element is a child of the orbit container and handles its own rotation */
+.moon-globe {
+    --r: 3; /* SPHERE RADIUS */
+    --u: 1vmin;
+    --h: 2px;
+    
+    border-radius: 50%;
+    width: calc(var(--r) * var(--u) * 2);
+    height: calc(var(--r) * var(--u) * 2);
+    position: relative;
+    
+    /* Apply a slight initial rotation for a 3D view */
+    transform: rotatex(45deg) rotatey(45deg);
+    
+    /* Customize the rotation speed here */
+    --rotation-speed: 10s;
+    animation: rotates var(--rotation-speed) linear infinite;
+}
+/* Styles for the inner lines of the globe */
+.moon-h {
+    .h,
+    .v {
+        --h: var(--w);
+        border-radius: 100vmax;
+        background-color: rgba(221, 219, 219, 0.7); /* SPHERE COLOR (Dodge Blue) */
+        top: 0;
+        left: 0;
+        box-shadow: 0 0 1em 1em #0000;
+    }
+    translate: calc(var(--r) * var(--u) - var(--w) / 2) calc(var(--r) * var(--u) - var(--w) / 2) calc((var(--d) * var(--s) * var(--u)));
+    --del: 0.5s; /* FLASH SPEED */
+    animation: moon-flash linear var(--del) infinite;
+    animation-delay: calc(var(--c) * var(--del) / var(--t));
+}
+/* The horizontal lines are created with SCSS and a loop, which can be approximated with a set of elements */
+/* For this example, we'll assume a single globe for simplicity, but you would duplicate the .line and .h elements
+    in the HTML and adjust the --c variable to simulate the SCSS loop. */
+/* Animation keyframes */
+@keyframes moon-flash {
+    0%, 13.33% {
+        color: rgba(140, 139, 139, 0.6); /* Dark Blue */
+        background-color: rgba(255, 255, 255, 0.6); /* Medium Blue */
+        box-shadow: 0 0 1em 0.1em #1e90ff30; /* Dodge Blue Glow */
+    }
+    6.67% {
+        color: rgba(255, 255, 255, 0.8); /* Pure Blue */
+        background-color: #4169e199; /* Royal Blue */
+        box-shadow: 0 0 1em 0.1em #ffffff60; /* Steel Blue Glow */
+    }
+}
 @keyframes rotates {
     from {
         transform: 
