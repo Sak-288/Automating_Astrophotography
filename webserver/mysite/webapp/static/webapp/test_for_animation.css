@@ -820,10 +820,10 @@ div {
 }
 @keyframes rotate-jupiter {
     from {
-        transform: translate(-50%, -50%) rotate(40deg);
+        transform: translate(-50%, -50%) rotate(40.25deg);
     }
     to {
-        transform: translate(-50%, -50%) rotate(400deg);
+        transform: translate(-50%, -50%) rotate(400.25deg);
     }
 }
 @keyframes rotate-saturne {
