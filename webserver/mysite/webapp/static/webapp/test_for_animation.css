@@ -989,3 +989,15 @@ div {
     border-width: 0 0 0.1em 0.1em;
     border-style: solid;
 }
+#solar_system:hover .MERCURY,
+#solar_system:hover .VENUS,
+#solar_system:hover .EARTH,
+#solar_system:hover .MARS,
+#solar_system:hover .JUPITER,
+#solar_system:hover .SATURNE,
+#solar_system:hover .URANUS,
+#solar_system:hover .NEPTUNE,
+#solar_system:hover .MOON,
+#solar_system:hover .SUN {
+    animation-play-state: paused;
+}
