@@ -828,26 +828,26 @@ div {
 }
 @keyframes rotate-saturne {
     from {
+        transform: translate(-50%, -50%) rotate(41deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(401deg);
+    }
+}
+@keyframes rotate-uranus {
+    from {
         transform: translate(-50%, -50%) rotate(42deg);
     }
     to {
         transform: translate(-50%, -50%) rotate(402deg);
     }
 }
-@keyframes rotate-uranus {
-    from {
-        transform: translate(-50%, -50%) rotate(43.5deg);
-    }
-    to {
-        transform: translate(-50%, -50%) rotate(403.5deg);
-    }
-}
 @keyframes rotate-neptune {
     from {
-        transform: translate(-50%, -50%) rotate(44.25deg);
+        transform: translate(-50%, -50%) rotate(43deg);
     }
     to {
-        transform: translate(-50%, -50%) rotate(404.25deg);
+        transform: translate(-50%, -50%) rotate(403deg);
     }
 }
 @keyframes rotate-moon {
