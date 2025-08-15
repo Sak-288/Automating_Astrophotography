@@ -25,7 +25,6 @@ div {
     top: var(--orbit-center-y);
     left: var(--orbit-center-x);
     transform-origin: 0 0;
-    transform: translate(-50%, -50%); /* Center the container itself */
     animation: orbit-animation var(--orbit-speed) linear infinite;
 }
 /* GLOBE - This element is a child of the orbit container and handles its own rotation */
@@ -175,7 +174,7 @@ div {
 .h, .v {
     --h: var(--w);
     border-radius: 100vmax;
-    background-color: rgba(255, 242, 0, 0.2); /* SPHERE COLOR */
+    background-color: rgba(255, 242, 0, 0.507); /* SPHERE COLOR */
     top: 0;
     left: 0;
     box-shadow: 0 0 1em 1em #0000;
@@ -241,7 +240,6 @@ div {
     top: var(--orbit-center-y);
     left: var(--orbit-center-x);
     transform-origin: 0 0;
-    transform: translate(-50%, -50%); /* Center the container itself */
     animation: orbit-animation var(--orbit-speed) linear infinite;
 }
 /* GLOBE - This element is a child of the orbit container and handles its own rotation */
