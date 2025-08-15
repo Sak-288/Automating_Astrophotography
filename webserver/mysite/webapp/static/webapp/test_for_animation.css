@@ -799,18 +799,12 @@ div {
     }
 }
 @keyframes rotates {
-    from {
-        transform: 
-            rotatex(0)
-            rotatey(0)
-            rotatez(0);
-    }
-    to {
-        transform: 
-            rotatex()
-            rotatey(360deg)
-            rotatez(0deg);
-    }
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
 }
 @keyframes orbit-animation {
     from {
