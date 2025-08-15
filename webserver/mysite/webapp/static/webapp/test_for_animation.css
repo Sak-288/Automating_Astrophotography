@@ -828,10 +828,10 @@ div {
 }
 @keyframes rotate-saturne {
     from {
-        transform: translate(-50%, -50%) rotate(38deg);
+        transform: translate(-50%, -50%) rotate(42deg);
     }
     to {
-        transform: translate(-50%, -50%) rotate(398deg);
+        transform: translate(-50%, -50%) rotate(402deg);
     }
 }
 @keyframes rotate-uranus {
