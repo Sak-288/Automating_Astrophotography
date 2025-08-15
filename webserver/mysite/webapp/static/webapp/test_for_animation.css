@@ -109,12 +109,10 @@ div {
     0%, 13.33% {
         color: rgba(200, 200, 200, 0.6);
         background-color: rgba(180, 180, 180, 0.6);
-        box-shadow: 0 0 1em 1em #cccccc30;
     }
     6.67% {
         color: rgba(220, 220, 220, 0.8);
         background-color: #cccccc99; /* FLASH COLOR */
-        box-shadow: 0 0 1em 1em #cccccc60; /* PLANET GLOW */
     }
 }
 /* SUN */
