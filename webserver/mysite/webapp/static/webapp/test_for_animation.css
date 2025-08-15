@@ -29,13 +29,6 @@ div {
     transform:translate(-50%, -50%);
 }
 /* Generic styles for all planets */
-.h, .v {
-    --h: var(--w);
-    border-radius: 100vmax;
-    top: 0;
-    left: 0;
-    box-shadow: 0 0 1em 1em #0000;
-}
 /* ORBITING CONTAINER - This element handles the revolution around a central point */
 .MERCURY {
     /* Customize the orbit properties here */
@@ -86,6 +79,13 @@ div {
     height: var(--h);
     --w: calc(var(--r) * var(--u) * 2);
     top: 50%;
+}
+.h, .v {
+    --h: var(--w);
+    border-radius: 100vmax;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 1em 1em #0000;
 }
 /* MERCURY */
 .mercury-h, .mercury-v {
@@ -184,6 +184,13 @@ div {
     height: var(--h);
     --w: calc(var(--r) * var(--u) * 2);
     top: 50%;
+}
+.h, .v {
+    --h: var(--w);
+    border-radius: 100vmax;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 1em 1em #0000;
 }
 /* SUN */
 .sun-h, .sun-v {
