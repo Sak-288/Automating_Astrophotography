@@ -684,12 +684,12 @@ div {
 }
 @keyframes rotate-image {
     from {
-    transform: rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg);
     }
     to {
-    transform: rotate(360deg);
+        transform: translate(-50%, -50%) rotate(360deg);
     }
 }
 .ASTEROID {
-    animation: rotate-image 2s linear infinite;
+    animation: rotate-image 15s linear infinite;
 }
