@@ -38,7 +38,7 @@ nSteps = int(TARGET_ANGLE / DEGREES_PER_STEP)
 
 # A more reasonable delay for a faster step
 # This gives a pulse rate of ~250 Hz (1 / (0.002 * 2))
-DELAY = 0.002
+DELAY = 0.01
 
 print(f"Moving {TARGET_ANGLE} degrees, which is {nSteps} steps.")
 print(f"Using a delay of {DELAY} seconds.")
