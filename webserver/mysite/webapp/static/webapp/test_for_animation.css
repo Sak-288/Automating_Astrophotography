@@ -306,12 +306,12 @@ div {
 /* Animation keyframes */
 @keyframes earth-flash {
     0%, 13.33% {
-        color: rgba(34, 139, 34, 0.6); /* Forest Green */
+        color: rgba(0, 255, 0, 0.6); /* Forest Green */
         background-color: rgba(65, 105, 225, 0.6); /* Royal Blue */
         box-shadow: 0 0 1em 0.1em #00640030; /* Dark Green Glow */
     }
     6.67% {
-        color: rgba(34, 139, 34, 0.8); /* More Opaque Green */
+        color: rgba(47, 188, 47, 0.8); /* More Opaque Green */
         background-color: #4169e199; /* Flashy Blue */
         box-shadow: 0 0 1em 0.1em #228b2260; /* Brighter Green Glow */
     }
