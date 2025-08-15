@@ -796,10 +796,10 @@ div {
 }
 @keyframes rotate-venus {
     from {
-        transform: translate(-50%, -50%) rotate(34deg);
+        transform: translate(-50%, -50%) rotate(35deg);
     }
     to {
-        transform: translate(-50%, -50%) rotate(394deg);
+        transform: translate(-50%, -50%) rotate(395deg);
     }
 }
 @keyframes rotate-earth {
