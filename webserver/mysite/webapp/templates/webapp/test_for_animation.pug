@@ -10,6 +10,7 @@
 </head>
 <body>
 <div class="planets-container">
+
 <div class="MERCURY">
 <div style="--t: {{ t2_plus_1 }}" class="mercury-globe">
 <div style="--c: {{ t }}" class="line radius h mercury-h"></div>
@@ -31,6 +32,8 @@
 {% for line in negative_lines %}
 <div style="--dp: {{ line.dp }}; --s:1; --c: {{ line.c }}" class="line h sun-h"></div>
 {% endfor %}
+</div>
+</div>
 
 <div class="VENUS">
 <div style="--t: {{ t2_plus_1 }}" class="venus-globe">
@@ -43,6 +46,7 @@
 {% endfor %}
 </div>
 </div>
+
 </div>
 </body>
 </html>
