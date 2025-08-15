@@ -627,11 +627,11 @@ div {
     0%, 13.33% {
         color: rgba(0, 0, 139, 0.6); /* Dark Blue */
         background-color: rgba(0, 0, 205, 0.6); /* Medium Blue */
+        box-shadow: 0 0 1em 1em #1e90ff30; /* Dodge Blue Glow */
     }
     6.67% {
         color: rgba(0, 0, 255, 0.8); /* Pure Blue */
         background-color: #4169e199; /* Royal Blue */
-        box-shadow: 0 0 1em 1em #4682b460; /* Steel Blue Glow */
     }
 }
 
