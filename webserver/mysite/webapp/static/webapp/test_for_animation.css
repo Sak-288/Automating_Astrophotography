@@ -989,10 +989,33 @@ div {
     border-width: 0 0 0.1em 0.1em;
     border-style: solid;
 }
-
 .SUN:hover{
     animation-play-state:paused;
 }
 .MERCURY:hover{
+    animation-play-state:paused;
+}
+.VENUS:hover{
+    animation-play-state:paused;
+}
+.EARTH:hover{
+    animation-play-state:paused;
+}
+.MARS:hover{
+    animation-play-state:paused;
+}
+.JUPITER:hover{
+    animation-play-state:paused;
+}
+.SATURNE:hover{
+    animation-play-state:paused;
+}
+.URANUS:hover{
+    animation-play-state:paused;
+}
+.NEPTUNE:hover{
+    animation-play-state:paused;
+}
+.MOON:hover{
     animation-play-state:paused;
 }
