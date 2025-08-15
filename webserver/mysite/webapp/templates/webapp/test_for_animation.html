@@ -25,7 +25,6 @@
 </div>
 
 <div id="solar_system" class="planets-container">
-    <div id="trail-container"></div>
 
   <!-- MERCURY -->
   <div class="MERCURY">
@@ -67,28 +66,30 @@
   </div>
 
   <!-- EARTH -->
-    <div id="EARTH" class="EARTH">
-    <div style="--t: {{ t2_plus_1 }}" class="earth-globe">
-        <div style="--c: {{ t }}" class="line radius h earth-h"></div>
-        {% for line in positive_lines %}
-        <div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h earth-h"></div>
-        {% endfor %}
-        {% for line in negative_lines %}
-        <div style="--dp: {{ line.dp }}; --s:1; --c: {{ line.c }}" class="line h earth-h"></div>
-        {% endfor %}
-    </div>
+   <div id="earth_trail">
+        <div id="EARTH" class="EARTH">
+        <div style="--t: {{ t2_plus_1 }}" class="earth-globe">
+            <div style="--c: {{ t }}" class="line radius h earth-h"></div>
+            {% for line in positive_lines %}
+            <div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h earth-h"></div>
+            {% endfor %}
+            {% for line in negative_lines %}
+            <div style="--dp: {{ line.dp }}; --s:1; --c: {{ line.c }}" class="line h earth-h"></div>
+            {% endfor %}
+        </div>
 
-    <!-- MOON -->
-    <div class="MOON">
-      <div style="--t: {{ t2_plus_1 }}" class="moon-globe">
-        <div style="--c: {{ t }}" class="line radius h moon-h"></div>
-        {% for line in positive_lines %}
-        <div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h moonearth-h"></div>
-        {% endfor %}
-        {% for line in negative_lines %}
-        <div style="--dp: {{ line.dp }}; --s:1; --c: {{ line.c }}" class="line h moon-h"></div>
-        {% endfor %}
-      </div>
+        <!-- MOON -->
+        <div class="MOON">
+        <div style="--t: {{ t2_plus_1 }}" class="moon-globe">
+            <div style="--c: {{ t }}" class="line radius h moon-h"></div>
+            {% for line in positive_lines %}
+            <div style="--dp: {{ line.dp }}; --s:-1; --c: {{ line.c }}" class="line h moonearth-h"></div>
+            {% endfor %}
+            {% for line in negative_lines %}
+            <div style="--dp: {{ line.dp }}; --s:1; --c: {{ line.c }}" class="line h moon-h"></div>
+            {% endfor %}
+        </div>
+        </div>
     </div>
   </div>
 
@@ -161,48 +162,5 @@
   </div>
 
 </div>
-<script>
-    const earthElement = document.getElementById('EARTH');
-    const trailContainer = document.getElementById('trail-container'); // Get the new container
-
-    // Interval (in milliseconds) for creating a new trail particle
-    const trailInterval = 10; // CHANGE THIS TO MAKE THE POINTS CLOSER
-    let lastPosition = { x: 0, y: 0 };
-    
-    // Function to create a new trail particle
-    function createTrailParticle() {
-        // Get the current position of the Earth element relative to the viewport
-        const rect = earthElement.getBoundingClientRect();
-        
-        // Get the position of the trail container relative to the viewport
-        const containerRect = trailContainer.getBoundingClientRect();
-
-        // Calculate the center point of the Earth element
-        const currentX = rect.left + rect.width / 2;
-        const currentY = rect.top + rect.height / 2;
-        
-        // Only create a new particle if the planet has moved significantly
-        if (Math.abs(currentX - lastPosition.x) > 1 || Math.abs(currentY - lastPosition.y) > 1) {
-            const particle = document.createElement('div');
-            particle.classList.add('trail-particle');
-            
-            // Position the particle relative to the new trail container's top-left corner
-            particle.style.left = (currentX - containerRect.left) + 'px';
-            particle.style.top = (currentY - containerRect.top) + 'px';
-            
-            trailContainer.appendChild(particle); // Append to the new container
-            
-            // Remove the particle after its animation is complete
-            setTimeout(() => {
-                particle.remove();
-            }, 2000); // Matches the animation duration
-            
-            lastPosition = { x: currentX, y: currentY };
-        }
-    }
-
-    // Use a loop to continuously check the position and create trails
-    setInterval(createTrailParticle, trailInterval);
-</script>
 </body>
 </html> 
