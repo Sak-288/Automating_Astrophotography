@@ -804,10 +804,10 @@ div {
 }
 @keyframes rotate-earth {
     from {
-        transform: translate(-50%, -50%) rotate(130deg);
+        transform: translate(-50%, -50%) rotate(128deg);
     }
     to {
-        transform: translate(-50%, -50%) rotate(490deg);
+        transform: translate(-50%, -50%) rotate(488deg);
     }
 }
 @keyframes rotate-mars {
