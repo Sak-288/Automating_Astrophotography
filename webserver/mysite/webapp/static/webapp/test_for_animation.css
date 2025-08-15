@@ -836,10 +836,10 @@ div {
 }
 @keyframes rotate-uranus {
     from {
-        transform: translate(-50%, -50%) rotate(38deg);
+        transform: translate(-50%, -50%) rotate(43.5deg);
     }
     to {
-        transform: translate(-50%, -50%) rotate(398deg);
+        transform: translate(-50%, -50%) rotate(403.5deg);
     }
 }
 @keyframes rotate-neptune {
