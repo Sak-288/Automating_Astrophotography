@@ -998,6 +998,14 @@ div {
 #solar_system:hover .URANUS,
 #solar_system:hover .NEPTUNE,
 #solar_system:hover .MOON,
-#solar_system:hover .SUN {
+#solar_system:hover .SUN,
+#solar_system:hover .mercury-orbit, /* NOT SURE ABOUT THIS YET */
+#solar_system:hover .venus-orbit,
+#solar_system:hover .earth-orbit,
+#solar_system:hover .mars-orbit,
+#solar_system:hover .jupiter-orbit,
+#solar_system:hover .saturne-orbit,
+#solar_system:hover .uranus-orbit,
+#solar_system:hover .neptune-orbit {
     animation-play-state: paused;
 }
