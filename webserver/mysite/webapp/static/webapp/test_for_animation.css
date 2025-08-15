@@ -739,28 +739,30 @@ div {
         transform: rotate(360deg) translate(calc(var(--orbit-radius) * -1), 0);
     }
 }
-#trail{
-    font-size:30px;
-    font-family:sans-serif;
-    font-weight:bolder;
-    color:white;
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%, -50%);
+#asteroid-trail {
+    position: relative;
+    width: 100%;
+    height: 100vh;
 }
-.trail{
-    --trailing_speed: 5s;
-    animation: trailing var(--trailing_speed) linear infinite;
+
+.trail {
+    position: absolute;
+    font-size: 5px;
+    font-family: sans-serif;
+    font-weight: bolder;
+    color: white;
+    transform: translate(-50%, -50%); /* Start centered on its creation point */
+    animation: fade-and-move 5s linear forwards;
 }
-@keyframes trailing {
+
+@keyframes fade-and-move {
     from {
-        transform: translate(-50%, -50%);
         opacity: 1;
+        transform: translate(-50%, -50%) scale(1); /* Starting point */
     }
     to {
-        transform: translate(-50%, -200px); 
-        opacity: 1;
+        opacity: 0;
+        transform: translate(-50%, -100px) scale(0.5); /* Fades out as it moves up and shrinks */
     }
 }
 #ASTEROID {

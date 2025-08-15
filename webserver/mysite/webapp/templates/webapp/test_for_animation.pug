@@ -60,10 +60,28 @@
 {% for line in negative_lines %}
 <div style="--dp: {{ line.dp }}; --s:1; --c: {{ line.c }}" class="line h earth-h"></div>
 {% endfor %}
-//- Ok but this is like the best idea I've ever gotten
 </div>
-<p id="trail" class="trail">⸱</p>
-//- MOON STARTS HERE --->
+<div id="trail"></div>
+<script>
+document.addEventListener('mousemove', function(e) {
+    // Create a new trail element
+    const trail = document.createElement('div');
+    trail.textContent = '⸱';
+    trail.classList.add('trailing');
+
+    // Position the trail element at the mouse cursor's location
+    trail.style.left = e.clientX + 'px';
+    trail.style.top = e.clientY + 'px';
+
+    // Add the new element to the container
+    document.getElementById('trail').appendChild(trail);
+
+    // Remove the element after the animation is complete (5 seconds)
+    // This prevents the DOM from getting too large and slowing down the page
+    setTimeout(() => {
+        trail.remove();
+    }, 5000);
+});</script>
 <div class="MOON">
 <div style="--t: {{ t2_plus_1 }}" class="moon-globe">
 <div style="--c: {{ t }}" class="line radius h moon-h"></div>
