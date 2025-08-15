@@ -378,9 +378,9 @@ div {
 /* Animation keyframes */
 @keyframes mars-flash {
     0%, 13.33% {
-        color: rgba(255, 59, 59, 0.2);
+        color: rgba(255, 0, 0, 0.2);
         background-color: rgba(255, 106, 106, 0.2);
-        box-shadow: 0 0 1em 0.1em #ffffff00;
+        box-shadow: 0 0 1em 0.1em #ff000000;
     }
     6.67% {
         color: rgba(255, 108, 108, 0.2);
