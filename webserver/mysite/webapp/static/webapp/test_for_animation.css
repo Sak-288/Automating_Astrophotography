@@ -147,23 +147,7 @@ div {
     animation: rotates var(--rotation-speed) linear infinite;
 }
 /* Styles for the inner lines of the globe */
-.line {
-    position: absolute;
-    height: var(--h);
-    border: 1px solid;
-    
-    --d: calc(var(--r) * var(--dp));
-    --w: calc(2 * sqrt(pow(var(--r),2) - pow(var(--d), 2)) * var(--u));
-    width: var(--w);
-    top: calc(50% - (var(--d) * var(--s) * var(--u)));
-    left: calc(50% - var(--w) / 2);
-    color: #aaa5;
-}
-.radius {
-    height: var(--h);
-    --w: calc(var(--r) * var(--u) * 2);
-    top: 50%;
-}
+
 .sun.h, .sun.v {
     --h: var(--w);
     border-radius: 100vmax;
@@ -233,23 +217,7 @@ div {
     animation: rotates var(--rotation-speed) linear infinite;
 }
 /* Styles for the inner lines of the globe */
-.line {
-    position: absolute;
-    height: var(--h);
-    border: 1px solid;
-    
-    --d: calc(var(--r) * var(--dp));
-    --w: calc(2 * sqrt(pow(var(--r),2) - pow(var(--d), 2)) * var(--u));
-    width: var(--w);
-    top: calc(50% - (var(--d) * var(--s) * var(--u)));
-    left: calc(50% - var(--w) / 2);
-    color: #aaa5;
-}
-.radius {
-    height: var(--h);
-    --w: calc(var(--r) * var(--u) * 2);
-    top: 50%;
-}
+
 .h, .v {
     --h: var(--w);
     border-radius: 100vmax;
@@ -318,23 +286,7 @@ div {
     animation: rotates var(--rotation-speed) linear infinite;
 }
 /* Styles for the inner lines of the globe */
-.line {
-    position: absolute;
-    height: var(--h);
-    border: 1px solid;
-    
-    --d: calc(var(--r) * var(--dp));
-    --w: calc(2 * sqrt(pow(var(--r),2) - pow(var(--d), 2)) * var(--u));
-    width: var(--w);
-    top: calc(50% - (var(--d) * var(--s) * var(--u)));
-    left: calc(50% - var(--w) / 2);
-    color: #aaa5;
-}
-.radius {
-    height: var(--h);
-    --w: calc(var(--r) * var(--u) * 2);
-    top: 50%;
-}
+
 .h, .v {
     --h: var(--w);
     border-radius: 100vmax;
@@ -404,23 +356,7 @@ div {
     animation: rotates var(--rotation-speed) linear infinite;
 }
 /* Styles for the inner lines of the globe */
-.line {
-    position: absolute;
-    height: var(--h);
-    border: 1px solid;
-    
-    --d: calc(var(--r) * var(--dp));
-    --w: calc(2 * sqrt(pow(var(--r),2) - pow(var(--d), 2)) * var(--u));
-    width: var(--w);
-    top: calc(50% - (var(--d) * var(--s) * var(--u)));
-    left: calc(50% - var(--w) / 2);
-    color: #aaa5;
-}
-.radius {
-    height: var(--h);
-    --w: calc(var(--r) * var(--u) * 2);
-    top: 50%;
-}
+
 .h, .v {
     --h: var(--w);
     border-radius: 100vmax;
@@ -490,23 +426,7 @@ div {
     animation: rotates var(--rotation-speed) linear infinite;
 }
 /* Styles for the inner lines of the globe */
-.line {
-    position: absolute;
-    height: var(--h);
-    border: 1px solid;
-    
-    --d: calc(var(--r) * var(--dp));
-    --w: calc(2 * sqrt(pow(var(--r),2) - pow(var(--d), 2)) * var(--u));
-    width: var(--w);
-    top: calc(50% - (var(--d) * var(--s) * var(--u)));
-    left: calc(50% - var(--w) / 2);
-    color: #aaa5;
-}
-.radius {
-    height: var(--h);
-    --w: calc(var(--r) * var(--u) * 2);
-    top: 50%;
-}
+
 .h, .v {
     --h: var(--w);
     border-radius: 100vmax;
@@ -576,23 +496,8 @@ div {
     animation: rotates var(--rotation-speed) linear infinite;
 }
 /* Styles for the inner lines of the globe */
-.line {
-    position: absolute;
-    height: var(--h);
-    border: 1px solid;
-    
-    --d: calc(var(--r) * var(--dp));
-    --w: calc(2 * sqrt(pow(var(--r),2) - pow(var(--d), 2)) * var(--u));
-    width: var(--w);
-    top: calc(50% - (var(--d) * var(--s) * var(--u)));
-    left: calc(50% - var(--w) / 2);
-    color: #aaa5;
-}
-.radius {
-    height: var(--h);
-    --w: calc(var(--r) * var(--u) * 2);
-    top: 50%;
-}
+
+
 .h, .v {
     --h: var(--w);
     border-radius: 100vmax;
@@ -662,23 +567,8 @@ div {
     animation: rotates var(--rotation-speed) linear infinite;
 }
 /* Styles for the inner lines of the globe */
-.line {
-    position: absolute;
-    height: var(--h);
-    border: 1px solid;
-    
-    --d: calc(var(--r) * var(--dp));
-    --w: calc(2 * sqrt(pow(var(--r),2) - pow(var(--d), 2)) * var(--u));
-    width: var(--w);
-    top: calc(50% - (var(--d) * var(--s) * var(--u)));
-    left: calc(50% - var(--w) / 2);
-    color: #aaa5;
-}
-.radius {
-    height: var(--h);
-    --w: calc(var(--r) * var(--u) * 2);
-    top: 50%;
-}
+
+
 .h, .v {
     --h: var(--w);
     border-radius: 100vmax;
@@ -748,23 +638,8 @@ div {
     animation: rotates var(--rotation-speed) linear infinite;
 }
 /* Styles for the inner lines of the globe */
-.line {
-    position: absolute;
-    height: var(--h);
-    border: 1px solid;
-    
-    --d: calc(var(--r) * var(--dp));
-    --w: calc(2 * sqrt(pow(var(--r),2) - pow(var(--d), 2)) * var(--u));
-    width: var(--w);
-    top: calc(50% - (var(--d) * var(--s) * var(--u)));
-    left: calc(50% - var(--w) / 2);
-    color: #aaa5;
-}
-.radius {
-    height: var(--h);
-    --w: calc(var(--r) * var(--u) * 2);
-    top: 50%;
-}
+
+
 .h, .v {
     --h: var(--w);
     border-radius: 100vmax;
