@@ -28,6 +28,14 @@ div {
     left:50%;
     transform:translate(-50%, -50%);
 }
+/* Generic styles for all planets */
+.h, .v {
+    --h: var(--w);
+    border-radius: 100vmax;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 1em 1em #0000;
+}
 /* ORBITING CONTAINER - This element handles the revolution around a central point */
 .MERCURY {
     /* Customize the orbit properties here */
@@ -79,20 +87,10 @@ div {
     --w: calc(var(--r) * var(--u) * 2);
     top: 50%;
 }
-.h, .v {
-    --h: var(--w);
-    border-radius: 100vmax;
-    background-color: rgba(169, 169, 169, 0.7); /* SPHERE COLOR */
-    top: 0;
-    left: 0;
-    box-shadow: 0 0 1em 1em #0000;
-}
-.mercury-h {
-    translate:
-        calc(var(--r) * var(--u) - var(--w) / 2)
-        calc(var(--r) * var(--u) - var(--w) / 2)
-        calc((var(--d) * var(--s) * var(--u)));
-    --del: 0.5s; /* FLASH SPEED */
+/* MERCURY */
+.mercury-h, .mercury-v {
+    background-color: rgba(169, 169, 169, 0.7);
+    --del: 0.5s;
     animation: mercury-flash linear var(--del) infinite;
     animation-delay: calc(var(--c) * var(--del) / var(--t));
 }
@@ -187,20 +185,10 @@ div {
     --w: calc(var(--r) * var(--u) * 2);
     top: 50%;
 }
-.h, .v {
-    --h: var(--w);
-    border-radius: 100vmax;
-    background-color: rgba(255, 215, 0, 0.8); /* SPHERE COLOR */
-    top: 0;
-    left: 0;
-    box-shadow: 0 0 1em 1em #0000;
-}
-.sun-h {
-    translate: 
-        calc(var(--r) * var(--u) - var(--w) / 2)
-        calc(var(--r) * var(--u) - var(--w) / 2)
-        calc((var(--d) * var(--s) * var(--u)));
-    --del: 0.5s; /* FLASH SPEED */
+/* SUN */
+.sun-h, .sun-v {
+    background-color: rgba(255, 215, 0, 0.8);
+    --del: 0.5s;
     animation: sun-flash linear var(--del) infinite;
     animation-delay: calc(var(--c) * var(--del) / var(--t));
 }
@@ -295,20 +283,11 @@ div {
     --w: calc(var(--r) * var(--u) * 2);
     top: 50%;
 }
-.h, .v {
-    --h: var(--w);
-    border-radius: 100vmax;
-    background-color: rgba(255, 179, 102, 0.7); /* SPHERE COLOR */
-    top: 0;
-    left: 0;
+/* VENUS */
+.venus-h, .venus-v {
+    background-color: rgba(255, 179, 102, 0.7);
     box-shadow: 0 0 1em 1em #ffe5b800;
-}
-.venus-h {
-    translate: 
-        calc(var(--r) * var(--u) - var(--w) / 2)
-        calc(var(--r) * var(--u) - var(--w) / 2)
-        calc((var(--d) * var(--s) * var(--u)));
-    --del: 0.5s; /* FLASH SPEED */
+    --del: 0.5s;
     animation: venus-flash linear var(--del) infinite;
     animation-delay: calc(var(--c) * var(--del) / var(--t));
 }
@@ -403,20 +382,10 @@ div {
     --w: calc(var(--r) * var(--u) * 2);
     top: 50%;
 }
-.h, .v {
-    --h: var(--w);
-    border-radius: 100vmax;
-    background-color: rgba(65, 105, 225, 0.7); /* SPHERE COLOR (Ocean Blue) */
-    top: 0;
-    left: 0;
-    box-shadow: 0 0 1em 1em #0000;
-}
-.earth-h {
-    translate:
-        calc(var(--r) * var(--u) - var(--w) / 2)
-        calc(var(--r) * var(--u) - var(--w) / 2)
-        calc((var(--d) * var(--s) * var(--u)));
-    --del: 0.5s; /* FLASH SPEED */
+/* EARTH */
+.earth-h, .earth-v {
+    background-color: rgba(65, 105, 225, 0.7);
+    --del: 0.5s;
     animation: earth-flash linear var(--del) infinite;
     animation-delay: calc(var(--c) * var(--del) / var(--t));
 }
@@ -511,20 +480,11 @@ div {
     --w: calc(var(--r) * var(--u) * 2);
     top: 50%;
 }
-.h, .v {
-    --h: var(--w);
-    border-radius: 100vmax;
-    background-color: rgba(255, 212, 144, 0.5); /* SPHERE COLOR */
-    top: 0;
-    left: 0;
+/* MARS */
+.mars-h, .mars-v {
+    background-color: rgba(255, 212, 144, 0.5);
     box-shadow: 0 0 1em 1em #ffe5b800;
-}
-.mars-h {
-    translate: 
-        calc(var(--r) * var(--u) - var(--w) / 2)
-        calc(var(--r) * var(--u) - var(--w) / 2)
-        calc((var(--d) * var(--s) * var(--u)));
-    --del: 0.5s; /* FLASH SPEED */
+    --del: 0.5s;
     animation: mars-flash linear var(--del) infinite;
     animation-delay: calc(var(--c) * var(--del) / var(--t));
 }
@@ -619,20 +579,10 @@ div {
     --w: calc(var(--r) * var(--u) * 2);
     top: 50%;
 }
-.h, .v {
-    --h: var(--w);
-    border-radius: 100vmax;
-    background-color: rgba(220, 150, 80, 0.7); /* SPHERE COLOR (Tan-Orange) */
-    top: 0;
-    left: 0;
-    box-shadow: 0 0 1em 1em #0000;
-}
-.jupiter-h {
-    translate: 
-        calc(var(--r) * var(--u) - var(--w) / 2)
-        calc(var(--r) * var(--u) - var(--w) / 2)
-        calc((var(--d) * var(--s) * var(--u)));
-    --del: 0.5s; /* FLASH SPEED */
+/* JUPITER */
+.jupiter-h, .jupiter-v {
+    background-color: rgba(220, 150, 80, 0.7);
+    --del: 0.5s;
     animation: jupiter-flash linear var(--del) infinite;
     animation-delay: calc(var(--c) * var(--del) / var(--t));
 }
@@ -727,20 +677,10 @@ div {
     --w: calc(var(--r) * var(--u) * 2);
     top: 50%;
 }
-.h, .v {
-    --h: var(--w);
-    border-radius: 100vmax;
-    background-color: rgba(210, 180, 140, 0.7); /* SPHERE COLOR (Light Tan-Gold) */
-    top: 0;
-    left: 0;
-    box-shadow: 0 0 1em 1em #0000;
-}
-.saturne-h {
-    translate: 
-        calc(var(--r) * var(--u) - var(--w) / 2)
-        calc(var(--r) * var(--u) - var(--w) / 2)
-        calc((var(--d) * var(--s) * var(--u)));
-    --del: 0.5s; /* FLASH SPEED */
+/* SATURN */
+.saturne-h, .saturne-v {
+    background-color: rgba(210, 180, 140, 0.7);
+    --del: 0.5s;
     animation: saturne-flash linear var(--del) infinite;
     animation-delay: calc(var(--c) * var(--del) / var(--t));
 }
@@ -835,20 +775,10 @@ div {
     --w: calc(var(--r) * var(--u) * 2);
     top: 50%;
 }
-.h, .v {
-    --h: var(--w);
-    border-radius: 100vmax;
-    background-color: rgba(135, 206, 235, 0.7); /* SPHERE COLOR (Light Sky Blue) */
-    top: 0;
-    left: 0;
-    box-shadow: 0 0 1em 1em #0000;
-}
-.uranus-h {
-    translate: 
-        calc(var(--r) * var(--u) - var(--w) / 2)
-        calc(var(--r) * var(--u) - var(--w) / 2)
-        calc((var(--d) * var(--s) * var(--u)));
-    --del: 0.5s; /* FLASH SPEED */
+/* URANUS */
+.uranus-h, .uranus-v {
+    background-color: rgba(135, 206, 235, 0.7);
+    --del: 0.5s;
     animation: uranus-flash linear var(--del) infinite;
     animation-delay: calc(var(--c) * var(--del) / var(--t));
 }
@@ -943,38 +873,12 @@ div {
     --w: calc(var(--r) * var(--u) * 2);
     top: 50%;
 }
-.h, .v {
-    --h: var(--w);
-    border-radius: 100vmax;
-    background-color: rgba(30, 144, 255, 0.7); /* SPHERE COLOR (Dodge Blue) */
-    top: 0;
-    left: 0;
-    box-shadow: 0 0 1em 1em #0000;
-}
-.neptune-h {
-    translate: 
-        calc(var(--r) * var(--u) - var(--w) / 2)
-        calc(var(--r) * var(--u) - var(--w) / 2)
-        calc((var(--d) * var(--s) * var(--u)));
-    --del: 0.5s; /* FLASH SPEED */
+/* NEPTUNE */
+.neptune-h, .neptune-v {
+    background-color: rgba(30, 144, 255, 0.7);
+    --del: 0.5s;
     animation: neptune-flash linear var(--del) infinite;
     animation-delay: calc(var(--c) * var(--del) / var(--t));
-}
-/* The horizontal lines are created with SCSS and a loop, which can be approximated with a set of elements */
-/* For this example, we'll assume a single globe for simplicity, but you would duplicate the .line and .h elements
-    in the HTML and adjust the --c variable to simulate the SCSS loop. */
-/* Animation keyframes */
-@keyframes neptune-flash {
-    0%, 13.33% {
-        color: rgba(0, 0, 139, 0.6); /* Dark Blue */
-        background-color: rgba(0, 0, 205, 0.6); /* Medium Blue */
-        box-shadow: 0 0 1em 1em #1e90ff30; /* Dodge Blue Glow */
-    }
-    6.67% {
-        color: rgba(0, 0, 255, 0.8); /* Pure Blue */
-        background-color: #4169e199; /* Royal Blue */
-        box-shadow: 0 0 1em 1em #4682b460; /* Steel Blue Glow */
-    }
 }
 @keyframes rotates {
     from {
