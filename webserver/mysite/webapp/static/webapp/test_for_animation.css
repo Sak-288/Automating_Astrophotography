@@ -62,7 +62,7 @@ div {
     transform: rotatex(45deg) rotatey(45deg);
     
     /* Customize the rotation speed here */
-    --rotation-speed: 30s;
+    --rotation-speed: 3000s;
     animation: rotates var(--rotation-speed) linear infinite;
 }
 /* Styles for the inner lines of the globe */
@@ -980,8 +980,8 @@ div {
     top:50%;
     left:50%;
     transform:translate(-50%, -50%);
-    height:57px;
-    width:57px;
+    height:60px;
+    width:60px;
     border-color: transparent transparent white transparent;
     border-radius:50%;
     border-width: 0 0 0.1em 0.1em;
