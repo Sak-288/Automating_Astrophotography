@@ -55,20 +55,13 @@ div {
     position: relative;
     
     /* Apply a slight initial rotation for a 3D view */
-    transform: rotatex(0deg) rotatey(0deg);
+    transform: rotatex(45deg) rotatey(45deg);
     
     /* Customize the rotation speed here */
     --rotation-speed: 10s;
     animation: rotates var(--rotation-speed) linear infinite;
 }
 /* Styles for the inner lines of the globe */
-.h, .v {
-        --h: var(--w);
-        border-radius: 100vmax;
-        top: 0;
-        left: 0;
-        box-shadow: 0 0 1em 1em #0000;
-}
 .line {
     position: absolute;
     height: var(--h);
@@ -85,6 +78,14 @@ div {
     height: var(--h);
     --w: calc(var(--r) * var(--u) * 2);
     top: 50%;
+}
+.h, .v {
+    --h: var(--w);
+    border-radius: 100vmax;
+    background-color: rgba(255, 242, 0, 0.507); /* SPHERE COLOR */
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 1em 1em #0000;
 }
 .mercury-h {
     .h,
