@@ -740,7 +740,6 @@ div {
     }
 }
 #trail{
-    --trailing_speed: 5s;
     font-size:5px;
     font-family:sans-serif;
     font-weight:bolder;
@@ -751,14 +750,17 @@ div {
     transform:translate(-50%, -50%);
 }
 .trail{
+    --trailing_speed: 5s;
     animation: trailing var(--trailing_speed) linear infinite;
 }
 @keyframes trailing {
     from {
-        opacity:1;
+        transform: translate(-50%, -50%); /* Starting point, centered */
+        opacity: 1;
     }
     to {
-        opacity:0;
+        transform: translate(-50%, -200px); /* Ending point, moved upwards */
+        opacity: 0;
     }
 }
 #ASTEROID {
