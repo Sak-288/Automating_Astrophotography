@@ -61,29 +61,9 @@
 <div style="--dp: {{ line.dp }}; --s:1; --c: {{ line.c }}" class="line h earth-h"></div>
 {% endfor %}
 </div>
-<div id="trail"></div>
+<div id="trail">
+<script src="{% static 'webapp/trail.js' %}"></script>
 </div>
-script.
-    document.addEventListener('mousemove', function(e) {
-    // Create a new trail element
-    const trailElement = document.createElement('div');
-    trailElement.textContent = '⸱';
-    trailElement.classList.add('trailing');
-
-    // Position the trail element at the mouse cursor's location
-    trailElement.style.left = e.clientX + 'px';
-    trailElement.style.top = e.clientY + 'px';
-
-    // Add the new element to the container
-    document.getElementById('trail').appendChild(trailElement);
-
-    // Remove the element after the animation is complete (5 seconds)
-    // This prevents the DOM from getting too large and slowing down the page
-    setTimeout(() => {
-    trailElement.remove();
-    }, 5000);
-});
-
 <div class="MOON">
 <div style="--t: {{ t2_plus_1 }}" class="moon-globe">
 <div style="--c: {{ t }}" class="line radius h moon-h"></div>
