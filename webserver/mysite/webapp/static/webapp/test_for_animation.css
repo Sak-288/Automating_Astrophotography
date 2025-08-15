@@ -31,7 +31,7 @@ div {
 /* ORBITING CONTAINER - This element handles the revolution around a central point */
 .MERCURY {
     /* Customize the orbit properties here */
-    --orbit-radius: 75px; /* Distance from the orbit center */ /* ORBIT RADIUS */
+    --orbit-radius: 80px; /* Distance from the orbit center */ /* ORBIT RADIUS */
     --orbit-speed: 10s;      /* Speed of the revolution */ /* ORBIT SPEED */
     --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
     --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
@@ -188,7 +188,7 @@ div {
 /* ORBITING CONTAINER - This element handles the revolution around a central point */
 .VENUS {
     /* Customize the orbit properties here */
-    --orbit-radius: 100px; /* Distance from the orbit center */ /* ORBIT RADIUS */
+    --orbit-radius: 154px; /* Distance from the orbit center */ /* ORBIT RADIUS */
     --orbit-speed: 20s;      /* Speed of the revolution */ /* ORBIT SPEED */
     --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
     --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
@@ -254,7 +254,7 @@ div {
 /* ORBITING CONTAINER - This element handles the revolution around a central point */
 .EARTH {
     /* Customize the orbit properties here */
-    --orbit-radius: 150px; /* Distance from the orbit center */ /* ORBIT RADIUS */
+    --orbit-radius: 171px; /* Distance from the orbit center */ /* ORBIT RADIUS */
     --orbit-speed: 20s;      /* Speed of the revolution */ /* ORBIT SPEED */
     --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
     --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
@@ -316,12 +316,11 @@ div {
         box-shadow: 0 0 1em 1em #228b2260; /* Brighter Green Glow */
     }
 }
-
 /* MARS */
 /* ORBITING CONTAINER - This element handles the revolution around a central point */
 .MARS {
     /* Customize the orbit properties here */
-    --orbit-radius: 200px; /* Distance from the orbit center */ /* ORBIT RADIUS */
+    --orbit-radius: 190px; /* Distance from the orbit center */ /* ORBIT RADIUS */
     --orbit-speed: 20s;      /* Speed of the revolution */ /* ORBIT SPEED */
     --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
     --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
@@ -388,7 +387,7 @@ div {
 /* ORBITING CONTAINER - This element handles the revolution around a central point */
 .JUPITER {
     /* Customize the orbit properties here */
-    --orbit-radius: 250px; /* Distance from the orbit center */ /* ORBIT RADIUS */
+    --orbit-radius: 252px; /* Distance from the orbit center */ /* ORBIT RADIUS */
     --orbit-speed: 20s;      /* Speed of the revolution */ /* ORBIT SPEED */
     --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
     --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
@@ -455,7 +454,7 @@ div {
 /* ORBITING CONTAINER - This element handles the revolution around a central point */
 .SATURNE {
     /* Customize the orbit properties here */
-    --orbit-radius: 300px; /* Distance from the orbit center */ /* ORBIT RADIUS */
+    --orbit-radius: 310px; /* Distance from the orbit center */ /* ORBIT RADIUS */
     --orbit-speed: 20s;      /* Speed of the revolution */ /* ORBIT SPEED */
     --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
     --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
@@ -521,7 +520,7 @@ div {
 /* ORBITING CONTAINER - This element handles the revolution around a central point */
 .URANUS {
     /* Customize the orbit properties here */
-    --orbit-radius: 350px; /* Distance from the orbit center */ /* ORBIT RADIUS */
+    --orbit-radius: 409px; /* Distance from the orbit center */ /* ORBIT RADIUS */
     --orbit-speed: 20s;      /* Speed of the revolution */ /* ORBIT SPEED */
     --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
     --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
@@ -588,7 +587,7 @@ div {
 /* ORBITING CONTAINER - This element handles the revolution around a central point */
 .NEPTUNE {
     /* Customize the orbit properties here */
-    --orbit-radius: 400px; /* Distance from the orbit center */ /* ORBIT RADIUS */
+    --orbit-radius: 500px; /* Distance from the orbit center */ /* ORBIT RADIUS */
     --orbit-speed: 20s;      /* Speed of the revolution */ /* ORBIT SPEED */
     --orbit-center-x: 50%;  /* X position of the orbit's center */ /* ORBIT X */
     --orbit-center-y: 50%;  /* Y position of the orbit's center */ /* ORBIT Y */
