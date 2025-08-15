@@ -19,6 +19,7 @@ div {
     box-sizing: border-box;
 }
 #solar_system {
+    transform-style: preserve-3d;
     position:absolute;
     margin-top:50px;
 }
