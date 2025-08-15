@@ -844,10 +844,10 @@ div {
 }
 @keyframes rotate-neptune {
     from {
-        transform: translate(-50%, -50%) rotate(43deg);
+        transform: translate(-50%, -50%) rotate(42deg);
     }
     to {
-        transform: translate(-50%, -50%) rotate(403deg);
+        transform: translate(-50%, -50%) rotate(402deg);
     }
 }
 @keyframes rotate-moon {
