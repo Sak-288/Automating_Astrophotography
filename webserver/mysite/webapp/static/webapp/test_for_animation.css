@@ -790,15 +790,16 @@ div {
     animation: rotate-image 90s linear infinite;
 }
 #earth_trail{
+    transform:rotate(30deg);
     position:absolute;
     top:50%;
     left:50%;
     transform:translate(-50%, -50%);
     height:380px;
     width:380px;
-    border-color: transparent transparent white white;
+    border-color: transparent transparent white transparent;
     border-radius:50%;
-    border-width: 0 0 0.1em 0.05em;
+    border-width: 0 0 0.1em 0;
     border-style: solid;
 }
 .earth_trail{
