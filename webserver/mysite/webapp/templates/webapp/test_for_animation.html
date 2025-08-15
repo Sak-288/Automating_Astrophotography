@@ -165,16 +165,20 @@
 
 <!-- JavaScript for spawning points -->
 <script>
-const container = document.getElementById('earth_simp');
+const earthDiv = document.getElementById('earth_simp');
+const container = document.body; // append points to body so they stay in place
 
 function spawnPoint() {
     const point = document.createElement('div');
     point.classList.add('point');
 
-    // Position at the exact center of the container
-    const centerX = (container.clientWidth / 2) - (point.clientWidth / 2);
-    const centerY = (container.clientHeight / 2) - (point.clientHeight / 2);
+    // Get Earth’s current position in the viewport
+    const rect = earthDiv.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
 
+    // Position point absolutely relative to the page
+    point.style.position = 'absolute';
     point.style.left = centerX + 'px';
     point.style.top = centerY + 'px';
 
