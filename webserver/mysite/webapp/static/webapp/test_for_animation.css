@@ -794,10 +794,13 @@ div {
     top:50%;
     left:50%;
     transform:translate(-50%, -50%);
-    height:400px;
-    width:400px;
+    height:380px;
+    width:380px;
     border-color: white transparent transparent transparent;
     border-radius:50%;
     border-width: 0.1em 0.1em 0 0;
     border-style: solid;
+}
+.earth_trail{
+    animation: rotate-image 12s linear infinite;
 }
