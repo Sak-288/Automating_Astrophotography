@@ -298,7 +298,7 @@ div {
 .h, .v {
     --h: var(--w);
     border-radius: 100vmax;
-    background-color: rgba(255, 212, 144, 0.5); /* SPHERE COLOR */
+    background-color: rgba(255, 179, 102, 0.7); /* SPHERE COLOR */
     top: 0;
     left: 0;
     box-shadow: 0 0 1em 1em #ffe5b800;
@@ -318,14 +318,14 @@ div {
 /* Animation keyframes */
 @keyframes venus-flash {
     0%, 13.33% {
-        color: rgba(255, 255, 255, 0.2);
-        background-color: rgba(255, 255, 255, 0.2);
-        box-shadow: 0 0 1em 1em #ffffff00;
+        color: rgba(255, 204, 153, 0.6);
+        background-color: rgba(255, 179, 102, 0.6);
+        box-shadow: 0 0 1em 1em #ffcc9930;
     }
     6.67% {
-        color: rgba(255, 196, 128, 0.2);
-        background-color: #ffffff81; /* FLASH COLOR */
-        box-shadow: 0 0 1em 1em #ffcd8230; /* PLANET GLOW */
+        color: rgba(255, 196, 128, 0.7);
+        background-color: #ffb36699; /* FLASH COLOR */
+        box-shadow: 0 0 1em 1em #ffcc9960; /* PLANET GLOW */
     }
 }
 @keyframes rotates {
@@ -406,13 +406,13 @@ div {
 .h, .v {
     --h: var(--w);
     border-radius: 100vmax;
-    background-color: rgba(255, 212, 144, 0.5); /* SPHERE COLOR */
+    background-color: rgba(65, 105, 225, 0.7); /* SPHERE COLOR (Ocean Blue) */
     top: 0;
     left: 0;
-    box-shadow: 0 0 1em 1em #ffe5b800;
+    box-shadow: 0 0 1em 1em #0000;
 }
 .earth-h {
-    translate: 
+    translate:
         calc(var(--r) * var(--u) - var(--w) / 2)
         calc(var(--r) * var(--u) - var(--w) / 2)
         calc((var(--d) * var(--s) * var(--u)));
@@ -426,14 +426,14 @@ div {
 /* Animation keyframes */
 @keyframes earth-flash {
     0%, 13.33% {
-        color: rgba(255, 255, 255, 0.2);
-        background-color: rgba(255, 255, 255, 0.2);
-        box-shadow: 0 0 1em 1em #ffffff00;
+        color: rgba(34, 139, 34, 0.6); /* Forest Green */
+        background-color: rgba(65, 105, 225, 0.6); /* Royal Blue */
+        box-shadow: 0 0 1em 1em #00640030; /* Dark Green Glow */
     }
     6.67% {
-        color: rgba(255, 196, 128, 0.2);
-        background-color: #ffffff81; /* FLASH COLOR */
-        box-shadow: 0 0 1em 1em #ffcd8230; /* PLANET GLOW */
+        color: rgba(34, 139, 34, 0.8); /* More Opaque Green */
+        background-color: #4169e199; /* Flashy Blue */
+        box-shadow: 0 0 1em 1em #228b2260; /* Brighter Green Glow */
     }
 }
 @keyframes rotates {
@@ -622,10 +622,10 @@ div {
 .h, .v {
     --h: var(--w);
     border-radius: 100vmax;
-    background-color: rgba(255, 212, 144, 0.5); /* SPHERE COLOR */
+    background-color: rgba(220, 150, 80, 0.7); /* SPHERE COLOR (Tan-Orange) */
     top: 0;
     left: 0;
-    box-shadow: 0 0 1em 1em #ffe5b800;
+    box-shadow: 0 0 1em 1em #0000;
 }
 .jupiter-h {
     translate: 
@@ -642,14 +642,14 @@ div {
 /* Animation keyframes */
 @keyframes jupiter-flash {
     0%, 13.33% {
-        color: rgba(255, 255, 255, 0.2);
-        background-color: rgba(255, 255, 255, 0.2);
-        box-shadow: 0 0 1em 1em #ffffff00;
+        color: rgba(240, 200, 160, 0.6); /* Lighter Tan */
+        background-color: rgba(180, 120, 70, 0.6); /* Darker Orange */
+        box-shadow: 0 0 1em 1em #8b451330; /* Saddle Brown Glow */
     }
     6.67% {
-        color: rgba(255, 196, 128, 0.2);
-        background-color: #ffffff81; /* FLASH COLOR */
-        box-shadow: 0 0 1em 1em #ffcd8230; /* PLANET GLOW */
+        color: rgba(255, 100, 100, 0.8); /* Red for the Great Red Spot */
+        background-color: #d2691e99; /* Chocolate Brown Flash */
+        box-shadow: 0 0 1em 1em #a52a2a60; /* Brown Glow */
     }
 }
 @keyframes rotates {
@@ -730,10 +730,10 @@ div {
 .h, .v {
     --h: var(--w);
     border-radius: 100vmax;
-    background-color: rgba(255, 212, 144, 0.5); /* SPHERE COLOR */
+    background-color: rgba(210, 180, 140, 0.7); /* SPHERE COLOR (Light Tan-Gold) */
     top: 0;
     left: 0;
-    box-shadow: 0 0 1em 1em #ffe5b800;
+    box-shadow: 0 0 1em 1em #0000;
 }
 .saturne-h {
     translate: 
@@ -750,14 +750,14 @@ div {
 /* Animation keyframes */
 @keyframes saturne-flash {
     0%, 13.33% {
-        color: rgba(255, 255, 255, 0.2);
-        background-color: rgba(255, 255, 255, 0.2);
-        box-shadow: 0 0 1em 1em #ffffff00;
+        color: rgba(240, 230, 140, 0.6); /* Pale Goldenrod */
+        background-color: rgba(218, 165, 32, 0.6); /* Goldenrod */
+        box-shadow: 0 0 1em 1em #ffd70030; /* Gold Glow */
     }
     6.67% {
-        color: rgba(255, 196, 128, 0.2);
-        background-color: #ffffff81; /* FLASH COLOR */
-        box-shadow: 0 0 1em 1em #ffcd8230; /* PLANET GLOW */
+        color: rgba(255, 255, 255, 0.8); /* White Flash */
+        background-color: #f5deb399; /* Wheat Flash */
+        box-shadow: 0 0 1em 1em #f5f5dc60; /* Beige Glow */
     }
 }
 @keyframes rotates {
@@ -838,10 +838,10 @@ div {
 .h, .v {
     --h: var(--w);
     border-radius: 100vmax;
-    background-color: rgba(255, 212, 144, 0.5); /* SPHERE COLOR */
+    background-color: rgba(135, 206, 235, 0.7); /* SPHERE COLOR (Light Sky Blue) */
     top: 0;
     left: 0;
-    box-shadow: 0 0 1em 1em #ffe5b800;
+    box-shadow: 0 0 1em 1em #0000;
 }
 .uranus-h {
     translate: 
@@ -858,14 +858,14 @@ div {
 /* Animation keyframes */
 @keyframes uranus-flash {
     0%, 13.33% {
-        color: rgba(255, 255, 255, 0.2);
-        background-color: rgba(255, 255, 255, 0.2);
-        box-shadow: 0 0 1em 1em #ffffff00;
+        color: rgba(0, 191, 255, 0.6); /* Deep Sky Blue */
+        background-color: rgba(0, 255, 255, 0.6); /* Cyan */
+        box-shadow: 0 0 1em 1em #87ceeb30; /* Sky Blue Glow */
     }
     6.67% {
-        color: rgba(255, 196, 128, 0.2);
-        background-color: #ffffff81; /* FLASH COLOR */
-        box-shadow: 0 0 1em 1em #ffcd8230; /* PLANET GLOW */
+        color: rgba(0, 206, 209, 0.8); /* Dark Cyan */
+        background-color: #40e0d099; /* Turquoise */
+        box-shadow: 0 0 1em 1em #20b2aa60; /* Light Sea Green Glow */
     }
 }
 @keyframes rotates {
@@ -946,10 +946,10 @@ div {
 .h, .v {
     --h: var(--w);
     border-radius: 100vmax;
-    background-color: rgba(255, 212, 144, 0.5); /* SPHERE COLOR */
+    background-color: rgba(30, 144, 255, 0.7); /* SPHERE COLOR (Dodge Blue) */
     top: 0;
     left: 0;
-    box-shadow: 0 0 1em 1em #ffe5b800;
+    box-shadow: 0 0 1em 1em #0000;
 }
 .neptune-h {
     translate: 
@@ -966,14 +966,14 @@ div {
 /* Animation keyframes */
 @keyframes neptune-flash {
     0%, 13.33% {
-        color: rgba(255, 255, 255, 0.2);
-        background-color: rgba(255, 255, 255, 0.2);
-        box-shadow: 0 0 1em 1em #ffffff00;
+        color: rgba(0, 0, 139, 0.6); /* Dark Blue */
+        background-color: rgba(0, 0, 205, 0.6); /* Medium Blue */
+        box-shadow: 0 0 1em 1em #1e90ff30; /* Dodge Blue Glow */
     }
     6.67% {
-        color: rgba(255, 196, 128, 0.2);
-        background-color: #ffffff81; /* FLASH COLOR */
-        box-shadow: 0 0 1em 1em #ffcd8230; /* PLANET GLOW */
+        color: rgba(0, 0, 255, 0.8); /* Pure Blue */
+        background-color: #4169e199; /* Royal Blue */
+        box-shadow: 0 0 1em 1em #4682b460; /* Steel Blue Glow */
     }
 }
 @keyframes rotates {
