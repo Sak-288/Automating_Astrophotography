@@ -786,14 +786,6 @@ div {
 .ASTEROID {
     animation: rotate-image 90s linear infinite;
 }
-.point {
-    width: 30px;
-    height: 30px;
-    color:white;
-    position: absolute;
-    border-radius: 50%;
-    opacity:1;
-}
 #earth_simp{
     width:30px;
     height:30px;
