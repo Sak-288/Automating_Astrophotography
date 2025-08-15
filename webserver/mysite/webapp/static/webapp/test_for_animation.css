@@ -112,29 +112,6 @@ div {
         box-shadow: 0 0 1em 1em #cccccc60; /* PLANET GLOW */
     }
 }
-@keyframes rotates {
-    from {
-        transform: 
-            rotatex(0)
-            rotatey(0)
-            rotatez(0);
-    }
-    to {
-        transform: 
-            rotatex(360deg)
-            rotatey(0deg)
-            rotatez(0deg);
-    }
-}
-@keyframes orbit-animation {
-    from {
-        transform: rotate(0deg) translate(calc(var(--orbit-radius) * -1), 0);
-    }
-    to {
-        transform: rotate(360deg) translate(calc(var(--orbit-radius) * -1), 0);
-    }
-}
-
 /* SUN */
 /* ORBITING CONTAINER - This element handles the revolution around a central point */
 .SUN {
@@ -218,28 +195,6 @@ div {
         color: rgba(255, 170, 0, 0.7); /* Even brighter Orange */
         background-color: #ff990099; /* Very Flashy Orange */
         box-shadow: 0 0 1em 1em #ffcc0060; /* More Intense Glow */
-    }
-}
-@keyframes rotates {
-    from {
-        transform: 
-            rotatex(0)
-            rotatey(0)
-            rotatez(0);
-    }
-    to {
-        transform: 
-            rotatex(360deg)
-            rotatey(0deg)
-            rotatez(0deg);
-    }
-}
-@keyframes orbit-animation {
-    from {
-        transform: rotate(0deg) translate(calc(var(--orbit-radius) * -1), 0);
-    }
-    to {
-        transform: rotate(360deg) translate(calc(var(--orbit-radius) * -1), 0);
     }
 }
 
@@ -328,29 +283,6 @@ div {
         box-shadow: 0 0 1em 1em #ffcc9960; /* PLANET GLOW */
     }
 }
-@keyframes rotates {
-    from {
-        transform: 
-            rotatex(0)
-            rotatey(0)
-            rotatez(0);
-    }
-    to {
-        transform: 
-            rotatex(360deg)
-            rotatey(0deg)
-            rotatez(0deg);
-    }
-}
-@keyframes orbit-animation {
-    from {
-        transform: rotate(0deg) translate(calc(var(--orbit-radius) * -1), 0);
-    }
-    to {
-        transform: rotate(360deg) translate(calc(var(--orbit-radius) * -1), 0);
-    }
-}
-
 /* EARTH */
 /* ORBITING CONTAINER - This element handles the revolution around a central point */
 .EARTH {
@@ -434,28 +366,6 @@ div {
         color: rgba(34, 139, 34, 0.8); /* More Opaque Green */
         background-color: #4169e199; /* Flashy Blue */
         box-shadow: 0 0 1em 1em #228b2260; /* Brighter Green Glow */
-    }
-}
-@keyframes rotates {
-    from {
-        transform: 
-            rotatex(0)
-            rotatey(0)
-            rotatez(0);
-    }
-    to {
-        transform: 
-            rotatex(360deg)
-            rotatey(0deg)
-            rotatez(0deg);
-    }
-}
-@keyframes orbit-animation {
-    from {
-        transform: rotate(0deg) translate(calc(var(--orbit-radius) * -1), 0);
-    }
-    to {
-        transform: rotate(360deg) translate(calc(var(--orbit-radius) * -1), 0);
     }
 }
 
@@ -544,28 +454,6 @@ div {
         box-shadow: 0 0 1em 1em #ffcd8230; /* PLANET GLOW */
     }
 }
-@keyframes rotates {
-    from {
-        transform: 
-            rotatex(0)
-            rotatey(0)
-            rotatez(0);
-    }
-    to {
-        transform: 
-            rotatex(360deg)
-            rotatey(0deg)
-            rotatez(0deg);
-    }
-}
-@keyframes orbit-animation {
-    from {
-        transform: rotate(0deg) translate(calc(var(--orbit-radius) * -1), 0);
-    }
-    to {
-        transform: rotate(360deg) translate(calc(var(--orbit-radius) * -1), 0);
-    }
-}
 
 /* JUPITER */
 /* ORBITING CONTAINER - This element handles the revolution around a central point */
@@ -650,28 +538,6 @@ div {
         color: rgba(255, 100, 100, 0.8); /* Red for the Great Red Spot */
         background-color: #d2691e99; /* Chocolate Brown Flash */
         box-shadow: 0 0 1em 1em #a52a2a60; /* Brown Glow */
-    }
-}
-@keyframes rotates {
-    from {
-        transform: 
-            rotatex(0)
-            rotatey(0)
-            rotatez(0);
-    }
-    to {
-        transform: 
-            rotatex(360deg)
-            rotatey(0deg)
-            rotatez(0deg);
-    }
-}
-@keyframes orbit-animation {
-    from {
-        transform: rotate(0deg) translate(calc(var(--orbit-radius) * -1), 0);
-    }
-    to {
-        transform: rotate(360deg) translate(calc(var(--orbit-radius) * -1), 0);
     }
 }
 
@@ -760,28 +626,6 @@ div {
         box-shadow: 0 0 1em 1em #f5f5dc60; /* Beige Glow */
     }
 }
-@keyframes rotates {
-    from {
-        transform: 
-            rotatex(0)
-            rotatey(0)
-            rotatez(0);
-    }
-    to {
-        transform: 
-            rotatex(360deg)
-            rotatey(0deg)
-            rotatez(0deg);
-    }
-}
-@keyframes orbit-animation {
-    from {
-        transform: rotate(0deg) translate(calc(var(--orbit-radius) * -1), 0);
-    }
-    to {
-        transform: rotate(360deg) translate(calc(var(--orbit-radius) * -1), 0);
-    }
-}
 
 /* URANUS */
 /* ORBITING CONTAINER - This element handles the revolution around a central point */
@@ -866,28 +710,6 @@ div {
         color: rgba(0, 206, 209, 0.8); /* Dark Cyan */
         background-color: #40e0d099; /* Turquoise */
         box-shadow: 0 0 1em 1em #20b2aa60; /* Light Sea Green Glow */
-    }
-}
-@keyframes rotates {
-    from {
-        transform: 
-            rotatex(0)
-            rotatey(0)
-            rotatez(0);
-    }
-    to {
-        transform: 
-            rotatex(360deg)
-            rotatey(0deg)
-            rotatez(0deg);
-    }
-}
-@keyframes orbit-animation {
-    from {
-        transform: rotate(0deg) translate(calc(var(--orbit-radius) * -1), 0);
-    }
-    to {
-        transform: rotate(360deg) translate(calc(var(--orbit-radius) * -1), 0);
     }
 }
 
@@ -985,8 +807,8 @@ div {
     }
     to {
         transform: 
-            rotatex(360deg)
-            rotatey(0deg)
+            rotatex()
+            rotatey(360deg)
             rotatez(0deg);
     }
 }
