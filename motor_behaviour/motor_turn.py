@@ -16,8 +16,8 @@ GPIO.setup(MS2, GPIO.OUT)
 GPIO.setup(MS3, GPIO.OUT)
 
 # --- Config microstepping : 1/4 pas
-GPIO.output(MS1, GPIO.HIGH)
-GPIO.output(MS2, GPIO.LOW)
+GPIO.output(MS1, GPIO.LOW)
+GPIO.output(MS2, GPIO.HIGH)
 GPIO.output(MS3, GPIO.LOW)
 
 # --- Paramètres moteur
