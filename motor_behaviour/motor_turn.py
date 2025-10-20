@@ -39,9 +39,9 @@ def step(delay):
 try:
     GPIO.output(DIR, GPIO.HIGH)  # Set direction
 
-    delay = 0.01        # initial speed (~50 Hz)
-    min_delay = 0.002   # max speed (~250 Hz)
-    accel_rate = 0.00002  # smaller = slower acceleration
+    delay = 0.02        # initial speed (~50 Hz)
+    min_delay = 0.01   # max speed (~250 Hz)
+    accel_rate = 0.001  # smaller = slower acceleration
 
     for i in range(nSteps):
         step(delay)
