@@ -16,12 +16,12 @@ GPIO.setup(MS2, GPIO.OUT)
 GPIO.setup(MS3, GPIO.OUT)
 
 # --- Config microstepping : FULL STEP (max torque)
-GPIO.output(MS1, GPIO.LOW)
-GPIO.output(MS2, GPIO.LOW)
-GPIO.output(MS3, GPIO.LOW)
+GPIO.output(MS1, GPIO.HIGH)
+GPIO.output(MS2, GPIO.HIGH)
+GPIO.output(MS3, GPIO.HIGH)
 
 # --- Motor parameters
-DEGREES_PER_STEP = 1.8
+DEGREES_PER_STEP = 1.8/16
 STEPS_PER_REV = int(360 / DEGREES_PER_STEP)
 
 # --- Movement
