@@ -25,7 +25,7 @@ DEGREES_PER_STEP = 1.8
 STEPS_PER_REV = int(360 / DEGREES_PER_STEP)
 
 # --- Movement
-TARGET_ANGLE = 2160
+TARGET_ANGLE = 180
 nSteps = int(TARGET_ANGLE / DEGREES_PER_STEP)
 print(f"Moving {TARGET_ANGLE}°, which is {nSteps} full steps.")
 
