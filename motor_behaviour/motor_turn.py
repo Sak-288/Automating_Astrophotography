@@ -39,11 +39,11 @@ def step(delay):
 try:
     GPIO.output(DIR, GPIO.HIGH)  # Set direction
 
-    delay = 0.001     # initial speed (~50 Hz)
+    delay = 0.1     # initial speed (~50 Hz)
 
     for i in range(nSteps):
         step(delay)
-        
+
 finally:
     GPIO.cleanup()
     print("Movement finished.")
