@@ -2,13 +2,13 @@ import RPi.GPIO as GPIO
 import time
 
 # --- Broches GPIO (BCM numbering)
-DIR = 20   # Direction pin
-STEP = 21  # Step pin
-MS1 = 14
-MS2 = 15
-MS3 = 18
+DIR = 38   # Direction pin
+STEP = 40  # Step pin
+MS1 = 10
+MS2 = 12
+MS3 = 14
 
-GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BOARD)
 GPIO.setup(DIR, GPIO.OUT)
 GPIO.setup(STEP, GPIO.OUT)
 GPIO.setup(MS1, GPIO.OUT)
