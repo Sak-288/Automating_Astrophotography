@@ -21,13 +21,14 @@ GPIO.output(MS2, GPIO.HIGH)
 GPIO.output(MS3, GPIO.HIGH)
 
 # --- Motor parameters
+MICRO_STEPPING = 16
 DEGREES_PER_STEP = 1.8/16
 STEPS_PER_REV = int(360 / DEGREES_PER_STEP)
 
 # --- Movement
 TARGET_ANGLE = 180
 nSteps = int(TARGET_ANGLE / DEGREES_PER_STEP)
-print(f"Moving {TARGET_ANGLE}°, which is {nSteps} full steps.")
+print(f"Moving {TARGET_ANGLE}°, which is {nSteps} steps.")
 
 # --- Step function
 def step(delay):
@@ -39,7 +40,7 @@ def step(delay):
 try:
     GPIO.output(DIR, GPIO.HIGH)  # Set direction
 
-    delay = 0.2  # initial speed (~50 Hz)
+    delay = 0.2/MICRO_STEPPING  # initial speed
 
     for i in range(nSteps):
         step(delay)
