@@ -1,12 +1,12 @@
 import RPi.GPIO as GPIO
 import time
 
-# --- Broches GPIO (BCM numbering)
-DIR = 38   # Direction pin
-STEP = 40  # Step pin
-MS1 = 10
-MS2 = 12
-MS3 = 14
+# --- Broches GPIO (BOARD numbering)
+DIR = 38    # Direction pin
+STEP = 40   # Step pin
+MS1 = 8     # Microstep pin 1
+MS2 = 10    # Microstep pin 2
+MS3 = 12    # Microstep pin 3
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(DIR, GPIO.OUT)
@@ -15,22 +15,21 @@ GPIO.setup(MS1, GPIO.OUT)
 GPIO.setup(MS2, GPIO.OUT)
 GPIO.setup(MS3, GPIO.OUT)
 
-# --- Config microstepping : FULL STEP (max couple)
+# --- Config microstepping : FULL STEP (max torque)
 GPIO.output(MS1, GPIO.LOW)
 GPIO.output(MS2, GPIO.LOW)
 GPIO.output(MS3, GPIO.LOW)
 
-# --- Paramètres moteur
-DEGREES_PER_STEP = 1.8       # Full step
+# --- Motor parameters
+DEGREES_PER_STEP = 1.8
 STEPS_PER_REV = int(360 / DEGREES_PER_STEP)
 
-# --- Mouvement
+# --- Movement
 TARGET_ANGLE = 2160
 nSteps = int(TARGET_ANGLE / DEGREES_PER_STEP)
+print(f"Moving {TARGET_ANGLE}°, which is {nSteps} full steps.")
 
-print(f"Moving {TARGET_ANGLE}°, soit {nSteps} pas entiers.")
-
-# --- Fonction pour faire un pas
+# --- Step function
 def step(delay):
     GPIO.output(STEP, GPIO.HIGH)
     time.sleep(delay)
@@ -38,23 +37,23 @@ def step(delay):
     time.sleep(delay)
 
 try:
-    GPIO.output(DIR, GPIO.HIGH)  # sens 1
+    GPIO.output(DIR, GPIO.HIGH)  # Set direction
 
-    delay = 0.01   # départ très lent (~50 Hz)
-    min_delay = 0.002  # vitesse max (~250 Hz)
-    accel_rate = 0.00002  # plus petit = accélération plus lente
+    delay = 0.01        # initial speed (~50 Hz)
+    min_delay = 0.002   # max speed (~250 Hz)
+    accel_rate = 0.00002  # smaller = slower acceleration
 
     for i in range(nSteps):
         step(delay)
 
-        # accélère progressivement jusqu'au tiers du parcours
+        # Accelerate in first third
         if delay > min_delay and i < nSteps/3:
             delay -= accel_rate
 
-        # ralentit sur le dernier tiers
+        # Decelerate in last third
         if i > (2*nSteps)/3:
             delay += accel_rate
 
 finally:
     GPIO.cleanup()
-    print("Fin du mouvement.")
+    print("Movement finished.")
