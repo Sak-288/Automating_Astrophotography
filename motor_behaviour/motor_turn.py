@@ -7,7 +7,7 @@ STEP = 40   # Step pin
 MS1 = 8     # Microstep pin 1
 MS2 = 10    # Microstep pin 2
 MS3 = 12    # Microstep pin 3
-EN = 36
+EN = 36     # Enable pin
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(EN, GPIO.OUT)
@@ -17,27 +17,26 @@ GPIO.setup(MS1, GPIO.OUT)
 GPIO.setup(MS2, GPIO.OUT)
 GPIO.setup(MS3, GPIO.OUT)
 
-# FULL STEP MODE: Maximum holding and running torque
-GPIO.output(MS1, GPIO.LOW)
-GPIO.output(MS2, GPIO.LOW)
-GPIO.output(MS3, GPIO.LOW)
+# 1/16TH STEP MODE: All MS pins HIGH
+GPIO.output(MS1, GPIO.HIGH)
+GPIO.output(MS2, GPIO.HIGH)
+GPIO.output(MS3, GPIO.HIGH)
 
+# Enable the driver (Active LOW)
 GPIO.output(EN, GPIO.LOW)
 
 # Motor parameters
-MICRO_STEPPING = 1/1
+MICRO_STEPPING = 16  # 16 microsteps per full step
 FULL_STEP_ANGLE = 1.8
 
-DEGREES_PER_STEP = FULL_STEP_ANGLE * MICRO_STEPPING  
-STEPS_PER_REV = int(360 / DEGREES_PER_STEP)           
+DEGREES_PER_STEP = FULL_STEP_ANGLE / MICRO_STEPPING  # 0.1125°
+STEPS_PER_REV = int(360 / DEGREES_PER_STEP)           # 3200 steps
 
-# Step function (Optimized for driver logic)
+# Step function
 def step(delay):
     GPIO.output(STEP, GPIO.HIGH)
-    # A short, fixed high-pulse guarantees the driver registers the step perfectly
-    time.sleep(0.0005) 
+    time.sleep(0.0001)  # 100us pulse is plenty for driver trigger
     GPIO.output(STEP, GPIO.LOW)
-    # The variable delay dictates the speed and torque curve
     time.sleep(delay)
 
 # Movement Function with Acceleration/Deceleration Ramping
@@ -49,19 +48,21 @@ def move(degrees, dir):
     elif dir == 0:
         GPIO.output(DIR, GPIO.LOW)   # Anti-Clockwise
 
-    # --- TORQUE OPTIMIZATION: TRAPEZOIDAL RAMPING ---
-    start_delay = 0.02  # SLOW starting speed = MASSIVE starting torque
-    target_delay = 0.005 # Cruising speed
+    time.sleep(0.001)  # Settling delay for DIR line
+
+    # --- SPEED & RAMP SCALING FOR MICROSTEPPING ---
+    start_delay = 0.01 / MICRO_STEPPING    # ~0.000625s
+    target_delay = 0.002 / MICRO_STEPPING  # ~0.000125s
     
-    # Ramp over 20% of the movement, or up to 40 steps, whichever is smaller
-    ramp_steps = min(int(nSteps * 0.20), 40) 
+    # Ramp over up to 36 degrees (320 steps in 1/16th mode)
+    ramp_steps = min(int(nSteps * 0.20), 20 * MICRO_STEPPING) 
 
     for i in range(nSteps):
         if i < ramp_steps:
-            # Acceleration phase: slowly decrease the delay
+            # Acceleration phase
             current_delay = start_delay - ((start_delay - target_delay) * (i / ramp_steps))
         elif i >= nSteps - ramp_steps:
-            # Deceleration phase: slowly increase the delay to prevent inertial skip at the end
+            # Deceleration phase
             steps_into_decel = i - (nSteps - ramp_steps)
             current_delay = target_delay + ((start_delay - target_delay) * (steps_into_decel / ramp_steps))
         else:
@@ -74,10 +75,13 @@ def move(degrees, dir):
 
 # Main execution loop
 try:
+    print("Moving 1800 degrees (5 full turns)...")
     move(1800, 1)
     time.sleep(2)
     move(1800, 0)
 
 finally:
+    # Disable driver outputs to keep motor cool while idle
+    GPIO.output(EN, GPIO.HIGH)
     GPIO.cleanup()
     print("GPIO safely cleaned up.")
