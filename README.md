@@ -6,4 +6,8 @@ UPDATE (19/08/2025) :
 Since the hardware part went kaput (the motors were too weak and the time new ones would arrive, I'd be at school again), this project is not (at least currently) in development
 anymore. Maybe I'll get around to finishing it when the holidays will arrive.
 
+UPDATE (05/08/2026) :
+
+In development again, yey !
+
 ![Hackatime Stats](https://hackatime-badge.hackclub.com/U0996SS3H41/Automating_Astrophotography)
