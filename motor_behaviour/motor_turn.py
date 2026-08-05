@@ -52,3 +52,7 @@ def move(degrees, dir):
     GPIO.cleanup()
     print("Movement finished.")
 
+move(180, 1)
+time.sleep(2)
+move(180, 0)
+
