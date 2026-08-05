@@ -48,7 +48,7 @@ def move(degrees, dir):
     elif dir == 0:
         GPIO.output(DIR, GPIO.LOW)   # Set direction | LOW == Anti-Clockwise
 
-    delay = 0.025 * MICRO_STEPPING     # Controls speed
+    delay = 0.0005 * MICRO_STEPPING     # Controls speed
     for i in range(nSteps):
         step(delay)
 
