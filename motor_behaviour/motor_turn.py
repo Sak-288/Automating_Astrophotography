@@ -15,7 +15,7 @@ GPIO.setup(MS1, GPIO.OUT)
 GPIO.setup(MS2, GPIO.OUT)
 GPIO.setup(MS3, GPIO.OUT)
 
-# It's a game of whackamole. 3 LOWS --> FULL STEP (1.8/360), 3 HIGHS --> 1/16th STEP ? (1.8/16/360)
+# 3 LOWS --> FULL STEP (1.8/360)
 GPIO.output(MS1, GPIO.LOW)
 GPIO.output(MS2, GPIO.LOW)
 GPIO.output(MS3, GPIO.LOW)
@@ -25,9 +25,8 @@ MICRO_STEPPING = 1/1
 FULL_STEP_ANGLE = 1.8
 
 # Degrees covered by a single pulse sent to the STEP pin
-DEGREES_PER_STEP = FULL_STEP_ANGLE * MICRO_STEPPING  # 0.1125 degrees
-# Total pulses needed to turn 360 degrees
-STEPS_PER_REV = int(360 / DEGREES_PER_STEP)           # 3200 steps
+DEGREES_PER_STEP = FULL_STEP_ANGLE * MICRO_STEPPING  # 1.8 degrees at Full Step
+STEPS_PER_REV = int(360 / DEGREES_PER_STEP)           # 200 steps
 
 # Step function
 def step(delay):
@@ -41,18 +40,23 @@ def move(degrees, dir):
     nSteps = int(degrees / DEGREES_PER_STEP)
 
     if dir == 1:
-        GPIO.output(DIR, GPIO.HIGH)  # Set direction | HIGH == Clockly
+        GPIO.output(DIR, GPIO.HIGH)  # Set direction | HIGH == Clockwise
     elif dir == 0:
-        GPIO.output(DIR, GPIO.LOW)  # Set direction | LOW == ANTI-Clockly
+        GPIO.output(DIR, GPIO.LOW)   # Set direction | LOW == Anti-Clockwise
 
-    delay = 0.2 * MICRO_STEPPING  # controlsd speed, so 0.2s for 1.8° and 40s for 360°, a bit slow but good enough ?
+    delay = 0.2 * MICRO_STEPPING     # Controls speed
     for i in range(nSteps):
         step(delay)
 
-    GPIO.cleanup()
     print("Movement finished.")
 
-move(180, 1)
-time.sleep(2)
-move(180, 0)
+# Main execution loop
+try:
+    move(180, 1)
+    time.sleep(2)
+    move(180, 0)
 
+finally:
+    # Cleanup only when ALL movements are finished
+    GPIO.cleanup()
+    print("GPIO safely cleaned up.")
