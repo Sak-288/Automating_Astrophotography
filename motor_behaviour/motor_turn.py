@@ -29,11 +29,6 @@ DEGREES_PER_STEP = FULL_STEP_ANGLE * MICRO_STEPPING  # 0.1125 degrees
 # Total pulses needed to turn 360 degrees
 STEPS_PER_REV = int(360 / DEGREES_PER_STEP)           # 3200 steps
 
-# Movement VARS
-TARGET_ANGLE = 180
-nSteps = int(TARGET_ANGLE / DEGREES_PER_STEP)
-print(f"Moving {TARGET_ANGLE}°, which is {nSteps} steps.")
-
 # Step function
 def step(delay):
     GPIO.output(STEP, GPIO.HIGH)
@@ -41,14 +36,19 @@ def step(delay):
     GPIO.output(STEP, GPIO.LOW)
     time.sleep(delay)
 
-try:
-    GPIO.output(DIR, GPIO.HIGH)  # Set direction
+# Movement Function
+def move(degrees, dir):
+    nSteps = int(degrees / DEGREES_PER_STEP)
 
-    delay = 0.2 * MICRO_STEPPING  # initial speed, so 0.2s for 1.8° and 40s for 360°, a bit slow but good enough ?
+    if dir == 1:
+        GPIO.output(DIR, GPIO.HIGH)  # Set direction | HIGH == Clockly
+    elif dir == 0:
+        GPIO.output(DIR, GPIO.LOW)  # Set direction | LOW == ANTI-Clockly
 
+    delay = 0.2 * MICRO_STEPPING  # controlsd speed, so 0.2s for 1.8° and 40s for 360°, a bit slow but good enough ?
     for i in range(nSteps):
         step(delay)
 
-finally:
     GPIO.cleanup()
     print("Movement finished.")
+
