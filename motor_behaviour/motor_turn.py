@@ -16,12 +16,12 @@ GPIO.setup(MS2, GPIO.OUT)
 GPIO.setup(MS3, GPIO.OUT)
 
 # It's a game of whackamole. 3 LOWS --> FULL STEP (1.8/360), 3 HIGHS --> 1/16th STEP ? (1.8/16/360)
-GPIO.output(MS1, GPIO.HIGH)
-GPIO.output(MS2, GPIO.HIGH)
-GPIO.output(MS3, GPIO.HIGH)
+GPIO.output(MS1, GPIO.LOW)
+GPIO.output(MS2, GPIO.LOW)
+GPIO.output(MS3, GPIO.LOW)
 
 # Motor parameters
-MICRO_STEPPING = 1/16
+MICRO_STEPPING = 1/1
 FULL_STEP_ANGLE = 1.8
 
 # Degrees covered by a single pulse sent to the STEP pin
