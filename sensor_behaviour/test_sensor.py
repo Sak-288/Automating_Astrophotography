@@ -1,6 +1,8 @@
 from mpu6050 import mpu6050
 from time import sleep, time
 
+# MIGHT HAVE TO CHANGE SENSOR !
+
 # Create sensor object
 sensor = mpu6050(0x68, 1)
 

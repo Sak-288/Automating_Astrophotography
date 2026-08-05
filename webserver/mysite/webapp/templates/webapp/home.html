@@ -20,9 +20,9 @@
                 {% else %}
                 <form method="post" action="{% url 'register_astronomer' %}">
                     {% csrf_token %}
-                <button style="cursor: pointer;" id="navREG" type="submit" class="btn btn-link">Register / </button>
+                <button style="cursor: pointer;" id="navREG" type="submit" class="btn btn-link">Register /</button>
                 </form>
-                <a href="{% url 'login' %}" id="navLOG">&nbsp;Log in</a>
+                <a href="{% url 'login' %}" id="navLOG">&nbsp;&nbsp;&nbsp;Log in</a>
                 {% endif %}
                 <a href="{% url 'test_for_animation' %}" id="navUSE">Explore the Skies</a>
                 <a href="" id="navABO">About</a>
