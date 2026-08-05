@@ -27,52 +27,50 @@ FULL_STEP_ANGLE = 1.8
 DEGREES_PER_STEP = FULL_STEP_ANGLE * MICRO_STEPPING  
 STEPS_PER_REV = int(360 / DEGREES_PER_STEP)           
 
-# Step function (Optimized for driver logic)
 def step(delay):
     GPIO.output(STEP, GPIO.HIGH)
-    # A short, fixed high-pulse guarantees the driver registers the step perfectly
-    time.sleep(0.0005) 
+    time.sleep(0.001)  # Slightly longer HIGH pulse ensures total driver saturation
     GPIO.output(STEP, GPIO.LOW)
-    # The variable delay dictates the speed and torque curve
     time.sleep(delay)
 
-# Movement Function with Acceleration/Deceleration Ramping
 def move(degrees, dir):
     nSteps = int(degrees / DEGREES_PER_STEP)
 
     if dir == 1:
-        GPIO.output(DIR, GPIO.HIGH)  # Clockwise
+        GPIO.output(DIR, GPIO.HIGH)  
     elif dir == 0:
-        GPIO.output(DIR, GPIO.LOW)   # Anti-Clockwise
+        GPIO.output(DIR, GPIO.LOW)   
+        
+    # TORQUE TWEAK 1: Pre-charge the coils. 
+    # Giving the driver 50ms after changing direction allows the magnetic 
+    # field to reach 100% holding strength before we attempt to move the load.
+    time.sleep(0.05) 
 
-    # --- TORQUE OPTIMIZATION: TRAPEZOIDAL RAMPING ---
-    start_delay = 0.02  # SLOW starting speed = MASSIVE starting torque
-    target_delay = 0.005 # Cruising speed
+    # --- EXTREME TORQUE RAMPING ---
+    start_delay = 0.04   # 40ms delay (EXTREMELY slow start to break static friction)
+    target_delay = 0.01  # 10ms delay (Slower top speed = massively higher running torque)
     
-    # Ramp over 20% of the movement, or up to 40 steps, whichever is smaller
-    ramp_steps = min(int(nSteps * 0.20), 40) 
+    # TORQUE TWEAK 2: Stretch the ramp. 
+    # Use up to 40% of the total movement just for accelerating.
+    ramp_steps = min(int(nSteps * 0.40), 100) 
 
     for i in range(nSteps):
         if i < ramp_steps:
-            # Acceleration phase: slowly decrease the delay
             current_delay = start_delay - ((start_delay - target_delay) * (i / ramp_steps))
         elif i >= nSteps - ramp_steps:
-            # Deceleration phase: slowly increase the delay to prevent inertial skip at the end
             steps_into_decel = i - (nSteps - ramp_steps)
             current_delay = target_delay + ((start_delay - target_delay) * (steps_into_decel / ramp_steps))
         else:
-            # Cruising phase
             current_delay = target_delay
             
         step(current_delay)
 
     print("Movement finished.")
 
-# Main execution loop
 try:
-    move(180, 1)
+    move(1800, 1)
     time.sleep(2)
-    move(180, 0)
+    move(1800, 0)
 
 finally:
     GPIO.cleanup()
