@@ -1,87 +1,66 @@
 import RPi.GPIO as GPIO
 import time
 
-# PINS FOR MOTOR CONTROLLERS
+# PINS FOR MOTOR CONTROLLERS | Obvi, do not touch that, but do replicate it when you have a doubt
 DIR = 38    # Direction pin
 STEP = 40   # Step pin
 MS1 = 8     # Microstep pin 1
 MS2 = 10    # Microstep pin 2
 MS3 = 12    # Microstep pin 3
-EN = 36     # Enable pin
+ENABLE = 36 # Shitter pin
 
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(EN, GPIO.OUT)
+GPIO.setup(ENABLE, GPIO.OUT)
 GPIO.setup(DIR, GPIO.OUT)
 GPIO.setup(STEP, GPIO.OUT)
 GPIO.setup(MS1, GPIO.OUT)
 GPIO.setup(MS2, GPIO.OUT)
 GPIO.setup(MS3, GPIO.OUT)
 
-# 1/16TH STEP MODE: All MS pins HIGH
-GPIO.output(MS1, GPIO.HIGH)
-GPIO.output(MS2, GPIO.HIGH)
-GPIO.output(MS3, GPIO.HIGH)
+GPIO.output(ENABLE, GPIO.LOW)
 
-# Enable the driver (Active LOW)
-GPIO.output(EN, GPIO.LOW)
+# 3 LOWS --> FULL STEP (1.8/360)
+GPIO.output(MS1, GPIO.LOW)
+GPIO.output(MS2, GPIO.LOW)
+GPIO.output(MS3, GPIO.LOW)
 
 # Motor parameters
-MICRO_STEPPING = 16  # 16 microsteps per full step
+MICRO_STEPPING = 1/1
 FULL_STEP_ANGLE = 1.8
 
-DEGREES_PER_STEP = FULL_STEP_ANGLE / MICRO_STEPPING  # 0.1125°
-STEPS_PER_REV = int(360 / DEGREES_PER_STEP)           # 3200 steps
+# Degrees covered by a single pulse sent to the STEP pin
+DEGREES_PER_STEP = FULL_STEP_ANGLE * MICRO_STEPPING  # 1.8 degrees at Full Step
+STEPS_PER_REV = int(360 / DEGREES_PER_STEP)           # 200 steps
 
 # Step function
 def step(delay):
     GPIO.output(STEP, GPIO.HIGH)
-    time.sleep(0.0001)  # 100us pulse is plenty for driver trigger
+    time.sleep(delay)
     GPIO.output(STEP, GPIO.LOW)
     time.sleep(delay)
 
-# Movement Function with Acceleration/Deceleration Ramping
+# Movement Function
 def move(degrees, dir):
     nSteps = int(degrees / DEGREES_PER_STEP)
 
     if dir == 1:
-        GPIO.output(DIR, GPIO.HIGH)  # Clockwise
+        GPIO.output(DIR, GPIO.HIGH)  # Set direction | HIGH == Clockwise
     elif dir == 0:
-        GPIO.output(DIR, GPIO.LOW)   # Anti-Clockwise
+        GPIO.output(DIR, GPIO.LOW)   # Set direction | LOW == Anti-Clockwise
 
-    time.sleep(0.001)  # Settling delay for DIR line
-
-    # --- SPEED & RAMP SCALING FOR MICROSTEPPING ---
-    start_delay = 0.01 / MICRO_STEPPING    # ~0.000625s
-    target_delay = 0.002 / MICRO_STEPPING  # ~0.000125s
-    
-    # Ramp over up to 36 degrees (320 steps in 1/16th mode)
-    ramp_steps = min(int(nSteps * 0.20), 20 * MICRO_STEPPING) 
-
+    delay = 0.001 * MICRO_STEPPING     # Controls speed
     for i in range(nSteps):
-        if i < ramp_steps:
-            # Acceleration phase
-            current_delay = start_delay - ((start_delay - target_delay) * (i / ramp_steps))
-        elif i >= nSteps - ramp_steps:
-            # Deceleration phase
-            steps_into_decel = i - (nSteps - ramp_steps)
-            current_delay = target_delay + ((start_delay - target_delay) * (steps_into_decel / ramp_steps))
-        else:
-            # Cruising phase
-            current_delay = target_delay
-            
-        step(current_delay)
+        step(delay)
 
     print("Movement finished.")
 
 # Main execution loop
 try:
-    print("Moving 1800 degrees (5 full turns)...")
     move(1800, 1)
     time.sleep(2)
-    move(1800, 0)
+    move(180°, 0)
 
 finally:
-    # Disable driver outputs to keep motor cool while idle
-    GPIO.output(EN, GPIO.HIGH)
+    # Cleanup only when ALL movements are finished
     GPIO.cleanup()
     print("GPIO safely cleaned up.")
