@@ -56,9 +56,9 @@ def move(degrees, dir):
 
 # Main execution loop
 try:
-    move(1800, 1)
+    move(18000, 1)
     time.sleep(2)
-    move(1800, 0)
+    move(18000, 0)
 
 finally:
     # Cleanup only when ALL movements are finished
