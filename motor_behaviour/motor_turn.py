@@ -70,9 +70,9 @@ def move(degrees, dir):
 
 # Main execution loop
 try:
-    move(90 * 38, 1)
-    time.sleep(2)
     move(90 * 38, 0)
+    time.sleep(2)
+    move(90 * 38, 1)
 
 finally:
     GPIO.cleanup()
