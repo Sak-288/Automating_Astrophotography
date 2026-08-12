@@ -38,7 +38,7 @@ def step(delay):
 
 # Movement Function with Acceleration/Deceleration Ramping
 def move(degrees, dir):
-    nSteps = int(degrees / DEGREES_PER_STEP)
+    nSteps = int(degrees * 38 / DEGREES_PER_STEP)
 
     if dir == 1:
         GPIO.output(DIR, GPIO.HIGH)  # Clockwise
@@ -67,13 +67,3 @@ def move(degrees, dir):
         step(current_delay)
 
     print("Movement finished.")
-
-# Main execution loop
-try:
-    move(45 * 38, 0)
-    time.sleep(2)
-    move(45 * 38, 1)
-
-finally:
-    GPIO.cleanup()
-    print("GPIO safely cleaned up.")

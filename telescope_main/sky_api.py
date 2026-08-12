@@ -1,1 +1,16 @@
-# DO YOUR OWN RESEARCH BEFORE USING AI !
+from skyfield.api import load
+from skyfield.api import N, W, wgs84
+from motor_behaviour.motor_turn import move
+
+ts = load.timescale()
+t = ts.now()
+planets = load('de421.bsp')
+earth, mars = planets['earth'], planets['mars']
+casablanca = earth + wgs84.latlon(33.5899 * N, 7.6039 * W)
+
+astrometric = casablanca.at(t).observe(mars)
+alt, az = astrometric.apparent().altaz()
+
+move(az)
+time.sleep (5)
+move(alt)
