@@ -10,7 +10,7 @@ earth, mars = planets['earth'], planets['mars']
 casablanca = earth + wgs84.latlon(33.5899 * N, 7.6039 * W)
 
 astrometric = casablanca.at(t).observe(mars)
-alt, az = astrometric.apparent().altaz()
+alt, az, d = astrometric.apparent().altaz()
 
 move(az)
 time.sleep (5)
