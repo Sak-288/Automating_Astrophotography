@@ -20,5 +20,5 @@ astrometric = casablanca.at(t).observe(mars)
 alt, az, d = astrometric.apparent().altaz()
 
 move(parse_dms(str(az)), 1)
-time.sleep (5)
+time.sleep (15)
 move(parse_dms(str(alt)), 1)
