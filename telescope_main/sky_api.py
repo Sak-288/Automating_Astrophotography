@@ -1,6 +1,6 @@
 from skyfield.api import load
 from skyfield.api import N, W, wgs84
-import motor_behaviour.motor_turn
+import time
 from motor_behaviour.motor_turn import move
 
 ts = load.timescale()
