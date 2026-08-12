@@ -12,6 +12,6 @@ casablanca = earth + wgs84.latlon(33.5899 * N, 7.6039 * W)
 astrometric = casablanca.at(t).observe(mars)
 alt, az, d = astrometric.apparent().altaz()
 
-move(az, 1)
+move(int(az), 1)
 time.sleep (5)
-move(alt, 1)
+move(int(alt), 1)
