@@ -67,3 +67,5 @@ def move(degrees, dir):
         step(current_delay)
 
     print("Movement finished.")
+
+move(180 * 37, 1)
