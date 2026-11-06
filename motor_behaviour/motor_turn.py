@@ -68,4 +68,4 @@ def move(degrees, dir):
 
     print("Movement finished.")
 
-move(180 * 37, 1)
+move(180, 1)
